@@ -42,7 +42,17 @@ export default function RootLayout({
       <body className={`antialiased bg-slate-900 text-slate-400`}>
         <SessionProvider>
           <div className="flex flex-col min-h-screen">
-            {!authRoutes.includes(pathname) && <NavbarMain scrollDown={isScrollingDown} scrollPosition={scrollPosition}/>}
+            <link
+              href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css"
+              rel="stylesheet"
+            ></link>
+
+            {!authRoutes.includes(pathname) && (
+              <NavbarMain
+                scrollDown={isScrollingDown}
+                scrollPosition={scrollPosition}
+              />
+            )}
 
             <main className="flex-grow flex flex-col items-center w-full">
               <div className="w-full">{children}</div>

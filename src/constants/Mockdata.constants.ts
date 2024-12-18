@@ -214,7 +214,8 @@ export const dataCafe: CafeProps[] = [
       },
       cafeLocation: {
         city: LOCATION_CITY.HOCHIMINH,
-        street: "1B-1B1, Đường Cộng Hoà",
+        houseNumber: "1B-1B1",
+        street: "Cộng Hoà",
         district: "Tân Bình",
         ward: "4",
       },
@@ -247,6 +248,7 @@ export const dataCafe: CafeProps[] = [
     isOnPromotion: true,
     isHoldingEvents: true,
     isCOTY: false,
+    isRecommendedByPeople: 180,
   },
   {
     id: "2",
@@ -271,7 +273,8 @@ export const dataCafe: CafeProps[] = [
       },
       cafeLocation: {
         city: LOCATION_CITY.HOCHIMINH,
-        street: "533, Đường Nguyễn Tri Phương",
+        houseNumber: "533",
+        street: "Nguyễn Tri Phương",
         district: "10",
         ward: "8",
       },
@@ -308,6 +311,7 @@ export const dataCafe: CafeProps[] = [
     isOnPromotion: true,
     isHoldingEvents: false,
     isCOTY: false,
+    isRecommendedByPeople: 100,
   },
   {
     id: "3",
@@ -335,7 +339,8 @@ export const dataCafe: CafeProps[] = [
       },
       cafeLocation: {
         city: LOCATION_CITY.THUDUC,
-        street: "116, Tô Ngọc Vân",
+        houseNumber: "116",
+        street: "Tô Ngọc Vân",
         district: "",
         ward: "Linh Tây",
       },
@@ -388,6 +393,7 @@ export const dataCafe: CafeProps[] = [
     isOnPromotion: true,
     isHoldingEvents: true,
     isCOTY: false,
+    isRecommendedByPeople: 100,
   },
   {
     id: "4",
@@ -414,7 +420,8 @@ export const dataCafe: CafeProps[] = [
       },
       cafeLocation: {
         city: LOCATION_CITY.HOCHIMINH,
-        street: "210, Đ. Nguyễn Trãi",
+        houseNumber: "210",
+        street: "Đ. Nguyễn Trãi",
         district: "1",
         ward: "Phạm Ngũ Lão",
       },
@@ -451,6 +458,7 @@ export const dataCafe: CafeProps[] = [
     isOnPromotion: false,
     isHoldingEvents: false,
     isCOTY: true,
+    isRecommendedByPeople: 80,
   },
   {
     id: "5",
@@ -479,7 +487,8 @@ export const dataCafe: CafeProps[] = [
       },
       cafeLocation: {
         city: LOCATION_CITY.HOCHIMINH,
-        street: "116 -117 -118 Đ. Bãi Sậy",
+        houseNumber: "166 -117 -118",
+        street: "Đ. Bãi Sậy",
         district: "6",
         ward: "1",
       },
@@ -516,6 +525,7 @@ export const dataCafe: CafeProps[] = [
     isOnPromotion: true,
     isHoldingEvents: false,
     isCOTY: false,
+    isRecommendedByPeople: 50,
   },
   {
     id: "6",
@@ -543,7 +553,8 @@ export const dataCafe: CafeProps[] = [
       },
       cafeLocation: {
         city: LOCATION_CITY.HOCHIMINH,
-        street: "99, Đường Nguyễn Huệ",
+        houseNumber: "99",
+        street: " Nguyễn Huệ",
         district: "1",
         ward: "Bến Nghé",
       },
@@ -580,6 +591,7 @@ export const dataCafe: CafeProps[] = [
     isOnPromotion: true,
     isHoldingEvents: false,
     isCOTY: false,
+    isRecommendedByPeople: 100,
   },
 ];
 

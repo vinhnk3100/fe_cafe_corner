@@ -18,6 +18,12 @@ export default function CafesPage() {
         </span>
         <CafeRank />
       </div>
+      <div className="flex flex-col w-full font-semibold items-center justify-center h-full lg:h-[400px] gap-6 overflow-hidden">
+        <div className="text-3xl text-slate-300 text-center py-3 px-6 bg-gradient-to-r from-transparent via-slate-950 to-transparent">
+          Popular Cafe Brand
+        </div>
+        <CafeBrand />
+      </div>
       <div className="flex flex-col text-slate-200 font-semibold items-center justify-center gap-6">
         <span className="text-3xl text-slate-50 py-3 px-6 bg-gradient-to-r from-transparent via-slate-950 to-transparent">
           Top Trending Cafe
@@ -35,12 +41,6 @@ export default function CafesPage() {
       </div>
       <div className="w-full grid gap-y-5 lg:gap-x-5 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 justify-items-center">
         <CafeCard />
-      </div>
-      <div className="flex flex-col w-full font-semibold items-center justify-center h-full lg:h-[400px] gap-6 overflow-hidden">
-        <div className="text-3xl text-slate-300 text-center py-3 px-6 bg-gradient-to-r from-transparent via-slate-950 to-transparent">
-          Popular Cafe Brand
-        </div>
-        <CafeBrand />
       </div>
     </div>
   );

@@ -119,7 +119,8 @@ export default function CafeCardItem({ data }: { data: CafeProps }) {
         </CardDescription>
         <div className="space-y-1">
           <div className="text-[12px] text-yellow-300 line-clamp-2">
-            <span>Đ/C:</span>
+            <span>Đ/C:{" "}</span>
+            <span>{cafeLocation?.houseNumber}{" "}</span>
             <span>{cafeLocation?.street}</span>
             {cafeLocation?.district && <span>, {cafeLocation?.district}</span>}
             {cafeLocation?.ward && <span>, Phường {cafeLocation?.ward}</span>}
@@ -133,7 +134,7 @@ export default function CafeCardItem({ data }: { data: CafeProps }) {
         <div className="flex flex-row gap-1 text-slate-50">
           <span>#</span>
           {data.cafeDetails.cafeCategory.map((item, index) => {
-            if (index > 2) return <>.</>
+            if (index > 2) return <>.</>;
             return (
               <Badge
                 key={item.id}

@@ -1,8 +1,8 @@
 export const LOCATION_CITY = {
-  HOCHIMINH: "TP.Hồ Chí Minh",
-  THUDUC: "TP.Thủ Đức",
-  BARIA_VUNGTAU: "TP.Bà Rịa - Vũng Tàu",
-  NHATRANG: "TP.Nha Trang",
+  HOCHIMINH: "Thành phố Hồ Chí Minh, Việt Nam",
+  THUDUC: "Thành phố Thủ Đức, Việt Nam",
+  BARIA_VUNGTAU: "Thành phố Bà Rịa - Vũng Tàu, Việt Nam",
+  NHATRANG: "Thành phố Nha Trang, Việt Nam",
 };
 
 export const CafeLocation = [

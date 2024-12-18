@@ -12,10 +12,11 @@ type CafeThemeColor = {
 
 export type CafeLocationProps = {
   city: string;
+  houseNumber: string;
   street: string;
   district: string;
   ward: string;
-}
+};
 
 export type CafeOperation = {
   openingTime: string;
@@ -57,4 +58,5 @@ export type CafeProps = {
   isOnPromotion: boolean;
   isHoldingEvents: boolean;
   isCOTY: boolean;
+  isRecommendedByPeople: number;
 };
