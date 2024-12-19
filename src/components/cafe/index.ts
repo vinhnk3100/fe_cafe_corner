@@ -4,3 +4,4 @@ export { default as CafeCarousel } from "@/components/cafe/cafe-carousel/CafeCar
 export { default as CafeCategory } from "@/components/cafe/cafe-category/CafeCategory";
 export { default as CafeBrand } from "@/components/cafe/cafe-brand/CafeBrand";
 export { default as CafeRank } from "@/components/cafe/cafe-rank/CafeRank";
+export { default as CafeView } from "@/components/cafe/cafe-view/CafeView";

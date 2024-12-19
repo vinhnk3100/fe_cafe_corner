@@ -4,14 +4,15 @@ import { dataCafe } from "@/constants/Mockdata.constants";
 import { CafeProps } from "@/types/cafe/cafe.types";
 
 export default function CafeCard() {
-  return (
-    <>
-      {dataCafe.map((data: CafeProps) => (
-        <Link key={data.id} href={`/cafes/${data.id}`}>
-          <CafeCardItem data={data} />
-        </Link>
-      ))}
-    </>
-  );
+  if (dataCafe) {
+    return (
+      <>
+        {dataCafe.map((data: CafeProps) => (
+          <Link key={data.id} href={`/cafes/${data.id}`}>
+            <CafeCardItem data={data} />
+          </Link>
+        ))}
+      </>
+    );
+  } else return <></>;
 }
-    
