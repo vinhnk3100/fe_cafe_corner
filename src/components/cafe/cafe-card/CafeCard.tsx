@@ -7,7 +7,7 @@ export default function CafeCard() {
   if (dataCafe) {
     return (
       <>
-        {dataCafe.map((data: CafeProps) => (
+        {dataCafe.slice(0, 8).map((data: CafeProps) => (
           <Link key={data.id} href={`/cafes/${data.id}`}>
             <CafeCardItem data={data} />
           </Link>

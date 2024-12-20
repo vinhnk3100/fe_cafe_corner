@@ -13,12 +13,12 @@ import {
 export default function CafesPage() {
   return (
     <div className="w-full mx-auto">
-      <div className="container mx-auto w-full flex flex-col text-slate-200 items-center pt-4 py-6 gap-6">
+      {/* <div className="container mx-auto w-full flex flex-col text-slate-200 items-center pt-4 py-6 gap-6"> */}
         {/* <span className="text-4xl text-slate-50 py-3 font-semibold px-6 bg-gradient-to-r from-transparent via-slate-950 to-transparent">
           Cafe of The Year 2024
         </span> */}
-        <CafeRank />
-      </div>
+        {/* <CafeRank /> */}
+      {/* </div> */}
       <div className="flex flex-col text-slate-200 font-semibold items-center justify-center gap-6">
         <CafeCarousel />
       </div>

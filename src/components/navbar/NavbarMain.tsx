@@ -26,6 +26,10 @@ import { GoStarFill } from "react-icons/go";
 import { signOut, useSession } from "next-auth/react";
 import { MdLocalCafe } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
+import { usePathname } from "next/navigation";
+import moment from "moment";
+import { useState } from "react";
+import { PiSpinnerBallDuotone } from "react-icons/pi";
 
 type NavbarMainProps = {
   scrollDown: boolean;
@@ -37,7 +41,7 @@ export default function NavbarMain({
   scrollPosition,
 }: NavbarMainProps) {
   const { data: session } = useSession();
-
+  const pathname = usePathname();
   return (
     <nav
       className={`bg-slate-950 py-3 px-10 w-full flex justify-between items-center z-[99] gap-8 sm:gap-0 transition-all ${
@@ -55,7 +59,9 @@ export default function NavbarMain({
         <div
           className={`${
             scrollDown ? "text-2xl text-slate-200" : "text-3xl"
-          } hover:cursor-pointer hover:text-slate-100 transition-all`}
+          } hover:cursor-pointer hover:text-slate-100 transition-all ${
+            pathname === "/" ? "text-yellow-500" : ""
+          }`}
         >
           <Link href={"/"}>
             <FaHome />
@@ -64,15 +70,28 @@ export default function NavbarMain({
         <div
           className={`${
             scrollDown ? "text-2xl text-slate-200" : "text-3xl"
-          } hover:cursor-pointer hover:text-slate-100 transition-all`}
+          } hover:cursor-pointer hover:text-slate-100 transition-all ${
+            pathname === "/cafes" ? "text-yellow-500" : ""
+          }`}
         >
           <Link href={"/cafes"}>
             <MdLocalCafe />
           </Link>
         </div>
+        <div
+          className={`${
+            scrollDown ? "text-2xl text-slate-200" : "text-3xl"
+          } hover:cursor-pointer hover:text-slate-100 transition-all ${
+            pathname === "/wheel-of-cafes" ? "text-yellow-500" : ""
+          }`}
+        >
+          <Link href={"/wheel-of-cafes"}>
+            <PiSpinnerBallDuotone />
+          </Link>
+        </div>
       </div>
       <div
-        className={`flex flex-row items-center justify-end transition-all h-12 group w-full ${
+        className={`flex flex-row items-center justify-end transition-all h-12 group w-full gap-3 ${
           scrollDown ? "hidden" : ""
         }`}
       >

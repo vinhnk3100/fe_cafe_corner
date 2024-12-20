@@ -303,7 +303,7 @@ export const dataCafe: CafeProps[] = [
         createDate: "2 giờ trước",
       },
     ],
-    totalLike: 5,
+    totalLike: 15056325,
     totalDislike: 2,
     totalComment: 10,
     totalShare: 5,
@@ -318,7 +318,7 @@ export const dataCafe: CafeProps[] = [
     username: "username1",
     createDate: "10 giờ trước",
     cafeDetails: {
-      title: "The Cafe House - Tô Ngọc Vân",
+      title: "The Cafe House",
       phoneNumber: "23456789",
       thumbnail:
         "https://file.hstatic.net/1000075078/file/hcm-to-ngoc-van1_980973528ceb4b968f3e56efd0d54bc4.jpg",
@@ -400,7 +400,7 @@ export const dataCafe: CafeProps[] = [
     username: "username1",
     createDate: "10 giờ trước",
     cafeDetails: {
-      title: "Highlands Cafe Nguyễn Trãi",
+      title: "Highlands Cafe",
       phoneNumber: "23456789",
       thumbnail:
         "https://phucthanhan.com.vn/wp-content/uploads/2024/02/highland-scaled.jpg",
@@ -583,7 +583,202 @@ export const dataCafe: CafeProps[] = [
         createDate: "2 giờ trước",
       },
     ],
-    totalLike: 10603,
+    totalLike: 9010603,
+    totalDislike: 2,
+    totalComment: 10,
+    totalShare: 5,
+    isTodayMenu: false,
+    isOnPromotion: true,
+    isHoldingEvents: false,
+    isCOTY: false,
+    isRecommendedByPeople: 100,
+  },
+  {
+    id: "7",
+    username: "username1",
+    createDate: "10 giờ trước",
+    cafeDetails: {
+      title: "Cà phê muối Chú Long",
+      phoneNumber: "123456789",
+      thumbnail:
+        "https://lh3.googleusercontent.com/proxy/ahngoLW8UZFvZa5horw5lwivKVqSjb8AQiNvqMHIZjyFFFMwJt3vaUMTYEyJwC28utrUmJdVH2wKSfkZjhUn02ccf2NwWkh94Mci4c0tRRiqy6cRgLSl9gZfN1PBhMc7VtHPtZ1QEtqYmQ",
+      content:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      contentImg: [],
+      cafeLogo:
+        "https://cdn.freebiesupply.com/logos/large/2x/starbucks-coffee-logo-png-transparent.png",
+      cafeOperation: {
+        openingTime: "06:30",
+        closingTime: "22:00",
+        openingDay: [1, 2, 3, 4, 5, 6, 7, 8],
+      },
+      cafeLocation: {
+        city: LOCATION_CITY.HOCHIMINH,
+        houseNumber: "301",
+        street: " Nguyễn Đình Chiểu",
+        district: "3",
+        ward: "5",
+      },
+      cafeCategory: [
+        {
+          id: "2",
+          cafeCategoryName: "Cozy",
+        },
+        {
+          id: "3",
+          cafeCategoryName: "Space",
+        },
+        {
+          id: "8",
+          cafeCategoryName: "Cityview",
+        },
+      ],
+      cafeTheme: {
+        primaryColor: "#006241",
+        secondaryColor: "black",
+      },
+    },
+    cafeComments: [
+      {
+        content: "Test comment",
+        createDate: "2 giờ trước",
+      },
+    ],
+    totalLike: 1254235,
+    totalDislike: 2,
+    totalComment: 10,
+    totalShare: 5,
+    isTodayMenu: false,
+    isOnPromotion: true,
+    isHoldingEvents: false,
+    isCOTY: false,
+    isRecommendedByPeople: 100,
+  },
+  {
+    id: "8",
+    username: "username1",
+    createDate: "10 giờ trước",
+    cafeDetails: {
+      title: "Cộng Cà Phê",
+      phoneNumber: "123456789",
+      thumbnail:
+        "https://scontent.fhan4-6.fna.fbcdn.net/v/t1.6435-9/72527896_10157056181049005_6887466502836977664_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=SjtFoz4XI2wQ7kNvgFiPuf5&_nc_oc=Adhlk8bEkhH63cxTDk9eoVxijon-qMT95ue0bqmuFGYMBeXuF7mT4mDr7Un4FgC4LQI&_nc_zt=23&_nc_ht=scontent.fhan4-6.fna&_nc_gid=Ackus5k4mpaGgAxm8nDiV97&oh=00_AYAqBMo1fQtwLZJpLK9kt90ycxWQ9Mv3OBoQfCsXCj18Gg&oe=678C382F",
+      content:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      contentImg: [
+        "https://lh3.googleusercontent.com/p/AF1QipMyroc8zhBI7fxgkiAayJC4gZU7MXOCQjIjl5qJ=s680-w680-h510",
+        "https://lh3.googleusercontent.com/p/AF1QipMkhbva2dlNIZGb3D62KBq3AP9M17IZQPeGgzJj=s680-w680-h510",
+        "https://lh3.googleusercontent.com/p/AF1QipOoexJ1G6Wb9jMol0E0Yk9062WlRGlfj-GVeikM=s680-w680-h510",
+        "https://lh3.googleusercontent.com/p/AF1QipMekOMAfsgahgFa8X8gfJBRmRM9MCLQSC9-ymjz=s680-w680-h510",
+        "https://lh3.googleusercontent.com/p/AF1QipM2FY_9mrq7qSgtiNb-Zuod2mjJviFKn-zhwN6h=s680-w680-h510",
+        "https://lh3.googleusercontent.com/p/AF1QipM0JvTCEEFcoypGPc8JEb0-dJGC19-o4ftIRZB5=s680-w680-h510",
+      ],
+      cafeLogo:
+        "https://cdn.haitrieu.com/wp-content/uploads/2022/03/Logo-Cong-Ca-Phe.png",
+      cafeOperation: {
+        openingTime: "08:30",
+        closingTime: "23:00",
+        openingDay: [1, 2, 3, 4, 5, 6, 7, 8],
+      },
+      cafeLocation: {
+        city: LOCATION_CITY.HOCHIMINH,
+        houseNumber: "152",
+        street: " Chợ Lớn",
+        district: "6",
+        ward: "11",
+      },
+      cafeCategory: [
+        {
+          id: "2",
+          cafeCategoryName: "Cozy",
+        },
+        {
+          id: "3",
+          cafeCategoryName: "Space",
+        },
+        {
+          id: "8",
+          cafeCategoryName: "Cityview",
+        },
+      ],
+      cafeTheme: {
+        primaryColor: "#006241",
+        secondaryColor: "black",
+      },
+    },
+    cafeComments: [
+      {
+        content: "Test comment",
+        createDate: "2 giờ trước",
+      },
+    ],
+    totalLike: 12254235,
+    totalDislike: 2,
+    totalComment: 10,
+    totalShare: 5,
+    isTodayMenu: false,
+    isOnPromotion: true,
+    isHoldingEvents: false,
+    isCOTY: false,
+    isRecommendedByPeople: 100,
+  },
+  {
+    id: "9",
+    username: "username1",
+    createDate: "10 giờ trước",
+    cafeDetails: {
+      title: "Three O'clock",
+      phoneNumber: "123456789",
+      thumbnail:
+        "https://static.spacet.vn/image-resized/1024x10240_max/img/blog/2023-11-30/65685e03392db7810f956fd9.webp",
+      content:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      contentImg: [
+        "https://annacoffee.vn/wp-content/uploads/2024/11/three1.jpeg",
+        "https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/49783372_1035532876630145_6386143871209832448_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Ek2OjyPgznkQ7kNvgFDbt1Y&_nc_oc=AdgMW74-MFIOGrZMZrMFexcU6uALyqoPWt9fQuZDYygpohILtI2nUqu91_rezaSlZ5E&_nc_zt=23&_nc_ht=scontent.fsgn2-5.fna&_nc_gid=APrm_URkWPn7KxBVTMXaacR&oh=00_AYBb60WlO-sETClKKUfqXN56_OHp0vVlFDWAlNpYNASSqA&oe=678C3EDA",
+        "https://coffee.kayla.vn/wp-content/uploads/2024/06/three-oclock-1.jpg",
+        "https://gcs.tripi.vn/public-tripi/tripi-feed/img/473794uPI/quan-cafe-quan-10-2.jpg",
+      ],
+      cafeLogo:
+        "https://cdn.haitrieu.com/wp-content/uploads/2022/03/Logo-Cong-Ca-Phe.png",
+      cafeOperation: {
+        openingTime: "08:30",
+        closingTime: "23:00",
+        openingDay: [1, 2, 3, 4, 5, 6, 7, 8],
+      },
+      cafeLocation: {
+        city: LOCATION_CITY.HOCHIMINH,
+        houseNumber: "152",
+        street: " Chợ Lớn",
+        district: "6",
+        ward: "11",
+      },
+      cafeCategory: [
+        {
+          id: "2",
+          cafeCategoryName: "Cozy",
+        },
+        {
+          id: "3",
+          cafeCategoryName: "Space",
+        },
+        {
+          id: "8",
+          cafeCategoryName: "Cityview",
+        },
+      ],
+      cafeTheme: {
+        primaryColor: "#006241",
+        secondaryColor: "black",
+      },
+    },
+    cafeComments: [
+      {
+        content: "Test comment",
+        createDate: "2 giờ trước",
+      },
+    ],
+    totalLike: 6254235,
     totalDislike: 2,
     totalComment: 10,
     totalShare: 5,
@@ -638,7 +833,7 @@ export const dataCafeCategory: CafeCategoryProps[] = [
   },
 ];
 
-export const dataCafeChain: CafeChain[] = [
+export const dataCafeChain1: CafeChain[] = [
   {
     id: "1",
     cafeChainName: "Classic Coffee",
@@ -649,13 +844,13 @@ export const dataCafeChain: CafeChain[] = [
     id: "2",
     cafeChainName: "Trung Nguyên",
     cafeChainLogo:
-      "https://classiccoffee.com.vn/upload/OuBM1TJ0HOC5IC7oSazFdoDBGQxwsc6gGH3.jpg",
+      "https://thietkelogo.vn/wp-content/uploads/2016/03/logo-cf-trung-nguyen.png",
   },
   {
     id: "3",
     cafeChainName: "Highlands Coffee",
     cafeChainLogo:
-      "https://classiccoffee.com.vn/upload/c5h7gUk1X5hrN2WFb3RDgWJidvw9CofOtxW.jpg",
+      "https://cdn.haitrieu.com/wp-content/uploads/2022/03/Logo-HighLands-Coffee.png",
   },
   {
     id: "4",
@@ -667,18 +862,63 @@ export const dataCafeChain: CafeChain[] = [
     id: "5",
     cafeChainName: "Phúc Long coffee & tea house",
     cafeChainLogo:
-      "https://classiccoffee.com.vn/upload/c5h7gUk1X5hrN2WFb3RDgWJidvw9CofOtxW.jpg",
+      "https://upload.wikimedia.org/wikipedia/vi/thumb/3/32/Logo_Ph%C3%BAc_Long.svg/2560px-Logo_Ph%C3%BAc_Long.svg.png",
   },
   {
     id: "6",
     cafeChainName: "Vinacafe",
     cafeChainLogo:
-      "https://upload.wikimedia.org/wikipedia/vi/thumb/3/32/Logo_Ph%C3%BAc_Long.svg/2560px-Logo_Ph%C3%BAc_Long.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Vinacaf%C3%A9_Logo.png/1200px-Vinacaf%C3%A9_Logo.png",
   },
   {
     id: "7",
     cafeChainName: "Cộng Cà Phê",
     cafeChainLogo:
       "https://www.cukcuk.vn/wp-content/uploads/2023/03/Cong-Ca-Phe-Logo-PNG-1-768x480.png",
+  },
+];
+
+export const dataCafeChain2: CafeChain[] = [
+  {
+    id: "8",
+    cafeChainName: "Katinat Kafe",
+    cafeChainLogo:
+      "https://cdn.haitrieu.com/wp-content/uploads/2022/06/logo-katinat-text.png",
+  },
+  {
+    id: "9",
+    cafeChainName: "Three O'Clock",
+    cafeChainLogo:
+      "https://threeoclock.vn/upload/news/85f239d2b1dd311ae3f4601301e00f68-1-5026.png",
+  },
+  {
+    id: "10",
+    cafeChainName: "Cheese Coffee",
+    cafeChainLogo:
+      "https://cdn.haitrieu.com/wp-content/uploads/2022/06/Logo-cheese-coffee-Blue.png",
+  },
+  {
+    id: "11",
+    cafeChainName: "The Coffee Club",
+    cafeChainLogo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/The_Coffee_Club_logo.svg/1200px-The_Coffee_Club_logo.svg.png",
+  },
+  {
+    id: "12",
+    cafeChainName: "Coffee Corner",
+    cafeChainLogo:
+      "https://www.shutterstock.com/image-vector/cafe-corner-tes-logo-design-260nw-1974175163.jpg",
+  },
+  {
+    id: "13",
+    cafeChainName: "KUMO CHAN Coffee and Garden",
+    cafeChainLogo:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfoa2lukAR1GMjRWtQBhpqzlzmTpoauFvy-w&s",
+  },
+  {
+    id: "14",
+    cafeChainName: "An Tea & Coffee est. 2018",
+    cafeChainLogo:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7QSm8z7GN8pJDBqvGze4avcIIPKSz5Qn9mQ&s",
   },
 ];

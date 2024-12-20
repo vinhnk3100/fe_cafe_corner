@@ -14,7 +14,7 @@ const CafeCard = () => {
           </div>
           <Image
             alt=""
-            src="https://files.oaiusercontent.com/file-54evoX6rVfYdrhUCugoJ3S?se=2024-12-19T07%3A55%3A52Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D0ce52bd1-1e60-4e4b-9b6c-630c89d806c3.webp&sig=RNEs7TinXf17yVJE3cxrJeFGWdh9oT7F/5J5Hfb7x2s%3D"
+            src="https://vielimousine.com/wp-content/uploads/2022/04/soho-coffee.jpg"
             width={600}
             height={600}
             className="w-full h-full aspect-video"
@@ -30,7 +30,7 @@ const CafeCard = () => {
           </div>
           <Image
             alt=""
-            src="https://files.oaiusercontent.com/file-4xZJtVy7QDjZU2A5hzkQgm?se=2024-12-19T08%3A01%3A49Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dea75079b-caba-40c9-9037-351642df42ea.webp&sig=gKFbwlhyARWAYSUnUQj0MNdqnim8Mc/TabrozFYjCK0%3D"
+            src="https://bizweb.dktcdn.net/100/349/716/files/cafe-rooftop-quan-1-2.jpg?v=1719990006316"
             width={600}
             height={600}
             className="w-full h-full aspect-video"
@@ -46,7 +46,7 @@ const CafeCard = () => {
           </div>
           <Image
             alt=""
-            src="https://elitetour.com.vn/files/images/Blogs/Fansipan-Terrace-Cafe-HomeStay-1.jpg"
+            src="https://naviday.vn/wp-content/uploads/2023/09/chenh-dalat-quan-ca-phe-di-buoi-nao-cung-dep.o-Da-Lat-ivviu-04-1024x768.jpg"
             width={600}
             height={600}
             className="w-full h-full aspect-video"

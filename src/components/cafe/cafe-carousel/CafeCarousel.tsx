@@ -5,14 +5,18 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Parallax, Pagination, Autoplay } from "swiper/modules";
 import { dataCafe as data } from "@/constants/Mockdata.constants";
+import CountUp from "react-countup";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "./CafeCarousel.style.scss";
 import Link from "next/link";
-import { FaChevronRight, FaStore } from "react-icons/fa";
+import { FaChevronRight, FaClock, FaStore } from "react-icons/fa";
 import { MdLocalCafe } from "react-icons/md";
+import { PiMapPinFill } from "react-icons/pi";
+import { Badge } from "@/components/ui/badge";
+import { formatLikeNumber } from "@/utils/format-number.utils";
 
 const CafeCarousel = () => {
   const [dataCafe, setDataCafe] = useState<CafeProps>();
@@ -25,6 +29,9 @@ const CafeCarousel = () => {
   }, []);
 
   if (dataCafe) {
+    const dataCafeSortedLike = [...data].sort(
+      (a, b) => b.totalLike - a.totalLike
+    );
     return (
       <Swiper
         speed={1600}
@@ -44,10 +51,10 @@ const CafeCarousel = () => {
         //   height: `calc(100vh - 60px)`, // Adjust height to fit the screen
         // }}
       >
-        {data.map((item) => (
+        {dataCafeSortedLike.slice(0, 4).map((item, index) => (
           <SwiperSlide key={item.id} className="w-full">
             <Card className="w-full border-0">
-              <CardContent className="relative group p-0 flex items-center justify-center w-full">
+              <CardContent className="relative group p-0 flex items-center justify-center w-full h-full">
                 {/* Background Overlay */}
                 <div className="absolute inset-0 bg-black opacity-70 group-hover:opacity-60 transition-opacity" />
                 {/* Image */}
@@ -62,39 +69,85 @@ const CafeCarousel = () => {
                 <div className="absolute left-0 lg:left-12 p-10 w-auto lg:w-[800px] h-[400px] flex justify-between flex-col">
                   <div className="flex flex-col">
                     <div
-                      className="text-lg lg:text-lg text-slate-50 group-hover:bg-gradient-to-r group-hover:from-yellow-300 group-hover:via-white group-hover:to-white group-hover:bg-clip-text group-hover:text-transparent transition-all flex flex-row gap-2 items-center"
                       data-swiper-parallax="-200"
-                    >
-                      <span className="font-bold">Opening hours:</span>
-                      {item.cafeDetails.cafeOperation.openingTime} -{" "}
-                      {item.cafeDetails.cafeOperation.closingTime}
-                    </div>
-                    <div
-                      data-swiper-parallax="-300"
-                      className="text-2xl lg:text-5xl text-slate-50 py-2 font-bold group-hover:bg-gradient-to-r group-hover:from-yellow-300 group-hover:via-white group-hover:to-white group-hover:bg-clip-text group-hover:text-transparent transition-all"
+                      className="text-2xl lg:text-6xl text-slate-50 py-2 font-bold"
                     >
                       {item.cafeDetails.title}
                     </div>
                     <div
-                      className="text-sm lg:text-xl text-slate-50 font-light group-hover:bg-gradient-to-r group-hover:from-yellow-300 group-hover:via-white group-hover:to-white group-hover:bg-clip-text group-hover:text-transparent transition-all"
+                      className="flex flex-row gap-3"
+                      data-swiper-parallax="-200"
+                    >
+                      {dataCafe.cafeDetails.cafeCategory.map((item, index) => {
+                        if (index > 2) return <>.</>;
+                        return (
+                          <Badge
+                            key={item.id}
+                            className="text-1xl w-auto bg-yellow-500 rounded-md text-slate-950 hover:bg-yellow-600"
+                          >
+                            {item.cafeCategoryName}
+                          </Badge>
+                        );
+                      })}
+                    </div>
+                    <div
+                      className="py-6 text-sm lg:text-xl text-slate-50 font-light group-hover:bg-gradient-to-r group-hover:from-yellow-300 group-hover:via-white group-hover:to-white group-hover:bg-clip-text group-hover:text-transparent transition-all flex items-start gap-2"
+                      data-swiper-parallax="-300"
+                    >
+                      <PiMapPinFill className="text-3xl text-slate-50" />
+                      <span>
+                        <span className="font-bold">Address: </span>
+                        {item.cafeDetails.cafeLocation.houseNumber},{" "}
+                        {item.cafeDetails.cafeLocation.street}
+                        {item.cafeDetails.cafeLocation.district && (
+                          <span>
+                            , Quận {item.cafeDetails.cafeLocation.district}
+                          </span>
+                        )}
+                        {item.cafeDetails.cafeLocation.ward && (
+                          <span>
+                            , Phường {item.cafeDetails.cafeLocation.ward}
+                          </span>
+                        )}
+                        {item.cafeDetails.cafeLocation.city && (
+                          <span>, {item.cafeDetails.cafeLocation.city}</span>
+                        )}
+                      </span>
+                    </div>
+                    <div
+                      className="font-light text-lg lg:text-lg text-slate-50 group-hover:bg-gradient-to-r group-hover:from-yellow-300 group-hover:via-white group-hover:to-white group-hover:bg-clip-text group-hover:text-transparent transition-all flex items-center gap-2"
                       data-swiper-parallax="-400"
                     >
-                      <span className="font-bold">Address: </span>
-                      {item.cafeDetails.cafeLocation.houseNumber},{" "}
-                      {item.cafeDetails.cafeLocation.street}
-                      {item.cafeDetails.cafeLocation.district && (
-                        <span>
-                          , Quận {item.cafeDetails.cafeLocation.district}
+                      <FaClock className="text-2xl text-slate-50" />
+                      <span>
+                        <span className="font-bold">Opening Daily: </span>
+                        {item.cafeDetails.cafeOperation.openingTime} -{" "}
+                        {item.cafeDetails.cafeOperation.closingTime}
+                      </span>
+                    </div>
+                    {/* Stats */}
+                    <div
+                      className="flex gap-8 py-6"
+                      data-swiper-parallax="-500"
+                    >
+                      <div className="text-white text-center w-[80px]">
+                        <span className="block text-3xl font-bold">
+                          <CountUp formattingFn={formatLikeNumber} duration={3} end={item.totalLike} />
                         </span>
-                      )}
-                      {item.cafeDetails.cafeLocation.ward && (
-                        <span>
-                          , Phường {item.cafeDetails.cafeLocation.ward}
+                        <span className="text-white/80">Likes</span>
+                      </div>
+                      <div className="text-white text-center">
+                        <span className="block text-3xl font-bold">
+                          <CountUp end={100} />+
                         </span>
-                      )}
-                      {item.cafeDetails.cafeLocation.city && (
-                        <span>, {item.cafeDetails.cafeLocation.city}</span>
-                      )}
+                        <span className="text-white/80">Reviews</span>
+                      </div>
+                      <div className="text-white text-center">
+                        <span className="block text-3xl font-bold">
+                          #{index + 1}
+                        </span>
+                        <span className="text-white/80">Ranking</span>
+                      </div>
                     </div>
                   </div>
 
