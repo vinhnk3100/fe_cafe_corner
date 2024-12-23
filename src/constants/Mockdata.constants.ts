@@ -355,23 +355,31 @@ export const dataCafe: CafeProps[] = [
         },
         {
           id: "3",
-          cafeCategoryName: "cozy",
+          cafeCategoryName: "music",
         },
         {
           id: "4",
-          cafeCategoryName: "Overnight",
+          cafeCategoryName: "overnight",
         },
         {
           id: "5",
-          cafeCategoryName: "Rooftop",
+          cafeCategoryName: "rooftop",
         },
         {
           id: "6",
-          cafeCategoryName: "cozy",
+          cafeCategoryName: "decoration",
         },
         {
           id: "7",
           cafeCategoryName: "cozy",
+        },
+        {
+          id: "8",
+          cafeCategoryName: "cityview",
+        },
+        {
+          id: "9",
+          cafeCategoryName: "lakeview",
         },
       ],
       cafeTheme: {

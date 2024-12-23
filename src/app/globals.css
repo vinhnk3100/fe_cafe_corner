@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body {
-  font-family: "https://fonts.googleapis.com/css?family=Be Vietnam Pro", sans-serif;
+  font-family: "https://fonts.googleapis.com/css?family=Be Vietnam Pro",
+    sans-serif;
 }
 
 @layer utilities {

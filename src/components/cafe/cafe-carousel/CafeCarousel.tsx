@@ -44,7 +44,7 @@ const CafeCarousel = () => {
         pagination={{
           clickable: true,
         }}
-        className="relative mx-auto w-full h-[700px]"
+        className="relative mx-auto w-full h-auto xl:h-[700px] rounded-md bg-slate-500 hover:shadow-[0_4px_6px_-1px_rgba(248,250,252,0.2),0_1px_3px_rgba(248,250,252,0.08)]"
         slidesPerView={1}
         modules={[Parallax, Pagination, Autoplay]}
         // style={{
@@ -66,16 +66,16 @@ const CafeCarousel = () => {
                   className="h-full w-full object-cover aspect-video"
                 />
                 {/* Content */}
-                <div className="absolute left-0 lg:left-12 p-10 w-auto lg:w-[800px] h-[400px] flex justify-between flex-col">
+                <div className="absolute left-0 lg:left-12 p-0 px-10 md:p-10 w-auto lg:w-[800px] h-auto lg:h-[400px] flex justify-between flex-col">
                   <div className="flex flex-col">
                     <div
                       data-swiper-parallax="-200"
-                      className="text-2xl lg:text-6xl text-slate-50 py-2 font-bold"
+                      className="text-xl md:text-3xl lg:text-6xl text-slate-50 py-2 font-bold"
                     >
                       {item.cafeDetails.title}
                     </div>
                     <div
-                      className="flex flex-row gap-3"
+                      className="flex-row gap-3 hidden md:flex"
                       data-swiper-parallax="-200"
                     >
                       {dataCafe.cafeDetails.cafeCategory.map((item, index) => {
@@ -91,7 +91,7 @@ const CafeCarousel = () => {
                       })}
                     </div>
                     <div
-                      className="py-6 text-sm lg:text-xl text-slate-50 font-light group-hover:bg-gradient-to-r group-hover:from-yellow-300 group-hover:via-white group-hover:to-white group-hover:bg-clip-text group-hover:text-transparent transition-all flex items-start gap-2"
+                      className="py-1 md:py-6 text-[0.7em] lg:text-xl text-slate-50 font-light group-hover:bg-gradient-to-r group-hover:from-yellow-300 group-hover:via-white group-hover:to-white group-hover:bg-clip-text group-hover:text-transparent transition-all flex items-start gap-2"
                       data-swiper-parallax="-300"
                     >
                       <PiMapPinFill className="text-3xl text-slate-50" />
@@ -115,10 +115,10 @@ const CafeCarousel = () => {
                       </span>
                     </div>
                     <div
-                      className="font-light text-lg lg:text-lg text-slate-50 group-hover:bg-gradient-to-r group-hover:from-yellow-300 group-hover:via-white group-hover:to-white group-hover:bg-clip-text group-hover:text-transparent transition-all flex items-center gap-2"
+                      className="font-light text-[0.7em] lg:text-xl text-slate-50 group-hover:bg-gradient-to-r group-hover:from-yellow-300 group-hover:via-white group-hover:to-white group-hover:bg-clip-text group-hover:text-transparent transition-all flex items-center gap-2"
                       data-swiper-parallax="-400"
                     >
-                      <FaClock className="text-2xl text-slate-50" />
+                      <FaClock className="text-sm md:text-2xl text-slate-50" />
                       <span>
                         <span className="font-bold">Opening Daily: </span>
                         {item.cafeDetails.cafeOperation.openingTime} -{" "}
@@ -127,32 +127,34 @@ const CafeCarousel = () => {
                     </div>
                     {/* Stats */}
                     <div
-                      className="flex gap-8 py-6"
+                      className="flex gap-8 py-2 md:py-6 text-[0.6em] lg:text-3xl"
                       data-swiper-parallax="-500"
                     >
-                      <div className="text-white text-center w-[80px]">
-                        <span className="block text-3xl font-bold">
-                          <CountUp formattingFn={formatLikeNumber} duration={3} end={item.totalLike} />
+                      <div className="text-white text-center w-auto md:w-[80px]">
+                        <span className="block font-bold">
+                          <CountUp
+                            formattingFn={formatLikeNumber}
+                            duration={3}
+                            end={item.totalLike}
+                          />
                         </span>
                         <span className="text-white/80">Likes</span>
                       </div>
                       <div className="text-white text-center">
-                        <span className="block text-3xl font-bold">
+                        <span className="block font-bold">
                           <CountUp end={100} />+
                         </span>
                         <span className="text-white/80">Reviews</span>
                       </div>
                       <div className="text-white text-center">
-                        <span className="block text-3xl font-bold">
-                          #{index + 1}
-                        </span>
+                        <span className="block font-bold">#{index + 1}</span>
                         <span className="text-white/80">Ranking</span>
                       </div>
                     </div>
                   </div>
 
                   {/* CTA Buttons */}
-                  <div className="flex flex-wrap gap-4 mt-4">
+                  <div className="hidden md:flex flex-wrap gap-4 mt-4">
                     {/* View Cafe Button */}
                     <Link href={`cafes/${item.id}`}>
                       <button
@@ -172,7 +174,7 @@ const CafeCarousel = () => {
                         className="bg-slate-400 hover:bg-slate-300 text-gray-950 rounded-lg px-8 py-3 font-semibold transition-all duration-300 ease-in-out flex flex-row gap-2 items-center"
                       >
                         <FaStore className="text-2xl" />
-                        View Chain Store
+                        View Cafe Chain
                         <FaChevronRight className="inline ml-2" />
                       </button>
                     </Link>

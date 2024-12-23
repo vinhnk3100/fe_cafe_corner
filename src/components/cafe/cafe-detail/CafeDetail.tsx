@@ -4,6 +4,7 @@ import { BiSolidLike } from "react-icons/bi";
 import {
   PiArrowFatDownFill,
   PiArrowFatUpFill,
+  PiCoffeeBeanFill,
   PiShareFatFill,
 } from "react-icons/pi";
 import {
@@ -48,27 +49,49 @@ import styles from "./CafeDetail.module.scss";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 
 const CafeDetail = ({ cafeId }: { cafeId: string }) => {
+  const iconSvg = `<svg fill="#FFF" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 width="800px" height="800px" viewBox="0 0 326.05 326.05"
+	 xml:space="preserve">
+<g>
+	<path d="M14.257,275.602C-17.052,220.391,4.253,133.798,69.023,69.01c73.553-73.543,175.256-91.076,227.182-39.16
+		c0.061,0.068,0.112,0.145,0.195,0.214c-10.392,30.235-43.486,94.567-142.686,129.348C62.842,191.29,27.788,241.972,14.257,275.602z
+		 M310.81,48.75c-7.871,18.361-21.57,42.356-45.173,65.957c-23.725,23.735-57.445,47.046-105.208,63.8
+		C63.49,212.5,36.405,268.149,28.848,295.116c0.357,0.36,0.664,0.733,1.011,1.083c51.921,51.918,153.628,34.386,227.176-39.169
+		C322.479,191.585,343.526,103.869,310.81,48.75z"/>
+</g>
+</svg>`;
+  const [screenSize, setScreenSize] = useState({
+    width: 0,
+    height: 0,
+  });
+
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore | null>(null);
   const [cafeprimaryColor, setCafeprimaryColor] = useState<string>();
   const [cafeData, setCafeData] = useState<CafeProps>();
   const [init, setInit] = useState(false);
 
-  const images = [
-    "https://swiperjs.com/demos/images/nature-1.jpg",
-    "https://swiperjs.com/demos/images/nature-2.jpg",
-    "https://swiperjs.com/demos/images/nature-3.jpg",
-    "https://swiperjs.com/demos/images/nature-4.jpg",
-    "https://swiperjs.com/demos/images/nature-5.jpg",
-    "https://swiperjs.com/demos/images/nature-6.jpg",
-    "https://swiperjs.com/demos/images/nature-7.jpg",
-    "https://swiperjs.com/demos/images/nature-8.jpg",
-    "https://swiperjs.com/demos/images/nature-9.jpg",
-    "https://swiperjs.com/demos/images/nature-10.jpg",
-  ];
-
   useEffect(() => {
     console.log(thumbsSwiper);
-  }, [thumbsSwiper])
+  }, [thumbsSwiper]);
+
+  useEffect(() => {
+    // Handler to update screen size
+    const handleResize = () => {
+      setScreenSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    // Set initial screen size
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Clean up event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const fetchCafeById = async () => {
@@ -98,321 +121,354 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
   if (!cafeData) {
     return <>Loading...</>;
   }
-  return (
-    <div className="container mx-auto px-4 lg:px-8 py-8 flex flex-col lg:flex-row gap-12">
-      {/* Left Sticky Section - Images */}
-      <div className="lg:w-1/2 sticky top-12 self-start space-y-8">
-        {/* Thumbnail Image */}
-        {/* <div className="relative w-full h-[500px] overflow-hidden rounded-lg shadow-lg">
-          <Image
-            src={cafeData.cafeDetails.thumbnail}
-            alt="Cafe Thumbnail"
-            layout="fill"
-            className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent"></div>
-          <div className="absolute bottom-6 left-6 text-white">
-            {cafeData.isCOTY && (
-              <div className="w-full h-full flex flex-row items-center gap-3">
-                <span className="h-full text-xl text-yellow-300">
-                  {" "}
-                  Cafe of the Year 2024
-                </span>
-                <FaCrown className="text-yellow-300 drop-shadow-md text-4xl" />
-              </div>
-            )}
-            <h1 className="text-lg text-slate-300 w-auto h-full">
-              {cafeData.isRecommendedByPeople >= 100
-                ? "Recommended by most viewer ⭐"
-                : ""}
-            </h1>
-            <h1
-              className="text-4xl font-bold"
-              style={{
-                color: `${cafeData.cafeDetails.cafeTheme.primaryColor}`,
-              }}
-            >
-              {cafeData.cafeDetails.title}
-            </h1>
-            <div className="flex gap-2 mt-2">
-              {cafeData.cafeDetails.cafeCategory.map((category) => (
-                <Badge
-                  key={category.id}
-                  className="bg-yellow-500 text-slate-900 hover:bg-yellow-300 cursor-pointer text-md"
-                >
-                  {category.cafeCategoryName}
-                </Badge>
-              ))}
-            </div>
-          </div>
-        </div> */}
 
-        {/* Carousel */}
-        {/* <Carousel
-          opts={{
-            align: "center",
-          }}
-          className="w-full max-w-full"
-        >
-          <CarouselContent className="gap-1 w-full">
-            {cafeData.cafeDetails.contentImg.map((imgSrc, index) => (
-              <CarouselItem
-                key={index}
-                className={`rounded-lg shadow-md hover:shadow-lg transition-shadow md:basis-1/2 ${
-                  cafeData.cafeDetails.contentImg.length >= 3
-                    ? "lg:basis-1/3"
-                    : "lg:basis-1/2"
-                }`}
+  if (init)
+    return (
+      <div className="container mx-auto px-4 lg:px-8 flex flex-col lg:flex-row py-8 lg:gap-12">
+        {/* Left Sticky Section - Images */}
+        <div className="lg:w-1/2 relative lg:sticky lg:top-20 self-start space-y-8">
+          {screenSize.width >= 1024 ? (
+            <>
+              {/* Main Swiper */}
+              <Swiper
+                loop={true}
+                spaceBetween={10}
+                navigation={true}
+                thumbs={{ swiper: thumbsSwiper }}
+                modules={[FreeMode, Navigation, Thumbs]}
+                className={`${styles.main_swiper} hidden`}
               >
-                <Dialog>
-                  <DialogTrigger className="relative w-full group overflow-hidden">
-                    <div className="flex justify-center items-center right-0 w-full h-full bg-black absolute opacity-0 group-hover:opacity-60 transition-all z-10">
-                      <FaPlusCircle className="text-4xl text-slate-50 group-hover:scale-110" />
-                    </div>
+                {cafeData.cafeDetails.contentImg.map((img, index) => (
+                  <SwiperSlide key={index}>
                     <Image
-                      src={imgSrc}
-                      alt={`Cafe Image ${index + 1}`}
-                      width={600}
-                      height={400}
-                      className="group-hover:scale-110 object-cover w-full h-48 rounded-lg transition-all"
-                    />
-                  </DialogTrigger>
-                  <DialogContent className="p-0 m-0 mx-auto w-full scale-150 border-none justify-center">
-                    <Image
-                      src={imgSrc}
-                      alt={`Cafe Image ${index + 1}`}
                       width={800}
                       height={600}
-                      className="object-contain bg-no-repeat w-full rounded-md border-none"
+                      src={img}
+                      alt={`Nature ${index + 1}`}
+                      className="w-full mx-auto h-[600px] max-h-[600px] md:max-h-[500px] sm:max-h-[400px] object-cover rounded-lg"
                     />
-                  </DialogContent>
-                </Dialog>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel> */}
-        {/* Main Swiper */}
-        <Swiper
-          loop={true}
-          spaceBetween={10}
-          navigation={true}
-          thumbs={{ swiper: thumbsSwiper }}
-          modules={[FreeMode, Navigation, Thumbs]}
-          className="w-full h-[550px] rounded-md"
-        >
-          {cafeData.cafeDetails.contentImg.map((img, index) => (
-            <SwiperSlide key={index}>
-              <Image
-                width={800}
-                height={600}
-                src={img}
-                alt={`Nature ${index + 1}`}
-                className="w-full h-full object-cover rounded-lg"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
 
-        {/* Thumbnail Swiper */}
-        <Swiper
-          onSwiper={setThumbsSwiper}
-          loop={true}
-          spaceBetween={10}
-          slidesPerView={3}
-          freeMode={true}
-          watchSlidesProgress={true}
-          modules={[FreeMode, Navigation, Thumbs]}
-          className={`${styles.mySwiper}`}
-        >
-          {cafeData.cafeDetails.contentImg.map((img, index) => {
-            return (
-              <SwiperSlide key={index}>
+              {/* Thumbnail Swiper */}
+              <Swiper
+                onSwiper={setThumbsSwiper}
+                spaceBetween={10}
+                slidesPerView={3}
+                freeMode={true}
+                watchSlidesProgress={true}
+                modules={[FreeMode, Navigation, Thumbs]}
+                className={`${styles.mySwiper}`}
+              >
+                {cafeData.cafeDetails.contentImg.map((img, index) => (
+                  <SwiperSlide key={index}>
+                    <Image
+                      width={800}
+                      height={800}
+                      src={img}
+                      alt={`Thumbnail ${index + 1}`}
+                      className="w-full h-[200px] md:h-[150px] sm:h-[100px] object-cover rounded-md opacity-100"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </>
+          ) : (
+            <>
+              {/* Thumbnail Image */}
+              <div className="relative w-full h-[500px] overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  width={800}
-                  height={800}
-                  src={img}
-                  alt={`Thumbnail ${index + 1}`}
-                  className={`w-full h-[200px] object-cover rounded-md opacity-100`}
+                  src={cafeData.cafeDetails.thumbnail}
+                  alt="Cafe Thumbnail"
+                  layout="fill"
+                  className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
                 />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 text-white">
+                  {cafeData.isCOTY && (
+                    <div className="w-full h-full flex flex-row items-center gap-3">
+                      <span className="h-full text-xl text-yellow-300">
+                        {" "}
+                        Cafe of the Year 2024
+                      </span>
+                      <FaCrown className="text-yellow-300 drop-shadow-md text-4xl" />
+                    </div>
+                  )}
+                  <h1 className="text-lg text-slate-300 w-auto h-full">
+                    {cafeData.isRecommendedByPeople >= 100
+                      ? "Recommended by most viewer ⭐"
+                      : ""}
+                  </h1>
+                  <h1
+                    className="text-4xl font-bold"
+                    style={{
+                      color: `${cafeData.cafeDetails.cafeTheme.primaryColor}`,
+                    }}
+                  >
+                    {cafeData.cafeDetails.title}
+                  </h1>
+                  <div className="flex gap-2 mt-2">
+                    {cafeData.cafeDetails.cafeCategory.map((category) => (
+                      <Badge
+                        key={category.id}
+                        className="bg-yellow-500 text-slate-900 hover:bg-yellow-300 cursor-pointer text-md"
+                      >
+                        {category.cafeCategoryName}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </div>
 
-      {/* Right Content Section */}
-      <div className="lg:w-1/2 flex flex-col space-y-8">
-        {/* Opening Hours */}
-        <div className="flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <FaClock className="text-yellow-500 text-3xl" />
-            <div>
-              <h2 className="text-lg font-semibold text-gray-200">
-                Opening Hours
+              {/* Carousel */}
+              <Carousel
+                opts={{
+                  align: "center",
+                }}
+                className="w-full max-w-full"
+              >
+                <CarouselContent className="gap-1 w-full">
+                  {cafeData.cafeDetails.contentImg.map((imgSrc, index) => (
+                    <CarouselItem
+                      key={index}
+                      className={`rounded-lg shadow-md hover:shadow-lg transition-shadow md:basis-1/2 ${
+                        cafeData.cafeDetails.contentImg.length >= 3
+                          ? "lg:basis-1/3"
+                          : "lg:basis-1/2"
+                      }`}
+                    >
+                      <Dialog>
+                        <DialogTrigger className="relative w-full group overflow-hidden">
+                          <div className="flex justify-center items-center right-0 w-full h-full bg-black absolute opacity-0 group-hover:opacity-60 transition-all z-10">
+                            <FaPlusCircle className="text-4xl text-slate-50 group-hover:scale-110" />
+                          </div>
+                          <Image
+                            src={imgSrc}
+                            alt={`Cafe Image ${index + 1}`}
+                            width={600}
+                            height={400}
+                            className="group-hover:scale-110 object-cover w-full h-48 rounded-lg transition-all"
+                          />
+                        </DialogTrigger>
+                        <DialogContent className="p-0 m-0 mx-auto w-full scale-150 border-none justify-center bg-slate-950">
+                          <Image
+                            src={imgSrc}
+                            alt={`Cafe Image ${index + 1}`}
+                            width={800}
+                            height={600}
+                            className="object-contain bg-no-repeat w-full rounded-md border-none"
+                          />
+                        </DialogContent>
+                      </Dialog>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+            </>
+          )}
+        </div>
+
+        {/* Right Content Section */}
+        <div className="w-full lg:w-1/2 flex flex-col space-y-8">
+          {/* Cafe Name */}
+          <div className="hidden lg:flex justify-between items-center">
+            <div className="flex items-start flex-col">
+              <h2 className="text-4xl font-semibold text-gray-200">
+                {cafeData.cafeDetails.title}
               </h2>
+              <div className="grid grid-cols-5 lg:grid-cols-3 xl:grid-cols-5 gap-2 mt-1">
+                {cafeData.cafeDetails.cafeCategory.map((category) => (
+                  <Badge
+                    key={category.id}
+                    className="bg-yellow-500 text-slate-900 hover:bg-yellow-300 cursor-pointer text-md"
+                  >
+                    {category.cafeCategoryName}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <BiSolidLike className="text-green-500 text-2xl" />
+              <span className="text-green-500 text-lg">
+                {Math.floor(
+                  (cafeData.totalLike /
+                    (cafeData.totalLike + cafeData.totalDislike)) *
+                    100
+                )}
+                %
+              </span>
+            </div>
+          </div>
+
+          {/* Opening Hours */}
+          <div className="flex justify-between items-center">
+            <div className="flex items-center gap-4">
+              <FaClock className="text-yellow-500 text-3xl" />
+              <div>
+                <h2 className="text-lg font-semibold text-gray-200">
+                  Opening Hours
+                </h2>
+                <p className="text-gray-400">
+                  {cafeData.cafeDetails.cafeOperation.openingTime} -{" "}
+                  {cafeData.cafeDetails.cafeOperation.closingTime}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Address */}
+          <div className="flex items-center gap-4">
+            <FaMapMarkerAlt className="text-yellow-500 text-6xl md:text-3xl" />
+            <div>
+              <h2 className="text-lg font-semibold text-gray-200">Address</h2>
               <p className="text-gray-400">
-                {cafeData.cafeDetails.cafeOperation.openingTime} -{" "}
-                {cafeData.cafeDetails.cafeOperation.closingTime}
+                {cafeData.cafeDetails.cafeLocation.houseNumber}{" "}
+                {cafeData.cafeDetails.cafeLocation.street}
+                {cafeData.cafeDetails.cafeLocation.district &&
+                  `, ${cafeData.cafeDetails.cafeLocation.district}`}
+                {cafeData.cafeDetails.cafeLocation.ward &&
+                  `, Phường ${cafeData.cafeDetails.cafeLocation.ward}`}
+                {cafeData.cafeDetails.cafeLocation.city &&
+                  `, ${cafeData.cafeDetails.cafeLocation.city}`}
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <BiSolidLike className="text-green-500 text-2xl" />
-            <span className="text-green-500 text-lg">
-              {Math.floor(
-                (cafeData.totalLike /
-                  (cafeData.totalLike + cafeData.totalDislike)) *
-                  100
-              )}
-              %
-            </span>
+
+          {/* Price */}
+          <div className="flex items-center gap-4">
+            <FaDollarSign className="text-yellow-500 text-3xl" />
+            <div>
+              <h2 className="text-lg font-semibold text-gray-200">Price</h2>
+              <p className="text-gray-400">From: 50,000đ - 100,000đ</p>
+            </div>
           </div>
-        </div>
 
-        {/* Address */}
-        <div className="flex items-center gap-4">
-          <FaMapMarkerAlt className="text-yellow-500 text-3xl" />
-          <div>
-            <h2 className="text-lg font-semibold text-gray-200">Address</h2>
-            <p className="text-gray-400">
-              {cafeData.cafeDetails.cafeLocation.houseNumber}{" "}
-              {cafeData.cafeDetails.cafeLocation.street}
-              {cafeData.cafeDetails.cafeLocation.district &&
-                `, ${cafeData.cafeDetails.cafeLocation.district}`}
-              {cafeData.cafeDetails.cafeLocation.ward &&
-                `, Phường ${cafeData.cafeDetails.cafeLocation.ward}`}
-              {cafeData.cafeDetails.cafeLocation.city &&
-                `, ${cafeData.cafeDetails.cafeLocation.city}`}
-            </p>
+          {/* Content */}
+          <div className="text-gray-300 leading-relaxed">
+            {cafeData.cafeDetails.content || "No additional content provided."}
           </div>
-        </div>
 
-        {/* Price */}
-        <div className="flex items-center gap-4">
-          <FaDollarSign className="text-yellow-500 text-3xl" />
-          <div>
-            <h2 className="text-lg font-semibold text-gray-200">Price</h2>
-            <p className="text-gray-400">From: 50,000đ - 100,000đ</p>
+          {/* CTA Buttons */}
+          <div className="flex gap-4 mt-4">
+            <button className="bg-yellow-500 text-gray-900 px-6 py-3 rounded-md font-semibold hover:bg-yellow-300 transition">
+              View Chain <FaChevronRight className="inline ml-2" />
+            </button>
+            <button className="bg-gray-800 text-gray-300 px-6 py-3 rounded-md font-semibold hover:bg-gray-700 transition">
+              See Events
+            </button>
           </div>
-        </div>
 
-        {/* Content */}
-        <div className="text-gray-300 leading-relaxed">
-          {cafeData.cafeDetails.content || "No additional content provided."}
-          {cafeData.cafeDetails.content || "No additional content provided."}
-        </div>
+          {/* Interaction Buttons */}
+          <div className="flex items-center gap-4">
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button className="bg-slate-900 border border-slate-800 hover:bg-green-800">
+                    <PiArrowFatUpFill className="text-xl text-green-600" />
+                    <CountUp
+                      end={cafeData.totalLike}
+                      formattingFn={formatLikeNumber}
+                    />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Upvote</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
 
-        {/* CTA Buttons */}
-        <div className="flex gap-4 mt-4">
-          <button className="bg-yellow-500 text-gray-900 px-6 py-3 rounded-md font-semibold hover:bg-yellow-300 transition">
-            View Products <FaChevronRight className="inline ml-2" />
-          </button>
-          <button className="bg-gray-800 text-gray-300 px-6 py-3 rounded-md font-semibold hover:bg-gray-700 transition">
-            See Events
-          </button>
-        </div>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button className="bg-slate-900 hover:bg-red-800 border border-slate-800">
+                    <PiArrowFatDownFill className="text-xl text-red-600" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Downvote</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
 
-        {/* Interaction Buttons */}
-        <div className="flex items-center gap-4">
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button className="bg-slate-900 border border-slate-800 hover:bg-green-800">
-                  <PiArrowFatUpFill className="text-xl text-green-600" />
-                  <CountUp
-                    end={cafeData.totalLike}
-                    formattingFn={formatLikeNumber}
-                  />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Upvote</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button className="bg-slate-900 hover:bg-cyan-800 border border-slate-800">
+                    <FaComments className="text-lg text-cyan-600" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Comments</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
 
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button className="bg-slate-900 hover:bg-red-800 border border-slate-800">
-                  <PiArrowFatDownFill className="text-xl text-red-600" />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Downvote</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button className="bg-slate-900 hover:bg-cyan-800 border border-slate-800">
-                  <FaComments className="text-lg text-cyan-600" />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Comments</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button className="bg-slate-900 hover:bg-purple-800 border border-slate-800">
-                  <PiShareFatFill className="text-lg text-purple-600" />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Share</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        </div>
-        <Particles
-          className="z-[-1]"
-          id="tsparticles"
-          options={{
-            fullScreen: { enable: true },
-            particles: {
-              color: {
-                value: "#ffffff",
-              },
-              links: {
-                enable: false,
-              },
-              move: {
-                direction: "none",
-                enable: true,
-                outModes: {
-                  default: "bounce",
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button className="bg-slate-900 hover:bg-purple-800 border border-slate-800">
+                    <PiShareFatFill className="text-lg text-purple-600" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Share</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
+          <Particles
+            className="z-[-1]"
+            id="tsparticles"
+            options={{
+              fullScreen: { enable: true },
+              particles: {
+                color: {
+                  value: "#ffffff",
                 },
-                random: false,
-                speed: 0.2,
-                straight: false,
-              },
-              number: {
-                density: {
+                links: {
+                  enable: false,
+                },
+                move: {
+                  direction: "none",
                   enable: true,
+                  outModes: {
+                    default: "bounce",
+                  },
+                  random: false,
+                  speed: 0.2,
+                  straight: false,
                 },
-                value: 30,
+                number: {
+                  density: {
+                    enable: true,
+                  },
+                  value: 30,
+                },
+                opacity: {
+                  value: 0.5,
+                },
+                shape: {
+                  type: "image", // Use image as the particle shape
+                  options: {
+                    image: [
+                      {
+                        src: `data:image/svg+xml;base64,${btoa(iconSvg)}`, // Base64 encode the SVG
+                        width: 200,
+                        height: 200,
+                      },
+                    ],
+                  },
+                },
+                size: {
+                  value: { min: 1, max: 10 },
+                },
               },
-              opacity: {
-                value: 0.5,
-              },
-              shape: {
-                type: "circle", // Use 'star' instead of 'stars'
-              },
-              size: {
-                value: { min: 1, max: 10 },
-              },
-            },
-          }}
-        />
+            }}
+          />
+        </div>
       </div>
-    </div>
-  );
+    );
 };
 
 export default CafeDetail;

@@ -25,8 +25,7 @@ const CafeRank = () => {
         <div className="relative w-full">
           <Link href={`cafes/${cafeCOTYData.id}`}>
             <motion.div
-              className="relative flex flex-row justify-between gap-6 w-full h-full rounded-lg overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 shadow-lg group hover:shadow-[0_0_30px_15px_rgba(252,211,77,0.5)] transition-all duration-500"
-              whileHover={{ scale: 1.05 }}
+              className="relative py-6 lg:py-4 flex flex-col lg:flex-row justify-between gap-6 w-full h-full lg:rounded-lg overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 shadow-lg group hover:shadow-[0_0_30px_15px_rgba(252,211,77,0.5)] transition-all duration-500"
             >
               {/* Background Gradient */}
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-600 to-transparent opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
@@ -36,22 +35,17 @@ const CafeRank = () => {
 
               {/* Content */}
               <motion.div
-                className="relative flex flex-col w-full px-6 py-8 z-10"
+                className="relative flex flex-col w-full px-6 z-10"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
                 {/* Title and Icon */}
-                <div className="text-5xl flex items-center gap-4 text-yellow-500 mb-4">
+                <div className="text-sm md:text-5xl flex items-center gap-4 text-yellow-500 mb-4">
                   <span className="font-bold">
                     {cafeCOTYData.cafeDetails.title}
                   </span>
                   <FaCrown className="text-yellow-400 drop-shadow-md scale-110 animate-pulse" />
-                </div>
-
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4 text-lg font-semibold text-white bg-yellow-700 px-4 py-2 rounded-full">
-                  Cafe of the Year
                 </div>
 
                 {/* Opening Hours */}
@@ -111,7 +105,7 @@ const CafeRank = () => {
               </motion.div>
 
               {/* Image */}
-              <div className="w-full md:w-[600px] mx-auto rounded-r-lg z-20">
+              <div className="w-full lg:w-[600px] mx-auto rounded-r-lg z-20">
                 <Image
                   alt="Cafe thumbnail"
                   height={900}

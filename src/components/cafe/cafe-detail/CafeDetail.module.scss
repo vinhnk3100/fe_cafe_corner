@@ -1,6 +1,41 @@
+.main_swiper {
+  width: 100%;
+  height: auto;
+
+  :global(.swiper-button-prev),
+  :global(.swiper-button-next) {
+    color: #fff;
+    background-color: #0f172a;
+    border-radius: 100%;
+    padding: 1.7rem;
+    transition: ease-in-out;
+    transition-duration: 150ms;
+
+    &:hover {
+      transition: ease-in-out;
+      background-color: #334155;
+      transition-duration: 150ms;
+    }
+
+    &::after {
+      font-size: 2em;
+      font-weight: 600;
+    }
+
+    &:active {
+      font-size: 1.2em;
+    }
+
+    &:focus {
+      outline: none !important;
+    }
+  }
+}
+
 .mySwiper {
-  height: 20%;
+  z-index: 99;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
   padding: 10px 0;
 
   :global(.swiper-wrapper) {
