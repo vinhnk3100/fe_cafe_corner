@@ -1,0 +1,44 @@
+{
+  "cafeCategories": [
+    {
+      "id": "1",
+      "cafeCategoryName": "Study"
+    },
+    {
+      "id": "2",
+      "cafeCategoryName": "Cozy"
+    },
+    {
+      "id": "3",
+      "cafeCategoryName": "Space"
+    },
+    {
+      "id": "4",
+      "cafeCategoryName": "Music"
+    },
+    {
+      "id": "5",
+      "cafeCategoryName": "Overnight"
+    },
+    {
+      "id": "6",
+      "cafeCategoryName": "Rooftop"
+    },
+    {
+      "id": "7",
+      "cafeCategoryName": "Lakeview"
+    },
+    {
+      "id": "8",
+      "cafeCategoryName": "Cityview"
+    },
+    {
+      "id": "9",
+      "cafeCategoryName": "Reserve"
+    },
+    {
+      "id": "10",
+      "cafeCategoryName": "Decoration"
+    }
+  ]
+}

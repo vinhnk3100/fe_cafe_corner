@@ -18,8 +18,23 @@ import { AdvanceFilterSearchCafeSchema } from "@/schemas/cafe.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import CafeAdvanceSearchDialog from "./advance-search/CafeAdvanceSearchDialog";
 
+type CafeSearchProps = {
+  searchCafeName: string;
+  setSearchCafeName: (value: string) => void;
+  cafeLocation: string;
+  setCafeLocation: (value: string) => void;
+  cafeDistrict: string;
+  setCafeDistrict: (value: string) => void;
+};
 
-const CafeSearch = () => {
+const CafeSearch = ({
+  searchCafeName,
+  setSearchCafeName,
+  cafeLocation,
+  setCafeLocation,
+  cafeDistrict,
+  setCafeDistrict,
+}: CafeSearchProps) => {
   const formCafeAdvanceSearch = useForm<
     z.infer<typeof AdvanceFilterSearchCafeSchema>
   >({
@@ -36,9 +51,6 @@ const CafeSearch = () => {
     },
   });
 
-  const [searchCafeName, setSearchCafeName] = useState<string>("");
-  const [cafeLocation, setCafeLocation] = useState<string>("");
-  const [cafeDistrict, setCafeDistrict] = useState<string>("");
   const [cafeDistrictOptions, setCafeDistrictOptions] = useState<string[]>([]);
   useEffect(() => {
     CafeLocation.map((item) => {

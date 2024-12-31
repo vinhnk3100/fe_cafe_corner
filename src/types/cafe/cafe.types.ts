@@ -24,10 +24,10 @@ export type CafeOperation = {
   openingDay: number[]
 }
 
-export type CafeChain = {
+export type CafeBrandType = {
   id: string;
-  cafeChainLogo: string;
-  cafeChainName: string;
+  cafeBrandLogo: string;
+  cafeBrandName: string;
 }
 
 export type CafeDetailProps = {
@@ -37,7 +37,7 @@ export type CafeDetailProps = {
   phoneNumber: string;
   contentImg: string[];
   cafeLogo: string;
-  cafeChain?: CafeChain;
+  cafeBrand?: CafeBrandType;
   cafeOperation: CafeOperation;
   cafeLocation: CafeLocationProps;
   cafeCategory: CafeCategoryProps[];

@@ -1,0 +1,19 @@
+{
+  "cafeViews": [
+    {
+      "id": 1,
+      "type": "Seaside",
+      "imageUrl": "https://vuanem.com/blog/wp-content/uploads/2023/08/top-quan-cafe-view-bien-nha-trang-1125x750.jpg"
+    },
+    {
+      "id": 2,
+      "type": "Rooftop",
+      "imageUrl": "https://1phutsaigon.vn/wp-content/uploads/2023/03/chang-vang-7.jpg"
+    },
+    {
+      "id": 3,
+      "type": "Mountain",
+      "imageUrl": "https://static.vinwonders.com/production/optimize_quan-ca-phe-dep-o-da-lat-1.png"
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   PiArrowFatUpFill,
@@ -134,7 +136,7 @@ export default function CafeCardItem({ data }: { data: CafeProps }) {
         <div className="flex flex-row gap-1 text-slate-50">
           <span>#</span>
           {data.cafeDetails.cafeCategory.map((item, index) => {
-            if (index > 2) return <>.</>;
+            if (index > 2) return <div key={item.id}>.</div>;
             return (
               <Badge
                 key={item.id}

@@ -1,8 +1,9 @@
-export { default as CafeCard } from "@/components/cafe/cafe-card/CafeCard";
-export { default as CafeSearch } from "@/components/cafe/cafe-search/CafeSearch";
-export { default as CafeCarousel } from "@/components/cafe/cafe-carousel/CafeCarousel";
-export { default as CafeCategory } from "@/components/cafe/cafe-category/CafeCategory";
-export { default as CafeBrand } from "@/components/cafe/cafe-brand/CafeBrand";
-export { default as CafeRank } from "@/components/cafe/cafe-rank/CafeRank";
-export { default as CafeView } from "@/components/cafe/cafe-view/CafeView";
-export { default as CafeChainDetail } from "@/components/cafe/cafe-chain-detail/CafeChainDetail";
+export { default as CafeMainCard } from "@/components/cafe/cafe-main/cafe-card/CafeCard";
+export { default as CafeSearch } from "@/components/cafe/explore/cafe-search/CafeSearch";
+export { default as CafeMainCarousel } from "@/components/cafe/cafe-main/cafe-carousel/CafeCarousel";
+export { default as CafeMainCategory } from "@/components/cafe/cafe-main/cafe-category/CafeCategory";
+export { default as CafeMainBrands } from "@/components/cafe/cafe-main/cafe-brand/CafeBrands";
+export { default as CafeMainRank } from "@/components/cafe/cafe-main/cafe-rank/CafeRank";
+export { default as CafeMainView } from "@/components/cafe/cafe-main/cafe-view/CafeView";
+export { default as CafeBrandDetail } from "@/components/cafe/cafe-brand-detail/CafeBrandDetail";
+export { default as ExploreCafeCard } from "@/components/cafe/explore/explore-cafe-card/ExploreCafeCard";

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import CafeCardItem from "./cafe-card-item/CafeCardItem";
 import { dataCafe } from "@/constants/Mockdata.constants";

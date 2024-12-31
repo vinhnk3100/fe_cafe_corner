@@ -1,0 +1,74 @@
+{
+  "cafeBrands": [
+    {
+      "id": "1",
+      "cafeBrandName": "Classic Coffee",
+      "cafeBrandLogo": "https://classiccoffee.com.vn/upload/wReSW5ndQPLungnaissmgS0X29HkibEP2TH.png"
+    },
+    {
+      "id": "2",
+      "cafeBrandName": "Trung Nguyên",
+      "cafeBrandLogo": "https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Trung-Nguyen-Ori.png"
+    },
+    {
+      "id": "3",
+      "cafeBrandName": "Highlands Coffee",
+      "cafeBrandLogo": "https://cdn.haitrieu.com/wp-content/uploads/2022/03/Logo-HighLands-Coffee.png"
+    },
+    {
+      "id": "4",
+      "cafeBrandName": "The Coffee House",
+      "cafeBrandLogo": "https://classiccoffee.com.vn/upload/ko2DsezaYOBouasrKep4kVWOVxxmmflGEnk.jpg"
+    },
+    {
+      "id": "5",
+      "cafeBrandName": "Phúc Long coffee & tea house",
+      "cafeBrandLogo": "https://upload.wikimedia.org/wikipedia/vi/thumb/3/32/Logo_Ph%C3%BAc_Long.svg/2560px-Logo_Ph%C3%BAc_Long.svg.png"
+    },
+    {
+      "id": "6",
+      "cafeBrandName": "Vinacafe",
+      "cafeBrandLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Vinacaf%C3%A9_Logo.png/1200px-Vinacaf%C3%A9_Logo.png"
+    },
+    {
+      "id": "7",
+      "cafeBrandName": "Cộng Cà Phê",
+      "cafeBrandLogo": "https://www.cukcuk.vn/wp-content/uploads/2023/03/Cong-Ca-Phe-Logo-PNG-1-768x480.png"
+    },
+    {
+      "id": "8",
+      "cafeBrandName": "Katinat Kafe",
+      "cafeBrandLogo": "https://cdn.haitrieu.com/wp-content/uploads/2022/06/logo-katinat-text.png"
+    },
+    {
+      "id": "9",
+      "cafeBrandName": "Three O'Clock",
+      "cafeBrandLogo": "https://threeoclock.vn/upload/news/85f239d2b1dd311ae3f4601301e00f68-1-5026.png"
+    },
+    {
+      "id": "10",
+      "cafeBrandName": "Cheese Coffee",
+      "cafeBrandLogo": "https://cdn.haitrieu.com/wp-content/uploads/2022/06/Logo-cheese-coffee-Blue.png"
+    },
+    {
+      "id": "11",
+      "cafeBrandName": "The Coffee Club",
+      "cafeBrandLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/The_Coffee_Club_logo.svg/1200px-The_Coffee_Club_logo.svg.png"
+    },
+    {
+      "id": "12",
+      "cafeBrandName": "Coffee Corner",
+      "cafeBrandLogo": "https://www.shutterstock.com/image-vector/cafe-corner-tes-logo-design-260nw-1974175163.jpg"
+    },
+    {
+      "id": "13",
+      "cafeBrandName": "KUMO CHAN Coffee and Garden",
+      "cafeBrandLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfoa2lukAR1GMjRWtQBhpqzlzmTpoauFvy-w&s"
+    },
+    {
+      "id": "14",
+      "cafeBrandName": "An Tea & Coffee est. 2018",
+      "cafeBrandLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7QSm8z7GN8pJDBqvGze4avcIIPKSz5Qn9mQ&s"
+    }
+  ]
+}

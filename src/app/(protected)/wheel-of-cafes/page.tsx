@@ -48,7 +48,6 @@ export default function WheelOfCafesPage() {
   }, [prizeNumber, mustSpin]);
 
   console.log("Prize number after spin ID: ", prizeNumber);
-  console.log("Cafe name after spin: ", data[prizeNumber].option);
   console.log("Cafe After spin ID", cafeAfterSpin);
 
   return (

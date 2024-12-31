@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card";
 import { CafeProps } from "@/types/cafe/cafe.types";
 import { useEffect, useState } from "react";
@@ -47,9 +49,6 @@ const CafeCarousel = () => {
         className="relative mx-auto w-full h-auto xl:h-[700px] rounded-md bg-slate-500 hover:shadow-[0_4px_6px_-1px_rgba(248,250,252,0.2),0_1px_3px_rgba(248,250,252,0.08)]"
         slidesPerView={1}
         modules={[Parallax, Pagination, Autoplay]}
-        // style={{
-        //   height: `calc(100vh - 60px)`, // Adjust height to fit the screen
-        // }}
       >
         {dataCafeSortedLike.slice(0, 4).map((item, index) => (
           <SwiperSlide key={item.id} className="w-full">

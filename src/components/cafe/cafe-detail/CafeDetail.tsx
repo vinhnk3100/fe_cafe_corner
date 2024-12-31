@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { BiSolidLike } from "react-icons/bi";
@@ -145,7 +147,7 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
                       height={600}
                       src={img}
                       alt={`Nature ${index + 1}`}
-                      className="w-full mx-auto h-[600px] max-h-[600px] md:max-h-[500px] sm:max-h-[400px] object-cover rounded-lg"
+                      className="w-full mx-auto h-[600px] max-h-[600px] md:max-h-[500px] sm:max-h-[400px] object-cover rounded-lg select-none"
                     />
                   </SwiperSlide>
                 ))}
@@ -168,7 +170,7 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
                       height={800}
                       src={img}
                       alt={`Thumbnail ${index + 1}`}
-                      className="w-full h-[200px] md:h-[150px] sm:h-[100px] object-cover rounded-md opacity-100"
+                      className="w-full h-[200px] md:h-[150px] sm:h-[100px] object-cover rounded-md opacity-100 select-none"
                     />
                   </SwiperSlide>
                 ))}
@@ -351,10 +353,10 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
 
           {/* CTA Buttons */}
           <div className="flex gap-4 mt-4">
-            <button className="bg-yellow-500 text-gray-900 px-6 py-3 rounded-md font-semibold hover:bg-yellow-300 transition">
+            <button className="bg-yellow-500 text-gray-900 px-6 py-3 rounded-md font-semibold hover:bg-yellow-300 transition select-none">
               View Chain <FaChevronRight className="inline ml-2" />
             </button>
-            <button className="bg-gray-800 text-gray-300 px-6 py-3 rounded-md font-semibold hover:bg-gray-700 transition">
+            <button className="bg-gray-800 text-gray-300 px-6 py-3 rounded-md font-semibold hover:bg-gray-700 transition select-none">
               See Events
             </button>
           </div>

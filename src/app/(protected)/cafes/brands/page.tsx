@@ -7,28 +7,28 @@ import {
   CarouselContent,
 } from "@/components/ui/carousel"; // Shadcn carousel component
 import Image from "next/image";
-import { dataCafeChain1, dataCafeChain2 } from "@/constants/Mockdata.constants";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
-import { CafeChain } from "@/types/cafe/cafe.types";
+import { CafeBrandType } from "@/types/cafe/cafe.types";
+import { mockDataCafeBrands } from "@/constants/Mockdata.constants";
 
 export default function ChainsPage() {
-    const cafeChainDataList = [...dataCafeChain1, ...dataCafeChain2];
-  const [inputSearchCafeChain, setInputSearchCafeChain] = useState<string>("");
-  const [cafeChainList, setCafeChainList] =
-    useState<CafeChain[]>(cafeChainDataList);
+    const dataCafeBrandList: CafeBrandType[] = mockDataCafeBrands;
+  const [inputSearchCafeBrand, setInputSearchCafeBrand] = useState<string>("");
+  const [cafeBrandList, setCafeBrandList] =
+    useState<CafeBrandType[]>(dataCafeBrandList);
 
   useEffect(() => {
-    if (inputSearchCafeChain) {
-      const newCafeChainList = cafeChainList.filter((item) => {
-        return item.cafeChainName
+    if (inputSearchCafeBrand) {
+      const newCafeBrandList = cafeBrandList.filter((item) => {
+        return item.cafeBrandName
           .toLowerCase()
-          .includes(inputSearchCafeChain.toLowerCase());
+          .includes(inputSearchCafeBrand.toLowerCase());
       });
-      setCafeChainList(newCafeChainList);
+      setCafeBrandList(newCafeBrandList);
 
-    } else setCafeChainList(cafeChainDataList);
-  }, [inputSearchCafeChain]);
+    } else setCafeBrandList(dataCafeBrandList);
+  }, [inputSearchCafeBrand]);
 
   return (
     <>
@@ -38,9 +38,9 @@ export default function ChainsPage() {
             Explore Popular Cafe Brands
           </h1>
           <Input
-            placeholder="Filter emails..."
-            value={(inputSearchCafeChain as string) ?? ""}
-            onChange={(event) => setInputSearchCafeChain(event.target.value)}
+            placeholder="Filter brand name..."
+            value={(inputSearchCafeBrand as string) ?? ""}
+            onChange={(event) => setInputSearchCafeBrand(event.target.value)}
             className="max-w-sm mb-3"
           />
           <Carousel
@@ -50,11 +50,11 @@ export default function ChainsPage() {
             className="w-full bg-slate-800 rounded-lg overflow-y-auto h-[500px] lg:h-[510px] xl:h-[580px] border border-slate-700"
           >
             <CarouselContent className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 m-0 p-0">
-              {cafeChainList?.map((cafe) => (
+              {cafeBrandList?.map((cafe) => (
                 <Link
                   key={cafe.id}
-                  href={`chains/${
-                    cafe.cafeChainName
+                  href={`brands/${
+                    cafe.cafeBrandName
                       .normalize("NFD") // Decompose accented characters
                       .toLowerCase() // Convert to lowercase
                       .replace(/[\u0300-\u036f]/g, "") // Remove diacritical marks
@@ -67,14 +67,14 @@ export default function ChainsPage() {
                   >
                     <div className="select-none bg-slate-700 rounded-lg p-4 flex flex-col items-center justify-center shadow-lg hover:shadow-slate-600 transition-shadow hover:cursor-pointer h-full">
                       <Image
-                        src={cafe.cafeChainLogo}
-                        alt={cafe.cafeChainName}
+                        src={cafe.cafeBrandLogo}
+                        alt={cafe.cafeBrandName}
                         width={150}
                         height={150}
                         className="object-contain rounded-md h-auto select-none"
                       />
                       <h2 className="text-slate-50 text-lg font-medium mt-4 text-center select-none">
-                        {cafe.cafeChainName}
+                        {cafe.cafeBrandName}
                       </h2>
                     </div>
                   </CarouselItem>

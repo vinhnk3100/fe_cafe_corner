@@ -1,4 +1,4 @@
-import { dataCafeCategory } from "@/constants/Mockdata.constants";
+import { mockDataCafeCategories } from "@/constants/Mockdata.constants";
 import { CafeCategoryProps } from "@/types/cafe/cafe-category.types";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -264,7 +264,7 @@ const CafeAdvanceSearchDialog = ({
                   <div className="flex flex-col w-full gap-2 text-slate-200">
                     <span>Category:</span>
                     <div className="grid grid-cols-2 lg:grid-cols-5 gap-2">
-                      {dataCafeCategory.map((item: CafeCategoryProps) => (
+                      {mockDataCafeCategories.map((item: CafeCategoryProps) => (
                         <FormField
                           key={item.id}
                           control={formCafeAdvanceSearch.control}

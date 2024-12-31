@@ -1,3 +1,5 @@
+"use client";
+
 import { dataCafe } from "@/constants/Mockdata.constants";
 import { CafeProps } from "@/types/cafe/cafe.types";
 import { useEffect, useState } from "react";
@@ -20,7 +22,7 @@ const CafeRank = () => {
   }, []);
   if (cafeCOTYData) {
     return (
-      <div className="flex flex-row gap-4">
+      <div className="container mx-auto flex flex-row gap-4">
         {/* Cafe of the Year */}
         <div className="relative w-full">
           <Link href={`cafes/${cafeCOTYData.id}`}>

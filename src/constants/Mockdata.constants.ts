@@ -1,9 +1,11 @@
 import { CartProps } from "@/types/shop/cart.types";
 import { PostProps } from "@/types/post/post.types";
-import { CATEGORY_TYPE } from "./category-type.constants";
-import { CafeChain, CafeProps } from "@/types/cafe/cafe.types";
+import { CafeBrandType, CafeProps } from "@/types/cafe/cafe.types";
 import { LOCATION_CITY } from "./cafe-location.constant";
 import { CafeCategoryProps } from "@/types/cafe/cafe-category.types";
+import { cafeBrands } from "@/data/cafe-brands.data.json";
+import { cafeViews } from "@/data/cafe-views.data.json";
+import { cafeCategories } from "@/data/cafe-categories.data.json";
 
 export const dataCartTable: CartProps[] = [
   {
@@ -201,10 +203,10 @@ export const dataCafe: CafeProps[] = [
         "https://scontent.fhan4-5.fna.fbcdn.net/v/t1.6435-9/35358682_1724945750908390_5266540433667784704_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=HIhZaP3_TSkQ7kNvgGIFix3&_nc_zt=23&_nc_ht=scontent.fhan4-5.fna&_nc_gid=AsWfGZqY7Y_cYCq7mBwmatI&oh=00_AYDutDEQU4njCPbgFO2Z9yNcwH10C_lWbMgWyPLsqqROkQ&oe=6770E5D6",
         "https://scontent.fhan3-2.fna.fbcdn.net/v/t1.6435-9/35298487_1724945627575069_8546917007017115648_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=hJ2teQS17kYQ7kNvgFxKuCh&_nc_zt=23&_nc_ht=scontent.fhan3-2.fna&_nc_gid=Afy2q4o_8F8jUxsX8Zbk3Ff&oh=00_AYCH7n4MSLmGIfQ7Jaqyy9ytVfi5G1NKr6quk6Wr-98wLg&oe=6770E091",
       ],
-      cafeChain: {
+      cafeBrand: {
         id: "1",
-        cafeChainName: "Classic Coffee",
-        cafeChainLogo:
+        cafeBrandName: "Classic Coffee",
+        cafeBrandLogo:
           "https://classiccoffee.com.vn/upload/wReSW5ndQPLungnaissmgS0X29HkibEP2TH.png",
       },
       cafeOperation: {
@@ -609,7 +611,7 @@ export const dataCafe: CafeProps[] = [
       title: "Cà phê muối Chú Long",
       phoneNumber: "123456789",
       thumbnail:
-        "https://lh3.googleusercontent.com/proxy/ahngoLW8UZFvZa5horw5lwivKVqSjb8AQiNvqMHIZjyFFFMwJt3vaUMTYEyJwC28utrUmJdVH2wKSfkZjhUn02ccf2NwWkh94Mci4c0tRRiqy6cRgLSl9gZfN1PBhMc7VtHPtZ1QEtqYmQ",
+        "https://i.ex-cdn.com/theleader.vn/files/f1/Upload_vn/2023/5/25/c%C3%A0%20ph%C3%AA%20mu%E1%BB%91i.jpg",
       content:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       contentImg: [],
@@ -798,135 +800,6 @@ export const dataCafe: CafeProps[] = [
   },
 ];
 
-export const dataCafeCategory: CafeCategoryProps[] = [
-  {
-    id: "1",
-    cafeCategoryName: "Study",
-  },
-  {
-    id: "2",
-    cafeCategoryName: "Cozy",
-  },
-  {
-    id: "3",
-    cafeCategoryName: "Space",
-  },
-  {
-    id: "4",
-    cafeCategoryName: "Music",
-  },
-  {
-    id: "5",
-    cafeCategoryName: "Overnight",
-  },
-  {
-    id: "6",
-    cafeCategoryName: "Rooftop",
-  },
-  {
-    id: "7",
-    cafeCategoryName: "Lakeview",
-  },
-  {
-    id: "8",
-    cafeCategoryName: "Cityview",
-  },
-  {
-    id: "9",
-    cafeCategoryName: "Reserve",
-  },
-  {
-    id: "10",
-    cafeCategoryName: "Decoration",
-  },
-];
-
-export const dataCafeChain1: CafeChain[] = [
-  {
-    id: "1",
-    cafeChainName: "Classic Coffee",
-    cafeChainLogo:
-      "https://classiccoffee.com.vn/upload/wReSW5ndQPLungnaissmgS0X29HkibEP2TH.png",
-  },
-  {
-    id: "2",
-    cafeChainName: "Trung Nguyên",
-    cafeChainLogo:
-      "https://thietkelogo.vn/wp-content/uploads/2016/03/logo-cf-trung-nguyen.png",
-  },
-  {
-    id: "3",
-    cafeChainName: "Highlands Coffee",
-    cafeChainLogo:
-      "https://cdn.haitrieu.com/wp-content/uploads/2022/03/Logo-HighLands-Coffee.png",
-  },
-  {
-    id: "4",
-    cafeChainName: "The Coffee House",
-    cafeChainLogo:
-      "https://classiccoffee.com.vn/upload/ko2DsezaYOBouasrKep4kVWOVxxmmflGEnk.jpg",
-  },
-  {
-    id: "5",
-    cafeChainName: "Phúc Long coffee & tea house",
-    cafeChainLogo:
-      "https://upload.wikimedia.org/wikipedia/vi/thumb/3/32/Logo_Ph%C3%BAc_Long.svg/2560px-Logo_Ph%C3%BAc_Long.svg.png",
-  },
-  {
-    id: "6",
-    cafeChainName: "Vinacafe",
-    cafeChainLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Vinacaf%C3%A9_Logo.png/1200px-Vinacaf%C3%A9_Logo.png",
-  },
-  {
-    id: "7",
-    cafeChainName: "Cộng Cà Phê",
-    cafeChainLogo:
-      "https://www.cukcuk.vn/wp-content/uploads/2023/03/Cong-Ca-Phe-Logo-PNG-1-768x480.png",
-  },
-];
-
-export const dataCafeChain2: CafeChain[] = [
-  {
-    id: "8",
-    cafeChainName: "Katinat Kafe",
-    cafeChainLogo:
-      "https://cdn.haitrieu.com/wp-content/uploads/2022/06/logo-katinat-text.png",
-  },
-  {
-    id: "9",
-    cafeChainName: "Three O'Clock",
-    cafeChainLogo:
-      "https://threeoclock.vn/upload/news/85f239d2b1dd311ae3f4601301e00f68-1-5026.png",
-  },
-  {
-    id: "10",
-    cafeChainName: "Cheese Coffee",
-    cafeChainLogo:
-      "https://cdn.haitrieu.com/wp-content/uploads/2022/06/Logo-cheese-coffee-Blue.png",
-  },
-  {
-    id: "11",
-    cafeChainName: "The Coffee Club",
-    cafeChainLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/The_Coffee_Club_logo.svg/1200px-The_Coffee_Club_logo.svg.png",
-  },
-  {
-    id: "12",
-    cafeChainName: "Coffee Corner",
-    cafeChainLogo:
-      "https://www.shutterstock.com/image-vector/cafe-corner-tes-logo-design-260nw-1974175163.jpg",
-  },
-  {
-    id: "13",
-    cafeChainName: "KUMO CHAN Coffee and Garden",
-    cafeChainLogo:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfoa2lukAR1GMjRWtQBhpqzlzmTpoauFvy-w&s",
-  },
-  {
-    id: "14",
-    cafeChainName: "An Tea & Coffee est. 2018",
-    cafeChainLogo:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7QSm8z7GN8pJDBqvGze4avcIIPKSz5Qn9mQ&s",
-  },
-];
+export const mockDataCafeCategories: CafeCategoryProps[] = cafeCategories;
+export const mockDataCafeBrands: CafeBrandType[] = cafeBrands;
+export const mockDataCafeViews = cafeViews;
