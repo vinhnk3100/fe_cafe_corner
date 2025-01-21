@@ -19,7 +19,6 @@ export default function WheelOfCafesPage() {
     };
   });
 
-  console.log(data);
   const handleSpinClick = () => {
     if (!mustSpin) {
       const newPrizeNumber = Math.floor(Math.random() * (data.length + 1));
@@ -45,42 +44,44 @@ export default function WheelOfCafesPage() {
         })
       );
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [prizeNumber, mustSpin]);
 
-  console.log("Prize number after spin ID: ", prizeNumber);
-  console.log("Cafe After spin ID", cafeAfterSpin);
+  // console.log("Prize number after spin ID: ", prizeNumber);
+  // console.log("Cafe After spin ID", cafeAfterSpin);
 
   return (
-    <div className="container mx-auto w-full">
-      <div className="flex flex-row w-full gap-6">
-        <div className={`${styles["roulette-container"]}`}>
-          <Wheel
-            mustStartSpinning={mustSpin}
-            prizeNumber={prizeNumber}
-            data={data}
-            onStopSpinning={() => {
-              setMustSpin(false);
-            }}
-            backgroundColors={["#020617", "#334155"]}
-            textColors={["#ffffff"]}
-            fontSize={12}
-            innerBorderWidth={1}
-            outerBorderWidth={3}
-            radiusLineWidth={3}
-          />
-          <Button
-            className="bg-slate-950 mx-auto flex font-bold text-xl w-auto p-5 hover:bg-slate-800"
-            onClick={handleSpinClick}
-          >
-            Let's Go
-          </Button>
-        </div>
-        <div className="flex w-full">Filter Section</div>
-      </div>
-      <div className="w-full flex bg-slate-700">
-        Display Result Section:
-        {!mustSpin ? <>{cafeAfterSpin?.cafeDetails.title}</> : "Please wait..."}
-      </div>
-    </div>
+    <></>
+    // <div className="container mx-auto w-full">
+    //   <div className="flex flex-row w-full gap-6">
+    //     <div className={`${styles["roulette-container"]}`}>
+    //       <Wheel
+    //         mustStartSpinning={mustSpin}
+    //         prizeNumber={prizeNumber}
+    //         data={data}
+    //         onStopSpinning={() => {
+    //           setMustSpin(false);
+    //         }}
+    //         backgroundColors={["#020617", "#334155"]}
+    //         textColors={["#ffffff"]}
+    //         fontSize={12}
+    //         innerBorderWidth={1}
+    //         outerBorderWidth={3}
+    //         radiusLineWidth={3}
+    //       />
+    //       <Button
+    //         className="bg-slate-950 mx-auto flex font-bold text-xl w-auto p-5 hover:bg-slate-800"
+    //         onClick={handleSpinClick}
+    //       >
+    //         Let's Go
+    //       </Button>
+    //     </div>
+    //     <div className="flex w-full">Filter Section</div>
+    //   </div>
+    //   <div className="w-full flex bg-slate-700">
+    //     Display Result Section:
+    //     {!mustSpin ? <>{cafeAfterSpin?.cafeDetails.title}</> : "Please wait..."}
+    //   </div>
+    // </div>
   );
 }
