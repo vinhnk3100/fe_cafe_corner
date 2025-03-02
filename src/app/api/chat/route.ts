@@ -11,7 +11,7 @@ type Message = {
 export async function POST(req: Request) {
   try {
     // Validate API Key
-    if (!process.env.NEXT_PUBLIC_OPENAI_API_KEY) {
+    if (!process.env.OPENAI_API_KEY) {
       return new Response(
         JSON.stringify({ error: "OPENAI_API_KEY is not set" }),
         { status: 500 }
