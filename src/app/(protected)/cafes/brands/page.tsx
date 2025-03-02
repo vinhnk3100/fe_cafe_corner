@@ -28,7 +28,7 @@ export default function ChainsPage() {
       setCafeBrandList(newCafeBrandList);
 
     } else setCafeBrandList(dataCafeBrandList);
-  }, [inputSearchCafeBrand]);
+  }, [cafeBrandList, dataCafeBrandList, inputSearchCafeBrand]);
 
   return (
     <>

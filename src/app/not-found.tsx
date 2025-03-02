@@ -22,7 +22,7 @@ const NotFound: React.FC = () => {
     }, 1000)
 
     return () => clearInterval(invalidTimeOut);
-  }, [])
+  }, [router])
   return (
     <div className="flex flex-col items-center justify-center px-5">
       <div className="text-[200px] font-dark font-bold flex text-slate-400 h-[250px]">

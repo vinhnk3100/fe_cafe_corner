@@ -13,6 +13,11 @@ const config: Config = {
         "3xl": "1600px", // Custom 3xl breakpoint
       },
       colors: {
+        primaryColor: "#121d23",
+        textPrimaryColor: "#c9a581",
+        buttonColor: "#C8A97E",
+        buttonHoverColor: "#B0906E",
+        coffeeBeanColor: "#293239",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

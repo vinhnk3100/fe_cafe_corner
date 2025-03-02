@@ -5,4 +5,7 @@ export const ApiEndpointList = {
   auth: {
     LOGIN_WITH_GOOGLE: "/api/GoogleAuth/login-google",
   },
+  cafe: {
+    GET_CAFES: "/api/cafe",
+  },
 };

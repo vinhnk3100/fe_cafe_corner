@@ -1,7 +1,6 @@
 "use client";
 
 import { signIn } from "next-auth/react";
-import LoginSchema from "@/schemas";
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -19,6 +18,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { Input } from "@/components/ui/input";
 import FormErrorMsg from "../FormErrorMsg";
+import { LoginSchema } from "@/schemas";
 
 export default function LoginForm() {
   const [message, setMessage] = useState<string>("");
