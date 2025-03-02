@@ -19,174 +19,108 @@ import {
 import Image from "next/image";
 import { TbLogout } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
-import { MdOutlineNoFood } from "react-icons/md";
-import { FaShop } from "react-icons/fa6";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { GoStarFill } from "react-icons/go";
 import { signOut, useSession } from "next-auth/react";
 import { MdLocalCafe } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
 import { usePathname } from "next/navigation";
-import moment from "moment";
-import { useState } from "react";
 import { PiSpinnerBallDuotone } from "react-icons/pi";
-
-type NavbarMainProps = {
-  scrollDown: boolean;
-  scrollPosition: number;
-};
+import { Button } from "../ui/button";
+import { Coffee } from "lucide-react";
 
 export default function NavbarMain({
   scrollDown,
   scrollPosition,
-}: NavbarMainProps) {
+}: {
+  scrollDown: boolean;
+  scrollPosition: number;
+}) {
   const { data: session } = useSession();
   const pathname = usePathname();
+
+  const navItems = [
+    { href: "/", icon: <FaHome />, active: pathname === "/" },
+    { href: "/cafes", icon: <MdLocalCafe />, active: pathname === "/cafes" },
+    {
+      href: "/wheel-of-cafes",
+      icon: <PiSpinnerBallDuotone />,
+      active: pathname === "/wheel-of-cafes",
+    },
+  ];
+
   return (
     <nav
-      className={`bg-slate-950 py-3 px-10 w-full flex justify-between items-center z-[99] gap-8 sm:gap-0 transition-all ${
-        scrollPosition === 0 ? "relative" : "fixed custom-navbar-bg"
-      } ${scrollDown ? "h-0 py-4 transition-all" : "fixed h-[60px]"}`}
+      className={`bg-primaryColor py-3 px-10 w-full flex justify-between items-center z-[99] transition-all shadow-md
+      ${scrollPosition === 0 ? "relative" : "fixed top-0 left-0 right-0 backdrop-blur-md bg-opacity-90"} 
+      ${scrollDown ? "opacity-0 h-0 pointer-events-none" : "opacity-100 h-[60px]"}`}
     >
-      <div
-        className={`text-2xl hover:cursor-pointer text-slate-200 w-full ${
-          scrollDown ? "hidden" : ""
-        }`}
-      >
-        <Link href={"/"}>Cafe Corner</Link>
+      <div className="text-2xl hover:cursor-pointer w-full text-textPrimaryColor">
+        <Link href="/">
+          <span className="flex items-center gap-2">
+            <Coffee className="w-10 h-10 text-primaryColor bg-buttonColor rounded-full p-1" />
+            Cafe Corner
+          </span>
+        </Link>
       </div>
-      <div className="hidden md:flex flex-row gap-12 items-center justify-center w-full">
-        <div
-          className={`${
-            scrollDown ? "text-2xl text-slate-200" : "text-3xl"
-          } hover:cursor-pointer hover:text-slate-100 transition-all ${
-            pathname === "/" ? "text-yellow-500" : ""
-          }`}
-        >
-          <Link href={"/"}>
-            <FaHome />
-          </Link>
-        </div>
-        <div
-          className={`${
-            scrollDown ? "text-2xl text-slate-200" : "text-3xl"
-          } hover:cursor-pointer hover:text-slate-100 transition-all ${
-            pathname === "/cafes" ? "text-yellow-500" : ""
-          }`}
-        >
-          <Link href={"/cafes"}>
-            <MdLocalCafe />
-          </Link>
-        </div>
-        <div
-          className={`${
-            scrollDown ? "text-2xl text-slate-200" : "text-3xl"
-          } hover:cursor-pointer hover:text-slate-100 transition-all ${
-            pathname === "/wheel-of-cafes" ? "text-yellow-500" : ""
-          }`}
-        >
-          <Link href={"/wheel-of-cafes"}>
-            <PiSpinnerBallDuotone />
-          </Link>
-        </div>
-      </div>
-      <div
-        className={`flex flex-row items-center justify-end transition-all h-12 group w-full gap-3 ${
-          scrollDown ? "hidden" : ""
-        }`}
-      >
-        <DropdownMenu modal={false}>
-          <DropdownMenuTrigger
-            className={`flex flex-row items-center focus:outline-none`}
+      <div className="hidden md:flex flex-row gap-8 items-center justify-center w-full">
+        {navItems.map(({ href, icon, active }) => (
+          <Link
+            key={href}
+            href={href}
+            className={`text-3xl transition-all hover:scale-110 hover:text-buttonColor ${
+              active ? "text-buttonColor" : "text-white"
+            }`}
           >
-            <Avatar>
+            {icon}
+          </Link>
+        ))}
+      </div>
+      <div className="flex items-center gap-3">
+        <DropdownMenu modal={false}>
+          <DropdownMenuTrigger className="focus:outline-none">
+            <Avatar className="border-2 border-transparent hover:border-buttonColor transition-all">
               <AvatarImage src={session?.user.image} />
               <AvatarFallback>
-                {session?.user.name
-                  .split("")
-                  .map((word: string) => word.charAt(0).toUpperCase())
-                  .join("")}
+                {session?.user.name.charAt(0).toUpperCase()}
               </AvatarFallback>
             </Avatar>
           </DropdownMenuTrigger>
-          <DropdownMenuContent
-            className={`top-2 relative rounded-lg p-2 right-10 ${
-              scrollDown ? "hidden" : ""
-            }`}
-          >
+          <DropdownMenuContent className="bg-primaryColor border-none shadow-lg p-3 rounded-lg">
             <Image
-              alt={session?.user.name
-                .split("")
-                .map((word: string) => word.charAt(0).toUpperCase())
-                .join("")}
+              alt={session?.user.name}
               src={session?.user.image}
               width={80}
               height={80}
-              className="ml-2 my-2 rounded-sm"
+              className="mx-auto my-2 rounded-md"
             />
-            <DropdownMenuLabel className="text-1xl flex items-center gap-2">
+            <DropdownMenuLabel className="text-lg flex items-center gap-2 text-textPrimaryColor">
               {session?.user.name}
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
-                    <GoStarFill className="text-red-500 animate-glow transition-all" />
+                    <GoStarFill className="text-yellow-500 animate-pulse" />
                   </TooltipTrigger>
-                  <TooltipContent className="bg-slate-700">
+                  <TooltipContent className="bg-gray-700 text-white">
                     <p>Administrator</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             </DropdownMenuLabel>
-            <DropdownMenuLabel className="text-[12px]">
-              @{session?.user.email.split("@")[0]} • Joined June 2024
-            </DropdownMenuLabel>
-            <DropdownMenuSeparator className="bg-slate-800" />
-            <div className="flex flex-col gap-[4px]">
+            <DropdownMenuSeparator className="bg-gray-600" />
+            <div className="flex flex-col gap-2">
               <DropdownMenuItem>
-                <Link
-                  href={"/profile/username"}
-                  className="text-[15px] flex gap-3"
-                >
-                  <span className="text-2xl">
-                    <CgProfile />
-                  </span>
-                  <span>Profile</span>
+                <Link href="/profile" className="flex gap-3 text-textPrimaryColor hover:text-buttonColor">
+                  <CgProfile className="text-2xl" /> Profile
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href={"/cart"} className="text-[15px] flex gap-3">
-                  <span className="text-2xl">
-                    <AiOutlineShoppingCart />
-                  </span>
-                  <span>Cart Check</span>
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <div
-                  className="text-[15px] flex gap-3"
+                <Button
+                  className="flex gap-3 w-full bg-buttonColor hover:bg-buttonHoverColor text-white"
                   onClick={() => signOut()}
                 >
-                  <span className="text-2xl">
-                    <TbLogout />
-                  </span>
-                  <span>Logout</span>
-                </div>
-              </DropdownMenuItem>
-            </div>
-            <DropdownMenuSeparator className="bg-slate-800 flex md:hidden" />
-            {/* Responsive Pages */}
-            <div className="flex md:hidden flex-col gap-[4px]">
-              <DropdownMenuItem className="text-[15px] flex gap-3">
-                <span className="text-2xl">
-                  <MdOutlineNoFood />
-                </span>
-                <span>Foods</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="text-[15px] flex gap-3">
-                <span className="text-2xl">
-                  <FaShop />
-                </span>
-                <span>Shops</span>
+                  <TbLogout className="text-2xl" /> Logout
+                </Button>
               </DropdownMenuItem>
             </div>
           </DropdownMenuContent>
