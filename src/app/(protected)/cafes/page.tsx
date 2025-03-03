@@ -10,7 +10,7 @@ import {
   PaginationNext,
   PaginationLink,
 } from "@/components/ui/pagination";
-import { Coffee, FilterX, GridIcon, TableIcon, X } from "lucide-react";
+import { Coffee, FilterX, GridIcon, Star, TableIcon, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Cafe } from "@/schemas/cafe.schema";
 import { Input } from "@/components/ui/input";
@@ -26,6 +26,7 @@ import {
 // Import skeleton loaders
 import CafesGridViewSkeleton from "@/components/cafe/cafe-view-mode/CafesGridViewSkeleton";
 import CafesTableViewSkeleton from "@/components/cafe/cafe-view-mode/CafesTableViewSkeleton";
+import CafeNewArrivals from "@/components/cafe/cafe-new-arrivals/CafeNewArrivals";
 
 const CafesGridView = dynamic(
   () => import("@/components/cafe/cafe-view-mode/CafesGridView"),
@@ -186,6 +187,15 @@ export default function CafesPage() {
   return (
     <div className="p-4 container mx-auto">
       <div className="flex gap-2 items-center justify-center my-8 h-full">
+        <Star className="w-12 h-12 bg-buttonColor rounded-full p-2 text-primaryColor" />
+        <span className="flex items-center justify-center text-4xl font-bold text-textPrimaryColor">
+          New Cafes Arrivals
+        </span>
+      </div>
+      <div className="w-full flex items-center justify-center">
+        <CafeNewArrivals cafes={cafes} />
+      </div>
+      <div className="flex gap-2 items-center justify-center my-8 h-full">
         <Coffee className="w-12 h-12 bg-buttonColor rounded-full p-2 text-primaryColor" />
         <span className="flex items-center justify-center text-4xl font-bold text-textPrimaryColor">
           Discover Cafes
@@ -257,7 +267,7 @@ export default function CafesPage() {
         <div className="mb-4 flex flex-row gap-2">
           <Button
             onClick={() => handleViewChange("grid")}
-            className={`mr-2 p-2 rounded-md ${
+            className={`mr-2 p-2 rounded-md md:block hidden ${
               viewMode === "grid"
                 ? "bg-buttonColor text-primaryColor hover:bg-buttonHoverColor"
                 : "bg-primaryColor text-textPrimaryColor hover:bg-coffeeBeanColor"
@@ -267,7 +277,7 @@ export default function CafesPage() {
           </Button>
           <Button
             onClick={() => handleViewChange("table")}
-            className={`p-2 rounded-md lg:block hidden ${
+            className={`p-2 rounded-md md:block hidden ${
               viewMode === "table"
                 ? "bg-buttonColor text-primaryColor hover:bg-buttonHoverColor"
                 : "bg-primaryColor text-textPrimaryColor hover:bg-coffeeBeanColor"

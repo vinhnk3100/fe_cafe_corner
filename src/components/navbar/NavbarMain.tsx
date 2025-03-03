@@ -47,7 +47,12 @@ export default function NavbarMain({
 
   const navItems = [
     { href: "/", label: "Home", icon: <FaHome />, active: pathname === "/" },
-    { href: "/cafes", label: "Cafes", icon: <MdLocalCafe />, active: pathname === "/cafes" },
+    {
+      href: "/cafes",
+      label: "Cafes",
+      icon: <MdLocalCafe />,
+      active: pathname === "/cafes",
+    },
     {
       href: "/cafe-swiper",
       label: "Cafe Swiper (beta)",
@@ -59,18 +64,25 @@ export default function NavbarMain({
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
-      animate={{ 
-        opacity: scrollDown ? 0 : 1, 
+      animate={{
+        opacity: scrollDown ? 0 : 1,
         y: scrollDown ? -60 : 0,
         display: scrollDown ? "none" : "flex",
-        pointerEvents: scrollDown ? "none" : "auto"
+        pointerEvents: scrollDown ? "none" : "auto",
       }}
       transition={{ duration: 0.3 }}
-      className={`bg-primaryColor py-3 px-4 md:px-10 w-full flex justify-between items-center z-[99] transition-all shadow-[0_4px_10px_rgba(26,37,43,0.6)]
-      ${scrollPosition === 0 ? "relative" : "fixed top-0 left-0 right-0 backdrop-blur-md bg-mainNavbarColor ease-in-out duration-300"}`}
+      className={`bg-primaryColor py-3 px-4 lg:px-10 w-full flex justify-between items-center z-[99] transition-all shadow-[0_4px_10px_rgba(26,37,43,0.6)]
+      ${
+        scrollPosition === 0
+          ? "relative"
+          : "fixed top-0 left-0 right-0 backdrop-blur-md bg-mainNavbarColor ease-in-out duration-300"
+      }`}
     >
-      <Link href="/" className="text-2xl hover:cursor-pointer text-textPrimaryColor z-20">
-        <motion.span 
+      <Link
+        href="/"
+        className="text-2xl hover:cursor-pointer text-textPrimaryColor z-20"
+      >
+        <motion.span
           className="flex items-center gap-2"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -81,12 +93,14 @@ export default function NavbarMain({
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex flex-row gap-8 items-center justify-center">
+      <div className="hidden lg:flex flex-row gap-8 items-center justify-center">
         {navItems.map(({ href, icon, label, active }) => (
           <Link key={href} href={href}>
             <motion.div
               className={`flex items-center gap-2 px-3 py-2 rounded-md transition-all ${
-                active ? "text-buttonColor bg-buttonColor/10" : "text-white hover:text-buttonColor"
+                active
+                  ? "text-buttonColor bg-buttonColor/10"
+                  : "text-white hover:text-buttonColor"
               }`}
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -97,16 +111,6 @@ export default function NavbarMain({
           </Link>
         ))}
       </div>
-
-      {/* Mobile Menu Button */}
-      <button 
-        className="md:hidden text-white z-20"
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        aria-label="Toggle menu"
-      >
-        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
-
       {/* Mobile Navigation */}
       <AnimatePresence>
         {mobileMenuOpen && (
@@ -121,7 +125,9 @@ export default function NavbarMain({
               <Link key={href} href={href} className="w-full max-w-xs">
                 <motion.div
                   className={`flex items-center gap-4 px-6 py-4 rounded-lg transition-all ${
-                    active ? "bg-buttonColor text-white" : "text-white bg-gray-800/50"
+                    active
+                      ? "bg-buttonColor text-white"
+                      : "text-white bg-gray-800/50"
                   }`}
                   whileHover={{ scale: 1.05, backgroundColor: "#4A5568" }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -137,14 +143,28 @@ export default function NavbarMain({
 
       {/* User Profile */}
       <div className="flex items-center gap-3 z-20">
+        {/* Mobile Menu Button */}
+        <Button
+          className="lg:hidden text-white z-20 bg-buttonColor hover:bg-buttonHoverColor flex items-center"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </Button>
         {status === "loading" ? (
           <div className="w-10 h-10 rounded-full bg-gray-700 animate-pulse"></div>
         ) : status === "authenticated" ? (
           <DropdownMenu modal={false}>
             <DropdownMenuTrigger className="focus:outline-none">
-              <motion.div whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
                 <Avatar className="border-2 border-transparent hover:border-buttonColor transition-all">
-                  <AvatarImage src={session?.user.image} alt={session?.user.name} />
+                  <AvatarImage
+                    src={session?.user.image}
+                    alt={session?.user.name}
+                  />
                   <AvatarFallback className="bg-buttonColor text-white">
                     {session?.user.name?.charAt(0).toUpperCase()}
                   </AvatarFallback>
@@ -154,7 +174,10 @@ export default function NavbarMain({
             <DropdownMenuContent className="bg-primaryColor border-none shadow-lg p-4 rounded-lg w-64 mt-2">
               <div className="flex items-center gap-3">
                 <Avatar className="w-12 h-12">
-                  <AvatarImage src={session?.user.image} alt={session?.user.name} />
+                  <AvatarImage
+                    src={session?.user.image}
+                    alt={session?.user.name}
+                  />
                   <AvatarFallback className="bg-buttonColor text-white">
                     {session?.user.name?.charAt(0).toUpperCase()}
                   </AvatarFallback>
@@ -179,8 +202,8 @@ export default function NavbarMain({
               <DropdownMenuSeparator className="bg-gray-600 my-3" />
               <div className="flex flex-col gap-2">
                 <DropdownMenuItem className="p-0 focus:bg-transparent">
-                  <Link 
-                    href="/profile" 
+                  <Link
+                    href="/profile"
                     className="flex items-center gap-3 text-textPrimaryColor hover:text-buttonColor p-2 w-full rounded-md hover:bg-gray-800 transition-all"
                   >
                     <CgProfile className="text-xl" /> Profile

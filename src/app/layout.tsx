@@ -117,7 +117,7 @@ export default function RootLayout({
                         CONTACT US
                       </Button>
                     </div>
-                    <div className="w-[2px] h-[200px] bg-slate-600 absolute left-1/3"></div>
+                    <div className="w-[2px] h-[200px] bg-slate-600 absolute left-1/3 md:block hidden"></div>
                     {/* Address Section */}
                     <div className="flex flex-col items-center text-center">
                       <div className="rounded-full bg-coffeeBeanColor p-3 mb-4">
@@ -133,7 +133,7 @@ export default function RootLayout({
                         GET DIRECTION
                       </Button>
                     </div>
-                    <div className="w-[2px] h-[200px] bg-slate-600 absolute right-1/3"></div>
+                    <div className="w-[2px] h-[200px] bg-slate-600 absolute right-1/3 md:block hidden"></div>
                     {/* Opening Hours Section */}
                     <div className="flex flex-col items-center text-center">
                       <div className="rounded-full bg-coffeeBeanColor p-3 mb-4">

@@ -4,3 +4,4 @@ export { default as CafeBrandDetail } from "@/components/cafe/cafe-brand-detail/
 export { default as CafesGridView } from "@/components/cafe/cafe-view-mode/CafesGridView";
 export { default as CafesTableView } from "@/components/cafe/cafe-view-mode/CafesTableView";
 export { default as CafeImage } from "@/components/cafe/CafeImage";
+export { default as CafeNewArrivals } from "@/components/cafe/cafe-new-arrivals/CafeNewArrivals";

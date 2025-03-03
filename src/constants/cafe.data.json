@@ -49,7 +49,7 @@
     "cafeDetails": {
       "title": "Starbucks Reserve Landmark 81",
       "content": "View thành phố tuyệt đẹp, cà phê thượng hạng, không gian hiện đại.",
-      "thumbnail": "",
+      "thumbnail": "https://scontent.fsgn2-7.fna.fbcdn.net/v/t1.6435-9/37818613_2245965625443917_2472122058192977920_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kTdDcYEtJdoQ7kNvgEjwMuF&_nc_oc=Adg-9-VqY5oE_XWjQO3sMyQu0-9LTQPWTmjUA6EFyzTm8MVdp9VvkDEjcEcQYo7aJuQ&_nc_zt=23&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=AadPG8j-8BkGqNmj9FP0zWP&oh=00_AYDyxk-kPa5_0tSteUNBOvGCPm3v6LtI4ymvADGWZwv3cg&oe=67ED33D8",
       "phoneNumber": "0912345678",
       "contentImg": [],
       "cafeLogo": "https://globalassets.starbucks.com/assets/5cd92291ff27445188f1796118318e41.svg",
@@ -89,7 +89,7 @@
     "cafeDetails": {
       "title": "Cộng Cà Phê - Pasteur",
       "content": "Không gian hoài cổ, cà phê cốt dừa ngon, vị trí trung tâm.",
-      "thumbnail": "",
+      "thumbnail": "https://cong-news.appwifi.com/wp-content/uploads/2024/11/IMG-20240711-WA0011-3-2.jpg",
       "phoneNumber": "0923456789",
       "contentImg": [],
       "cafeLogo": "https://congcaphe.com/wp-content/uploads/2023/04/cong-logo-300x300.png",
@@ -129,7 +129,7 @@
     "cafeDetails": {
       "title": "Shin Coffee - Mạc Thị Bưởi",
       "content": "Cà phê specialty chất lượng, không gian yên tĩnh, thiết kế tối giản.",
-      "thumbnail": "",
+      "thumbnail": "https://images.happycow.net/venues/1024/38/67/hcmp386756_2532192.jpeg",
       "phoneNumber": "0934567890",
       "contentImg": [],
       "cafeLogo": "https://shincoffee.vn/wp-content/uploads/2023/04/shin-logo-300x300.png",
@@ -169,7 +169,7 @@
     "cafeDetails": {
       "title": "Trung Nguyên Legend Café - Đồng Khởi",
       "content": "Cà phê đậm đà, không gian sang trọng, vị trí đắc địa.",
-      "thumbnail": "",
+      "thumbnail": "https://trungnguyenlegendcafe.net/wp-content/uploads/2020/08/005-min-1-scaled.jpg",
       "phoneNumber": "0945678901",
       "contentImg": [],
       "cafeLogo": "https://trungnguyenlegend.com/wp-content/uploads/2023/04/trung-nguyen-logo-300x300.png",
@@ -209,7 +209,7 @@
     "cafeDetails": {
       "title": "Anh Coffee Roastery",
       "content": "Cà phê rang xay tại chỗ, không gian hiện đại, nhiều phương pháp pha chế.",
-      "thumbnail": "",
+      "thumbnail": "https://images.adsttc.com/media/images/61c1/a77a/5c10/e001/6403/3695/large_jpg/1.jpg?1640081338",
       "phoneNumber": "0956789012",
       "contentImg": [],
       "cafeLogo": "https://anhcoffeeroastery.com/wp-content/uploads/2023/04/anh-coffee-logo-300x300.png",
@@ -249,7 +249,7 @@
     "cafeDetails": {
       "title": "Bonjour Café The Art",
       "content": "Không gian ngập tràn hoa, phong cách Paris, đồ uống đa dạng.",
-      "thumbnail": "",
+      "thumbnail": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwwn6hznoo2h21",
       "phoneNumber": "0967890123",
       "contentImg": [],
       "cafeLogo": "https://bonjourcafetheart.com/wp-content/uploads/2023/04/bonjour-cafe-logo-300x300.png",
@@ -289,7 +289,7 @@
     "cafeDetails": {
       "title": "Beanthere Cafe",
       "content": "Cafe organic với nguyên liệu sạch và không gian xanh.",
-      "thumbnail": "",
+      "thumbnail": "https://media-cdn.tripadvisor.com/media/photo-s/19/13/51/c7/exterior-of-the-cafe.jpg",
       "phoneNumber": "0933221100",
       "contentImg": [],
       "cafeLogo": "https://source.unsplash.com/100x100/?logo",
@@ -329,7 +329,7 @@
     "cafeDetails": {
       "title": "Katinat Saigon Kafe",
       "content": "Quán cafe phong cách tối giản với thức uống chất lượng.",
-      "thumbnail": "",
+      "thumbnail": "https://katinat.vn/wp-content/uploads/2023/12/1-3.jpg",
       "phoneNumber": "0977885544",
       "contentImg": [],
       "cafeLogo": "https://source.unsplash.com/100x100/?logo",
@@ -369,7 +369,7 @@
     "cafeDetails": {
       "title": "The Coffee House",
       "content": "Không gian ấm cúng, phù hợp để làm việc và gặp gỡ bạn bè.",
-      "thumbnail": "",
+      "thumbnail": "https://file.hstatic.net/1000075078/file/_kh_9431__1__e19a7a49963245b39b280271da3cd9fb_master.jpg",
       "phoneNumber": "0988123456",
       "contentImg": [],
       "cafeLogo": "https://source.unsplash.com/100x100/?logo",
@@ -409,7 +409,7 @@
     "cafeDetails": {
       "title": "Starbucks Vietnam",
       "content": "Chuỗi cafe nổi tiếng với không gian hiện đại và đa dạng thức uống.",
-      "thumbnail": "",
+      "thumbnail": "https://vcdn1-kinhdoanh.vnecdn.net/2023/02/13/1-1676288952-7215-1676289633.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=oBBnUto1WHmQU2fmjCx00g",
       "phoneNumber": "0966332211",
       "contentImg": [],
       "cafeLogo": "https://source.unsplash.com/100x100/?logo",
@@ -444,19 +444,19 @@
   },
   {
     "id": "12",
-    "username": "vintage_enthusiast",
+    "username": "mib_cafe",
     "createDate": "2025-02-25",
     "cafeDetails": {
-      "title": "Vintage Coffee",
+      "title": "Monkey In Black Cafe",
       "content": "Quán cafe phong cách cổ điển với không gian hoài niệm.",
-      "thumbnail": "",
+      "thumbnail": "https://cdn.khoequan.com/wp-content/uploads/2022/06/27152846/Monkey-in-Black-1.jpeg?ssl=1",
       "phoneNumber": "0944556677",
       "contentImg": [],
       "cafeLogo": "https://source.unsplash.com/100x100/?logo",
       "cafeBrand": {
         "id": "brand_12",
         "cafeBrandLogo": "https://source.unsplash.com/100x100/?brand",
-        "cafeBrandName": "Vintage Coffee"
+        "cafeBrandName": "Monkey In Black Cafe"
       },
       "cafeOperation": {
         "openingTime": "09:00",
@@ -465,12 +465,12 @@
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
-        "houseNumber": "5",
-        "street": "Lê Lợi",
-        "district": "1",
-        "ward": "Phường Vĩnh Ninh"
+        "houseNumber": "698",
+        "street": "Sư Vạn Hạnh",
+        "district": "10",
+        "ward": "Phường 12"
       },
-      "cafeCategory": [{ "id": "cat_12", "name": "Vintage Cafe" }],
+      "cafeCategory": [{ "id": "cat_12", "name": "MIB Cafe" }],
       "cafeTheme": { "primaryColor": "#A52A2A", "secondaryColor": "#FFD700" }
     },
     "totalLike": 1200,
@@ -489,7 +489,7 @@
     "cafeDetails": {
       "title": "Khóm Coffee & Tea",
       "content": "Không gian tự nhiên, nhiều cây xanh, đồ uống chất lượng.",
-      "thumbnail": "",
+      "thumbnail": "https://noithatkendesign.vn/storage/app/media/uploaded-files/thiet-ke-khom-coffee-1.jpg",
       "phoneNumber": "0978901234",
       "contentImg": [],
       "cafeLogo": "https://khomcoffee.com/wp-content/uploads/2023/04/khom-coffee-logo-300x300.png",
@@ -529,7 +529,7 @@
     "cafeDetails": {
       "title": "Vừng Ơi Mở Ra",
       "content": "Không gian sáng tạo, kết hợp cổ điển và hiện đại, nhạc acoustic.",
-      "thumbnail": "",
+      "thumbnail": "https://lh3.googleusercontent.com/p/AF1QipPcWxW2ALmY1Brv79MkEnc_UxhEHLV0kH5DXmmi=s680-w680-h510",
       "phoneNumber": "0989012345",
       "contentImg": [],
       "cafeLogo": "https://vungoi.com/wp-content/uploads/2023/04/vung-oi-logo-300x300.png",
@@ -569,7 +569,7 @@
     "cafeDetails": {
       "title": "Workshop Coffee",
       "content": "Không gian hiện đại, cà phê chất lượng, nhiều loại bánh ngon.",
-      "thumbnail": "",
+      "thumbnail": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/95/c9/b2/the-workshop-cafe.jpg?w=900&h=500&s=1",
       "phoneNumber": "0990123456",
       "contentImg": [],
       "cafeLogo": "https://workshopcoffee.vn/wp-content/uploads/2023/04/workshop-coffee-logo-300x300.png",
