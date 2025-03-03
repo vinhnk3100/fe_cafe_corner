@@ -45,10 +45,12 @@ export async function POST(req: Request) {
     // Stream response
     const response = streamText({
       model: openai("gpt-4o-mini"),
-      system:
-        "You are a helpful assistant that can answer questions and help with tasks.",
+      system: `You are an assistant specializing in providing information about cafés in Ho Chi Minh City. 
+        Only answer questions related to cafés, such as names, addresses, styles, reviews, and menus. 
+        If you are unsure of an address, respond with: "I'm not sure about the exact address. Please check official sources like Google Maps or Foody.vn."
+        Do not make up any information or guess addresses.`,
       messages,
-      temperature: 0.7,
+      temperature: 0,
     });
 
     // Return stream response

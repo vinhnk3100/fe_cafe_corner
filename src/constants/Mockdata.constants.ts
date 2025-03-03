@@ -4,7 +4,6 @@ import { LOCATION_CITY } from "./cafe-location.constant";
 import { CafeCategoryProps } from "@/types/cafe/cafe-category.types";
 import { cafeBrands } from "@/data/cafe-brands.data.json";
 import { cafeViews } from "@/data/cafe-views.data.json";
-import { cafeCategories } from "@/data/cafe-categories.data.json";
 
 export const dataPost: PostProps[] = [
   {
@@ -692,6 +691,5 @@ export const dataCafe: CafeProps[] = [
   },
 ];
 
-export const mockDataCafeCategories: CafeCategoryProps[] = cafeCategories;
 export const mockDataCafeBrands: CafeBrandType[] = cafeBrands;
 export const mockDataCafeViews = cafeViews;

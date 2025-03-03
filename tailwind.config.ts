@@ -18,6 +18,7 @@ const config: Config = {
         buttonColor: "#C8A97E",
         buttonHoverColor: "#B0906E",
         coffeeBeanColor: "#293239",
+        mainNavbarColor: "#1A252B",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

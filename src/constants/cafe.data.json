@@ -44,37 +44,34 @@
   },
   {
     "id": "2",
-    "username": "cafehunter",
+    "username": "foodie_saigon",
     "createDate": "2025-02-21",
     "cafeDetails": {
-      "title": "Phúc Long Coffee & Tea",
-      "content": "Trà và cà phê chất lượng, phục vụ nhanh chóng.",
-      "thumbnail": "https://source.unsplash.com/400x300/?tea",
-      "phoneNumber": "0909876543",
-      "contentImg": [
-        "https://source.unsplash.com/400x300/?tea-shop",
-        "https://source.unsplash.com/400x300/?cafe-drink"
-      ],
-      "cafeLogo": "https://source.unsplash.com/100x100/?logo",
+      "title": "Starbucks Reserve Landmark 81",
+      "content": "View thành phố tuyệt đẹp, cà phê thượng hạng, không gian hiện đại.",
+      "thumbnail": "",
+      "phoneNumber": "0912345678",
+      "contentImg": [],
+      "cafeLogo": "https://globalassets.starbucks.com/assets/5cd92291ff27445188f1796118318e41.svg",
       "cafeBrand": {
         "id": "brand_2",
-        "cafeBrandLogo": "https://source.unsplash.com/100x100/?brand",
-        "cafeBrandName": "Phúc Long"
+        "cafeBrandLogo": "https://globalassets.starbucks.com/assets/5cd92291ff27445188f1796118318e41.svg",
+        "cafeBrandName": "Starbucks"
       },
       "cafeOperation": {
-        "openingTime": "06:30",
-        "closingTime": "22:30",
+        "openingTime": "08:00",
+        "closingTime": "23:00",
         "openingDay": [1, 2, 3, 4, 5, 6, 7]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
-        "houseNumber": "45",
-        "street": "Cách Mạng Tháng 8",
-        "district": "3",
-        "ward": "Phường 6"
+        "houseNumber": "720A",
+        "street": "Điện Biên Phủ",
+        "district": "Bình Thạnh",
+        "ward": "22"
       },
-      "cafeCategory": [{ "id": "cat_2", "name": "Milk Tea & Coffee" }],
-      "cafeTheme": { "primaryColor": "#FFD700", "secondaryColor": "#A52A2A" }
+      "cafeCategory": [{ "id": "cat_1", "name": "Specialty Coffee" }],
+      "cafeTheme": { "primaryColor": "#00704A", "secondaryColor": "#D4E9E2" }
     },
     "totalLike": 1500,
     "totalDislike": 30,
@@ -87,126 +84,37 @@
   },
   {
     "id": "3",
-    "username": "coffeelover_99",
+    "username": "vietcoffee_lover",
     "createDate": "2025-02-22",
     "cafeDetails": {
-      "title": "Highlands Coffee",
-      "content": "Chuỗi cafe nổi tiếng với hương vị truyền thống.",
-      "thumbnail": "https://source.unsplash.com/400x300/?cappuccino",
-      "phoneNumber": "0933456789",
-      "contentImg": [
-        "https://source.unsplash.com/400x300/?coffee-bean",
-        "https://source.unsplash.com/400x300/?vietnamese-coffee"
-      ],
-      "cafeLogo": "https://source.unsplash.com/100x100/?logo",
+      "title": "Cộng Cà Phê - Pasteur",
+      "content": "Không gian hoài cổ, cà phê cốt dừa ngon, vị trí trung tâm.",
+      "thumbnail": "",
+      "phoneNumber": "0923456789",
+      "contentImg": [],
+      "cafeLogo": "https://congcaphe.com/wp-content/uploads/2023/04/cong-logo-300x300.png",
       "cafeBrand": {
         "id": "brand_3",
-        "cafeBrandLogo": "https://source.unsplash.com/100x100/?brand",
-        "cafeBrandName": "Highlands Coffee"
+        "cafeBrandLogo": "https://congcaphe.com/wp-content/uploads/2023/04/cong-logo-300x300.png",
+        "cafeBrandName": "Cộng Cà Phê"
       },
       "cafeOperation": {
-        "openingTime": "07:00",
-        "closingTime": "23:00",
+        "openingTime": "07:30",
+        "closingTime": "22:30",
         "openingDay": [1, 2, 3, 4, 5, 6, 7]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
-        "houseNumber": "10",
-        "street": "Lê Lợi",
-        "district": "1",
-        "ward": "Bến Thành"
-      },
-      "cafeCategory": [{ "id": "cat_3", "name": "Vietnamese Coffee" }],
-      "cafeTheme": { "primaryColor": "#8B0000", "secondaryColor": "#FFA500" }
-    },
-    "totalLike": 2000,
-    "totalDislike": 80,
-    "totalComment": 500,
-    "totalShare": 600,
-    "isTodayMenu": true,
-    "isOnPromotion": false,
-    "isHoldingEvents": true,
-    "isCOTY": true
-  },
-  {
-    "id": "4",
-    "username": "espresso_lover",
-    "createDate": "2025-02-23",
-    "cafeDetails": {
-      "title": "Oromia Coffee & Lounge",
-      "content": "Không gian yên tĩnh, phù hợp làm việc hoặc thư giãn.",
-      "thumbnail": "https://source.unsplash.com/400x300/?coffee-shop",
-      "phoneNumber": "0912345678",
-      "contentImg": [
-        "https://source.unsplash.com/400x300/?coffee-table",
-        "https://source.unsplash.com/400x300/?coffee-cup"
-      ],
-      "cafeLogo": "https://source.unsplash.com/100x100/?logo",
-      "cafeBrand": {
-        "id": "brand_4",
-        "cafeBrandLogo": "https://source.unsplash.com/100x100/?brand",
-        "cafeBrandName": "Oromia Coffee"
-      },
-      "cafeOperation": {
-        "openingTime": "08:00",
-        "closingTime": "22:00",
-        "openingDay": [1, 2, 3, 4, 5, 6, 7]
-      },
-      "cafeLocation": {
-        "city": "Hồ Chí Minh",
-        "houseNumber": "193A",
-        "street": "Nam Kỳ Khởi Nghĩa",
-        "district": "3",
-        "ward": "Phường 7"
-      },
-      "cafeCategory": [{ "id": "cat_4", "name": "Lounge & Cafe" }],
-      "cafeTheme": { "primaryColor": "#4B0082", "secondaryColor": "#FFD700" }
-    },
-    "totalLike": 1700,
-    "totalDislike": 60,
-    "totalComment": 300,
-    "totalShare": 500,
-    "isTodayMenu": false,
-    "isOnPromotion": true,
-    "isHoldingEvents": false,
-    "isCOTY": false
-  },
-  {
-    "id": "5",
-    "username": "cafe_addict",
-    "createDate": "2025-02-25",
-    "cafeDetails": {
-      "title": "The Workshop Coffee",
-      "content": "Quán cafe phong cách tối giản, chuyên về cà phê pha thủ công.",
-      "thumbnail": "https://source.unsplash.com/400x300/?coffee-art",
-      "phoneNumber": "0987654321",
-      "contentImg": [
-        "https://source.unsplash.com/400x300/?coffee-maker",
-        "https://source.unsplash.com/400x300/?coffee-brewing"
-      ],
-      "cafeLogo": "https://source.unsplash.com/100x100/?logo",
-      "cafeBrand": {
-        "id": "brand_5",
-        "cafeBrandLogo": "https://source.unsplash.com/100x100/?brand",
-        "cafeBrandName": "The Workshop"
-      },
-      "cafeOperation": {
-        "openingTime": "09:00",
-        "closingTime": "21:00",
-        "openingDay": [1, 2, 3, 4, 5, 6]
-      },
-      "cafeLocation": {
-        "city": "Hồ Chí Minh",
-        "houseNumber": "27",
-        "street": "Ngô Đức Kế",
+        "houseNumber": "26",
+        "street": "Pasteur",
         "district": "1",
         "ward": "Bến Nghé"
       },
-      "cafeCategory": [{ "id": "cat_5", "name": "Specialty Coffee" }],
-      "cafeTheme": { "primaryColor": "#A52A2A", "secondaryColor": "#E6E6FA" }
+      "cafeCategory": [{ "id": "cat_2", "name": "Vietnamese Coffee" }],
+      "cafeTheme": { "primaryColor": "#4A6572", "secondaryColor": "#D1D8E0" }
     },
-    "totalLike": 1300,
-    "totalDislike": 40,
+    "totalLike": 900,
+    "totalDislike": 70,
     "totalComment": 150,
     "totalShare": 200,
     "isTodayMenu": true,
@@ -215,90 +123,164 @@
     "isCOTY": false
   },
   {
-    "id": "6",
-    "username": "vintage_vibes",
-    "createDate": "2025-02-26",
+    "id": "4",
+    "username": "chill_cafe_hunter",
+    "createDate": "2025-02-23",
     "cafeDetails": {
-      "title": "Cafe Đinh",
-      "content": "Quán cafe hoài cổ với không gian ấm cúng, đồ uống truyền thống.",
-      "thumbnail": "https://source.unsplash.com/400x300/?old-coffee",
-      "phoneNumber": "0977123456",
-      "contentImg": [
-        "https://source.unsplash.com/400x300/?coffee-vietnam",
-        "https://source.unsplash.com/400x300/?retro-cafe"
-      ],
-      "cafeLogo": "https://source.unsplash.com/100x100/?logo",
+      "title": "Shin Coffee - Mạc Thị Bưởi",
+      "content": "Cà phê specialty chất lượng, không gian yên tĩnh, thiết kế tối giản.",
+      "thumbnail": "",
+      "phoneNumber": "0934567890",
+      "contentImg": [],
+      "cafeLogo": "https://shincoffee.vn/wp-content/uploads/2023/04/shin-logo-300x300.png",
       "cafeBrand": {
-        "id": "brand_6",
-        "cafeBrandLogo": "https://source.unsplash.com/100x100/?brand",
-        "cafeBrandName": "Cafe Đinh"
+        "id": "brand_4",
+        "cafeBrandLogo": "https://shincoffee.vn/wp-content/uploads/2023/04/shin-logo-300x300.png",
+        "cafeBrandName": "Shin Coffee"
       },
       "cafeOperation": {
-        "openingTime": "07:30",
-        "closingTime": "22:00",
-        "openingDay": [2, 3, 4, 5, 6, 7]
+        "openingTime": "08:30",
+        "closingTime": "21:30",
+        "openingDay": [1, 2, 3, 4, 5, 6]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
-        "houseNumber": "9",
-        "street": "Nguyễn Du",
+        "houseNumber": "13",
+        "street": "Mạc Thị Bưởi",
         "district": "1",
-        "ward": "Phường Bến Thành"
+        "ward": "Bến Nghé"
       },
-      "cafeCategory": [{ "id": "cat_6", "name": "Vintage Coffee" }],
-      "cafeTheme": { "primaryColor": "#D2691E", "secondaryColor": "#FFF8DC" }
+      "cafeCategory": [{ "id": "cat_1", "name": "Specialty Coffee" }],
+      "cafeTheme": { "primaryColor": "#333333", "secondaryColor": "#F5F5F5" }
     },
-    "totalLike": 800,
-    "totalDislike": 30,
-    "totalComment": 100,
-    "totalShare": 150,
+    "totalLike": 1100,
+    "totalDislike": 40,
+    "totalComment": 180,
+    "totalShare": 250,
     "isTodayMenu": false,
     "isOnPromotion": true,
     "isHoldingEvents": false,
     "isCOTY": false
   },
   {
-    "id": "7",
-    "username": "cafe_lifestyle",
-    "createDate": "2025-02-27",
+    "id": "5",
+    "username": "saigon_coffee_trip",
+    "createDate": "2025-02-24",
     "cafeDetails": {
-      "title": "The Coffee House",
-      "content": "Không gian hiện đại, thoải mái để gặp gỡ bạn bè hoặc làm việc.",
-      "thumbnail": "https://source.unsplash.com/400x300/?modern-cafe",
-      "phoneNumber": "0901122334",
-      "contentImg": [
-        "https://source.unsplash.com/400x300/?coffee-cup-latte",
-        "https://source.unsplash.com/400x300/?cozy-cafe"
-      ],
-      "cafeLogo": "https://source.unsplash.com/100x100/?logo",
+      "title": "Trung Nguyên Legend Café - Đồng Khởi",
+      "content": "Cà phê đậm đà, không gian sang trọng, vị trí đắc địa.",
+      "thumbnail": "",
+      "phoneNumber": "0945678901",
+      "contentImg": [],
+      "cafeLogo": "https://trungnguyenlegend.com/wp-content/uploads/2023/04/trung-nguyen-logo-300x300.png",
       "cafeBrand": {
-        "id": "brand_7",
-        "cafeBrandLogo": "https://source.unsplash.com/100x100/?brand",
-        "cafeBrandName": "The Coffee House"
+        "id": "brand_5",
+        "cafeBrandLogo": "https://trungnguyenlegend.com/wp-content/uploads/2023/04/trung-nguyen-logo-300x300.png",
+        "cafeBrandName": "Trung Nguyên Legend"
       },
       "cafeOperation": {
         "openingTime": "07:00",
-        "closingTime": "22:30",
+        "closingTime": "23:00",
         "openingDay": [1, 2, 3, 4, 5, 6, 7]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
-        "houseNumber": "23",
-        "street": "Trần Hưng Đạo",
-        "district": "5",
-        "ward": "Phường 2"
+        "houseNumber": "4-6",
+        "street": "Đồng Khởi",
+        "district": "1",
+        "ward": "Bến Nghé"
       },
-      "cafeCategory": [{ "id": "cat_7", "name": "Modern Coffee" }],
-      "cafeTheme": { "primaryColor": "#1E90FF", "secondaryColor": "#FFD700" }
+      "cafeCategory": [{ "id": "cat_2", "name": "Vietnamese Coffee" }],
+      "cafeTheme": { "primaryColor": "#6A040F", "secondaryColor": "#F5EEDC" }
     },
-    "totalLike": 2500,
-    "totalDislike": 100,
-    "totalComment": 600,
-    "totalShare": 700,
+    "totalLike": 1300,
+    "totalDislike": 60,
+    "totalComment": 220,
+    "totalShare": 350,
     "isTodayMenu": true,
+    "isOnPromotion": false,
+    "isHoldingEvents": true,
+    "isCOTY": false
+  },
+  {
+    "id": "6",
+    "username": "coffee_adventurer",
+    "createDate": "2025-02-25",
+    "cafeDetails": {
+      "title": "Anh Coffee Roastery",
+      "content": "Cà phê rang xay tại chỗ, không gian hiện đại, nhiều phương pháp pha chế.",
+      "thumbnail": "",
+      "phoneNumber": "0956789012",
+      "contentImg": [],
+      "cafeLogo": "https://anhcoffeeroastery.com/wp-content/uploads/2023/04/anh-coffee-logo-300x300.png",
+      "cafeBrand": {
+        "id": "brand_6",
+        "cafeBrandLogo": "https://anhcoffeeroastery.com/wp-content/uploads/2023/04/anh-coffee-logo-300x300.png",
+        "cafeBrandName": "Anh Coffee Roastery"
+      },
+      "cafeOperation": {
+        "openingTime": "08:00",
+        "closingTime": "22:00",
+        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+      },
+      "cafeLocation": {
+        "city": "Hồ Chí Minh",
+        "houseNumber": "200",
+        "street": "Pasteur",
+        "district": "3",
+        "ward": "6"
+      },
+      "cafeCategory": [{ "id": "cat_1", "name": "Specialty Coffee" }],
+      "cafeTheme": { "primaryColor": "#FF8C00", "secondaryColor": "#FFFACD" }
+    },
+    "totalLike": 1000,
+    "totalDislike": 55,
+    "totalComment": 190,
+    "totalShare": 280,
+    "isTodayMenu": false,
     "isOnPromotion": true,
     "isHoldingEvents": false,
     "isCOTY": true
+  },
+  {
+    "id": "7",
+    "username": "floral_cafe_lover",
+    "createDate": "2025-02-26",
+    "cafeDetails": {
+      "title": "Bonjour Café The Art",
+      "content": "Không gian ngập tràn hoa, phong cách Paris, đồ uống đa dạng.",
+      "thumbnail": "",
+      "phoneNumber": "0967890123",
+      "contentImg": [],
+      "cafeLogo": "https://bonjourcafetheart.com/wp-content/uploads/2023/04/bonjour-cafe-logo-300x300.png",
+      "cafeBrand": {
+        "id": "brand_7",
+        "cafeBrandLogo": "https://bonjourcafetheart.com/wp-content/uploads/2023/04/bonjour-cafe-logo-300x300.png",
+        "cafeBrandName": "Bonjour Café The Art"
+      },
+      "cafeOperation": {
+        "openingTime": "08:30",
+        "closingTime": "21:30",
+        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+      },
+      "cafeLocation": {
+        "city": "Hồ Chí Minh",
+        "houseNumber": "40",
+        "street": "Thảo Điền",
+        "district": "2",
+        "ward": "Thảo Điền"
+      },
+      "cafeCategory": [{ "id": "cat_3", "name": "Dessert & Cafe" }],
+      "cafeTheme": { "primaryColor": "#E91E63", "secondaryColor": "#FFF0F5" }
+    },
+    "totalLike": 1250,
+    "totalDislike": 35,
+    "totalComment": 210,
+    "totalShare": 320,
+    "isTodayMenu": true,
+    "isOnPromotion": true,
+    "isHoldingEvents": true,
+    "isCOTY": false
   },
   {
     "id": "8",
@@ -307,12 +289,9 @@
     "cafeDetails": {
       "title": "Beanthere Cafe",
       "content": "Cafe organic với nguyên liệu sạch và không gian xanh.",
-      "thumbnail": "https://source.unsplash.com/400x300/?organic-coffee",
+      "thumbnail": "",
       "phoneNumber": "0933221100",
-      "contentImg": [
-        "https://source.unsplash.com/400x300/?green-cafe",
-        "https://source.unsplash.com/400x300/?nature-coffee"
-      ],
+      "contentImg": [],
       "cafeLogo": "https://source.unsplash.com/100x100/?logo",
       "cafeBrand": {
         "id": "brand_8",
@@ -350,12 +329,9 @@
     "cafeDetails": {
       "title": "Katinat Saigon Kafe",
       "content": "Quán cafe phong cách tối giản với thức uống chất lượng.",
-      "thumbnail": "https://source.unsplash.com/400x300/?minimalist-cafe",
+      "thumbnail": "",
       "phoneNumber": "0977885544",
-      "contentImg": [
-        "https://source.unsplash.com/400x300/?coffee-minimal",
-        "https://source.unsplash.com/400x300/?latte-art"
-      ],
+      "contentImg": [],
       "cafeLogo": "https://source.unsplash.com/100x100/?logo",
       "cafeBrand": {
         "id": "brand_9",
@@ -383,6 +359,246 @@
     "totalShare": 300,
     "isTodayMenu": true,
     "isOnPromotion": false,
+    "isHoldingEvents": false,
+    "isCOTY": false
+  },
+  {
+    "id": "10",
+    "username": "cozy_coffee_lover",
+    "createDate": "2025-02-27",
+    "cafeDetails": {
+      "title": "The Coffee House",
+      "content": "Không gian ấm cúng, phù hợp để làm việc và gặp gỡ bạn bè.",
+      "thumbnail": "",
+      "phoneNumber": "0988123456",
+      "contentImg": [],
+      "cafeLogo": "https://source.unsplash.com/100x100/?logo",
+      "cafeBrand": {
+        "id": "brand_10",
+        "cafeBrandLogo": "https://source.unsplash.com/100x100/?brand",
+        "cafeBrandName": "The Coffee House"
+      },
+      "cafeOperation": {
+        "openingTime": "08:00",
+        "closingTime": "22:00",
+        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+      },
+      "cafeLocation": {
+        "city": "Hồ Chí Minh",
+        "houseNumber": "25",
+        "street": "Lý Thường Kiệt",
+        "district": "10",
+        "ward": "Phường Trần Hưng Đạo"
+      },
+      "cafeCategory": [{ "id": "cat_10", "name": "Cozy Cafe" }],
+      "cafeTheme": { "primaryColor": "#8B4513", "secondaryColor": "#FFF8DC" }
+    },
+    "totalLike": 2000,
+    "totalDislike": 70,
+    "totalComment": 500,
+    "totalShare": 450,
+    "isTodayMenu": true,
+    "isOnPromotion": true,
+    "isHoldingEvents": false,
+    "isCOTY": false
+  },
+  {
+    "id": "11",
+    "username": "modern_vibes",
+    "createDate": "2025-02-26",
+    "cafeDetails": {
+      "title": "Starbucks Vietnam",
+      "content": "Chuỗi cafe nổi tiếng với không gian hiện đại và đa dạng thức uống.",
+      "thumbnail": "",
+      "phoneNumber": "0966332211",
+      "contentImg": [],
+      "cafeLogo": "https://source.unsplash.com/100x100/?logo",
+      "cafeBrand": {
+        "id": "brand_11",
+        "cafeBrandLogo": "https://source.unsplash.com/100x100/?brand",
+        "cafeBrandName": "Starbucks Vietnam"
+      },
+      "cafeOperation": {
+        "openingTime": "06:30",
+        "closingTime": "23:30",
+        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+      },
+      "cafeLocation": {
+        "city": "Hồ Chí Minh",
+        "houseNumber": "99",
+        "street": "Bạch Đằng",
+        "district": "5",
+        "ward": "Phường 5"
+      },
+      "cafeCategory": [{ "id": "cat_11", "name": "Modern Cafe" }],
+      "cafeTheme": { "primaryColor": "#00704A", "secondaryColor": "#D4AF37" }
+    },
+    "totalLike": 5000,
+    "totalDislike": 100,
+    "totalComment": 1200,
+    "totalShare": 950,
+    "isTodayMenu": false,
+    "isOnPromotion": true,
+    "isHoldingEvents": true,
+    "isCOTY": true
+  },
+  {
+    "id": "12",
+    "username": "vintage_enthusiast",
+    "createDate": "2025-02-25",
+    "cafeDetails": {
+      "title": "Vintage Coffee",
+      "content": "Quán cafe phong cách cổ điển với không gian hoài niệm.",
+      "thumbnail": "",
+      "phoneNumber": "0944556677",
+      "contentImg": [],
+      "cafeLogo": "https://source.unsplash.com/100x100/?logo",
+      "cafeBrand": {
+        "id": "brand_12",
+        "cafeBrandLogo": "https://source.unsplash.com/100x100/?brand",
+        "cafeBrandName": "Vintage Coffee"
+      },
+      "cafeOperation": {
+        "openingTime": "09:00",
+        "closingTime": "21:30",
+        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+      },
+      "cafeLocation": {
+        "city": "Hồ Chí Minh",
+        "houseNumber": "5",
+        "street": "Lê Lợi",
+        "district": "1",
+        "ward": "Phường Vĩnh Ninh"
+      },
+      "cafeCategory": [{ "id": "cat_12", "name": "Vintage Cafe" }],
+      "cafeTheme": { "primaryColor": "#A52A2A", "secondaryColor": "#FFD700" }
+    },
+    "totalLike": 1200,
+    "totalDislike": 30,
+    "totalComment": 250,
+    "totalShare": 180,
+    "isTodayMenu": false,
+    "isOnPromotion": false,
+    "isHoldingEvents": false,
+    "isCOTY": false
+  },
+  {
+    "id": "13",
+    "username": "natural_cafe_vibes",
+    "createDate": "2025-02-27",
+    "cafeDetails": {
+      "title": "Khóm Coffee & Tea",
+      "content": "Không gian tự nhiên, nhiều cây xanh, đồ uống chất lượng.",
+      "thumbnail": "",
+      "phoneNumber": "0978901234",
+      "contentImg": [],
+      "cafeLogo": "https://khomcoffee.com/wp-content/uploads/2023/04/khom-coffee-logo-300x300.png",
+      "cafeBrand": {
+        "id": "brand_8",
+        "cafeBrandLogo": "https://khomcoffee.com/wp-content/uploads/2023/04/khom-coffee-logo-300x300.png",
+        "cafeBrandName": "Khóm Coffee & Tea"
+      },
+      "cafeOperation": {
+        "openingTime": "09:00",
+        "closingTime": "22:00",
+        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+      },
+      "cafeLocation": {
+        "city": "Hồ Chí Minh",
+        "houseNumber": "5",
+        "street": "Trần Quý Khoách",
+        "district": "1",
+        "ward": "Tân Định"
+      },
+      "cafeCategory": [{ "id": "cat_4", "name": "Tea & Coffee" }],
+      "cafeTheme": { "primaryColor": "#8FBC8F", "secondaryColor": "#F0FFF0" }
+    },
+    "totalLike": 1150,
+    "totalDislike": 45,
+    "totalComment": 200,
+    "totalShare": 300,
+    "isTodayMenu": false,
+    "isOnPromotion": false,
+    "isHoldingEvents": true,
+    "isCOTY": false
+  },
+  {
+    "id": "14",
+    "username": "acoustic_cafe_vibes",
+    "createDate": "2025-02-28",
+    "cafeDetails": {
+      "title": "Vừng Ơi Mở Ra",
+      "content": "Không gian sáng tạo, kết hợp cổ điển và hiện đại, nhạc acoustic.",
+      "thumbnail": "",
+      "phoneNumber": "0989012345",
+      "contentImg": [],
+      "cafeLogo": "https://vungoi.com/wp-content/uploads/2023/04/vung-oi-logo-300x300.png",
+      "cafeBrand": {
+        "id": "brand_9",
+        "cafeBrandLogo": "https://vungoi.com/wp-content/uploads/2023/04/vung-oi-logo-300x300.png",
+        "cafeBrandName": "Vừng Ơi Mở Ra"
+      },
+      "cafeOperation": {
+        "openingTime": "08:00",
+        "closingTime": "23:00",
+        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+      },
+      "cafeLocation": {
+        "city": "Hồ Chí Minh",
+        "houseNumber": "61",
+        "street": "Trần Quốc Thảo",
+        "district": "3",
+        "ward": "7"
+      },
+      "cafeCategory": [{ "id": "cat_5", "name": "Live Music Cafe" }],
+      "cafeTheme": { "primaryColor": "#5F9EA0", "secondaryColor": "#F0FFFF" }
+    },
+    "totalLike": 1400,
+    "totalDislike": 25,
+    "totalComment": 230,
+    "totalShare": 420,
+    "isTodayMenu": true,
+    "isOnPromotion": true,
+    "isHoldingEvents": true,
+    "isCOTY": true
+  },
+  {
+    "id": "15",
+    "username": "modern_cafe_lover",
+    "createDate": "2025-03-01",
+    "cafeDetails": {
+      "title": "Workshop Coffee",
+      "content": "Không gian hiện đại, cà phê chất lượng, nhiều loại bánh ngon.",
+      "thumbnail": "",
+      "phoneNumber": "0990123456",
+      "contentImg": [],
+      "cafeLogo": "https://workshopcoffee.vn/wp-content/uploads/2023/04/workshop-coffee-logo-300x300.png",
+      "cafeBrand": {
+        "id": "brand_10",
+        "cafeBrandLogo": "https://workshopcoffee.vn/wp-content/uploads/2023/04/workshop-coffee-logo-300x300.png",
+        "cafeBrandName": "Workshop Coffee"
+      },
+      "cafeOperation": {
+        "openingTime": "08:30",
+        "closingTime": "22:30",
+        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+      },
+      "cafeLocation": {
+        "city": "Hồ Chí Minh",
+        "houseNumber": "27",
+        "street": "Ngô Đức Kế",
+        "district": "1",
+        "ward": "Bến Nghé"
+      },
+      "cafeCategory": [{ "id": "cat_1", "name": "Specialty Coffee" }],
+      "cafeTheme": { "primaryColor": "#4682B4", "secondaryColor": "#E6E6FA" }
+    },
+    "totalLike": 1280,
+    "totalDislike": 38,
+    "totalComment": 215,
+    "totalShare": 380,
+    "isTodayMenu": false,
+    "isOnPromotion": true,
     "isHoldingEvents": false,
     "isCOTY": false
   }

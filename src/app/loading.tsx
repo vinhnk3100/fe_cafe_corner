@@ -9,50 +9,51 @@ const Loading = () => {
   const containerRef = useRef(null);
   
   useGSAP(() => {
-    // Create smoke particles
-    const smokeTimeline = gsap.timeline({ repeat: -1 });
+    const smokeTimeline = gsap.timeline({
+      repeat: 0,
+      onComplete: () => {
+        if (!document.hidden) {
+          window.dispatchEvent(new CustomEvent('loadingAnimationComplete'));
+        }
+      }
+    });
     
-    // Animate each smoke path
     gsap.utils.toArray<HTMLElement>('.smoke-path').forEach((path, index) => {
-      // Initial state
       gsap.set(path as HTMLElement, {
         y: 0,
         opacity: 0,
         scale: 0.5
       });
       
-      // Create individual timeline for each smoke path
       smokeTimeline.to(path, {
         y: -80,
         opacity: index % 2 === 0 ? 0.7 : 0.5,
         scale: 1.5,
-        duration: 3,
+        duration: 1,
         ease: "power1.out",
         stagger: 0.2
-      }, index * 0.4)
+      }, index * 0.2)
       .to(path, {
         y: -120,
         opacity: 0,
         scale: 2,
-        duration: 2,
+        duration: 0.8,
         ease: "power2.out"
-      }, `>-2`);
+      }, `>-1.5`);
     });
     
-    // Animate coffee cup
     gsap.to('.coffee-cup', {
       y: 10,
-      duration: 2,
-      repeat: -1,
+      duration: 1,
+      repeat: 1,
       yoyo: true,
       ease: "power1.inOut"
     });
     
-    // Pulse animation for the loading text
     gsap.to('.loading-text', {
       opacity: 0.5,
-      duration: 0.8,
-      repeat: -1,
+      duration: 0.4,
+      repeat: 2,
       yoyo: true,
       ease: "power1.inOut"
     });
@@ -60,16 +61,13 @@ const Loading = () => {
   }, { scope: containerRef });
   
   return (
-    <div ref={containerRef} className="min-h-screen bg-amber-950 flex flex-col items-center justify-center">
+    <div ref={containerRef} className="min-h-screen flex flex-col items-center justify-center">
       <div className="relative mb-8">
-        {/* Coffee Cup */}
         <div className="coffee-cup relative z-10 bg-amber-100 p-4 rounded-full">
           <Coffee size={80} className="text-amber-950" />
         </div>
         
-        {/* Smoke Particles */}
         <div className="absolute top-1 left-1/2 transform -translate-x-1/2 z-0 w-20 h-32">
-          {/* Multiple smoke paths with different sizes and positions */}
           <svg viewBox="0 0 100 100" className="w-full h-full">
             <path 
               className="smoke-path" 
@@ -115,12 +113,10 @@ const Loading = () => {
         </div>
       </div>
       
-      {/* Loading Text */}
       <h2 className="loading-text text-2xl font-bold text-amber-100 mt-6">
         Brewing...
       </h2>
       
-      {/* Loading Dots */}
       <div className="flex mt-4 space-x-2">
         {[0, 1, 2].map((dot, index) => (
           <div 
@@ -133,7 +129,6 @@ const Loading = () => {
         ))}
       </div>
       
-      {/* Add keyframes for the dots */}
       <style jsx>{`
         @keyframes pulse {
           0%, 100% {
