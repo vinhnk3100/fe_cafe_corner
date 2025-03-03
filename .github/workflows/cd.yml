@@ -43,7 +43,6 @@ jobs:
       - name: Notify Discord on Failure
         if: failure()
         run: |
-            npm install
             npm run send-dm-discord
         env:
             DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
@@ -52,7 +51,7 @@ jobs:
       - name: Notify Discord on Success
         if: success()
         run: |
-            npm install
+            echo "Notifying Discord of successful deployment..."
             npm run send-dm-discord
         env:
             DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
