@@ -25,12 +25,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to Netlify
-        run: npx netlify-cli deploy --prod
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-
       - name: Rollback on failure
         if: failure()
         run: |
@@ -47,6 +41,7 @@ jobs:
         env:
             DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
             DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}
+            DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
 
       - name: Notify Discord on Success
         if: success()
@@ -56,4 +51,12 @@ jobs:
         env:
             DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
             DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}
+            DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
 
+      - name: Deploy to Netlify
+        if: success() # Only run if the previous steps succeed
+        run: npx netlify-cli deploy --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          
