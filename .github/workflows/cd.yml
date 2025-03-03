@@ -49,5 +49,12 @@ jobs:
             DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
             DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}
 
-
+      - name: Notify Discord on Success
+        if: success()
+        run: |
+            npm install
+            npm run send-dm-discord
+        env:
+            DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+            DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}
 
