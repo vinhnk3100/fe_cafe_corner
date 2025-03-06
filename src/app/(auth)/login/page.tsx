@@ -27,7 +27,7 @@ export default function LoginPage() {
     () => ({
       background: {
         color: {
-          value: "rgb(2 6 23 / var(1))",
+          value: "#121d23",
         },
       },
       fpsLimit: 120,
@@ -95,7 +95,7 @@ export default function LoginPage() {
   );
   if (init) {
     return (
-      <div className="h-screen flex justify-center items-center bg-slate-900">
+      <div className="h-screen flex justify-center items-center">
         <FormAuth />
         <Particles
           id="tsparticles"

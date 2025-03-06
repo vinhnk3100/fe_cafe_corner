@@ -10,13 +10,14 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        "3xl": "1600px", // Custom 3xl breakpoint
+        "3xl": "1600px",
       },
       colors: {
         primaryColor: "#121d23",
         textPrimaryColor: "#c9a581",
         buttonColor: "#C8A97E",
         buttonHoverColor: "#B0906E",
+        buttonHoverTextLightColor: "#E5C48D",
         coffeeBeanColor: "#293239",
         mainNavbarColor: "#1A252B",
         background: "hsl(var(--background))",
@@ -59,6 +60,16 @@ const config: Config = {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -66,33 +77,74 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        wave: {
+          "0%, 100%": { transform: "translateX(-50%) translateY(0)" },
+          "50%": { transform: "translateX(-50%) translateY(10px)" },
+        },
         glow: {
-          "0%, 100%": { opacity: "0.8", transform: "scale(1)" },
-          "50%": { opacity: "1", transform: "scale(1.1)" },
+          "0%, 100%": {
+            opacity: "0.8",
+            transform: "scale(1)",
+          },
+          "50%": {
+            opacity: "1",
+            transform: "scale(1.1)",
+          },
         },
         "bounce-slow-stop": {
-          "0%, 20%, 50%, 80%, 100%": { transform: "translateY(0)" },
-          "40%": { transform: "translateY(-150px)" },
-          "60%": { transform: "translateY(-75px)" },
-          "80%": { transform: "translateY(-25px)" },
-          "100%": { transform: "translateY(0)" },
+          "0%, 20%, 50%, 80%, 100%": {
+            transform: "translateY(0)",
+          },
+          "40%": {
+            transform: "translateY(-150px)",
+          },
+          "60%": {
+            transform: "translateY(-75px)",
+          },
+          "80%": {
+            transform: "translateY(-25px)",
+          },
+          "100%": {
+            transform: "translateY(0)",
+          },
         },
         "bounce-category": {
-          "0%, 20%, 50%, 80%, 100%": { transform: "translateY(0)" },
-          "40%": { transform: "translateY(-20px)" },
-          "60%": { transform: "translateY(-15px)" },
-          "80%": { transform: "translateY(-10px)" },
-          "100%": { transform: "translateY(0)" },
+          "0%, 20%, 50%, 80%, 100%": {
+            transform: "translateY(0)",
+          },
+          "40%": {
+            transform: "translateY(-20px)",
+          },
+          "60%": {
+            transform: "translateY(-15px)",
+          },
+          "80%": {
+            transform: "translateY(-10px)",
+          },
+          "100%": {
+            transform: "translateY(0)",
+          },
         },
         "bounce-zoom-icon": {
-          "0%, 20%, 50%, 80%, 100%": { scale: "1" },
-          "40%": { scale: "1.7" },
-          "60%": { scale: "1.5" },
-          "80%": { scale: "1.3" },
-          "100%": { scale: "1" },
+          "0%, 20%, 50%, 80%, 100%": {
+            scale: "1",
+          },
+          "40%": {
+            scale: "1.7",
+          },
+          "60%": {
+            scale: "1.5",
+          },
+          "80%": {
+            scale: "1.3",
+          },
+          "100%": {
+            scale: "1",
+          },
         },
       },
       animation: {
+        wave: "wave 3s ease-in-out infinite",
         glow: "glow 2s ease-in-out infinite",
         "bounce-slow-stop": "bounce-slow-stop 4s ease-in-out infinite",
         "bounce-category": "bounce-category 2s ease-in-out infinite",

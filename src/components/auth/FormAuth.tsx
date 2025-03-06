@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import LoginForm from "./login/LoginForm";
 import { ApiEndpointList } from "@/constants/api-endpoint.constant";
 import Image from "next/image";
@@ -12,7 +12,8 @@ export default function FormAuth() {
   const [imageUrl, setImageUrl] = useState<string>("");
   const [quote, setQuote] = useState<string>("");
   const [quoteAuthor, setQuoteAuthor] = useState<string>("");
-  const fetchGenerateImage = async () => {
+
+  const fetchGenerateImage = useCallback(async () => {
     try {
       const res = await fetch("https://picsum.photos/600/500");
       if (!res.ok) {
@@ -24,9 +25,9 @@ export default function FormAuth() {
     } catch (error: unknown) {
       console.log(error);
     }
-  };
+  }, []);
 
-  const fetchQuoteApi = async () => {
+  const fetchQuoteApi = useCallback(async () => {
     const apiKey = process.env.NEXT_PUBLIC_X_API_KEY_NINJA_QUOTE;
     if (!apiKey) {
       throw new Error("API key is missing!");
@@ -45,14 +46,14 @@ export default function FormAuth() {
       setQuote(data[0].quote);
       setQuoteAuthor(data[0].author);
     } catch (error: unknown) {
-      throw new Error(`Error: ${error}`);
+      console.log(error);
     }
-  };
+  }, [])  ;
 
   useEffect(() => {
     fetchQuoteApi();
     fetchGenerateImage();
-  }, []);
+  }, [fetchGenerateImage, fetchQuoteApi]);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -85,7 +86,7 @@ export default function FormAuth() {
     <>
       {imageUrl ? (
         <motion.div
-          className="flex mx-52 border border-slate-600 rounded-sm z-10 w-[1200px]"
+          className="flex mx-52 border border-primaryColor rounded-sm z-10 w-[1200px]"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{
@@ -94,7 +95,7 @@ export default function FormAuth() {
             damping: 20,
           }}
         >
-          <div className="w-1/2 p-12 bg-slate-950 text-white flex flex-col justify-between rounded-sm relative overflow-hidden">
+          <div className="w-1/2 p-12 bg-primaryColor shadow-[0_0_20px_rgba(0,0,1,0.9)] text-white flex flex-col justify-between rounded-sm relative overflow-hidden">
             <Image
               alt=""
               src={imageUrl}
@@ -102,9 +103,6 @@ export default function FormAuth() {
               height={600}
               className="w-full border rounded-lg absolute right-0 left-0 bottom-0 top-0 h-full z-[1] opacity-30 bg-cover bg-center bg-no-repeat"
             />
-            <div className="z-20">
-              <h1 className="mt-4 text-3xl font-semibold">Humlek</h1>
-            </div>
             <motion.div
               className="flex w-full justify-center align-middle h-full items-center z-10"
               style={{
@@ -123,14 +121,14 @@ export default function FormAuth() {
                   transformStyle: "preserve-3d",
                 }}
                 transition={{ velocity: 0 }}
-                className="border rounded-lg w-full h-full"
+                className="rounded-lg w-full h-full"
               >
                 <Image
-                  alt=""
+                  alt="alt_img"
                   src={imageUrl}
-                  layout="fill"
-                  objectFit="cover"
-                  className={`border rounded-lg transition-transform duration-500 ease-out`}
+                  width={1920}
+                  height={1080}
+                  className={`rounded-lg transition-transform duration-500 ease-out object-cover object-center shadow-lg transform-gpu`}
                 />
               </motion.div>
             </motion.div>
@@ -140,7 +138,7 @@ export default function FormAuth() {
             </div>
           </div>
           <motion.div
-            className="w-1/2 flex items-center justify-center p-12 bg-black rounded-sm"
+            className="w-1/2 flex items-center justify-center p-12 bg-mainNavbarColor border border-mainNavbarColor shadow-[0_0_20px_rgba(0,0,1,0.9)] rounded-sm"
             initial={{ rotateY: 0 }}
             animate={{ rotateY: 0 }}
           >

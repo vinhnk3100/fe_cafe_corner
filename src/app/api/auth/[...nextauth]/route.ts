@@ -2,6 +2,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import { AuthServices } from "../../service";
+import { User } from "next-auth";
 
 const handler = NextAuth({
   providers: [
@@ -15,15 +16,26 @@ const handler = NextAuth({
         username: { label: "Username", type: "text" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials, req): Promise<any> {
-        console.log(credentials);
+      async authorize(credentials, req) {
+        console.log("credentials", credentials);
         if (!credentials) return null;
         try {
           const { username, password } = credentials;
-          console.log(username, password);
+          if (username === "admin" && password === "admin") {
+            const user: User = { 
+              id: "1", 
+              name: username, 
+              email: `${username}@example.com`,
+              role: "admin",
+              accessToken: "1234567890",
+            };
+            return user;
+          }
+          return null;
           // Call database to login
         } catch (error) {
-          console.log(error);
+          console.error(error);
+          return null; // Explicitly return null on error
         }
       },
     }),
@@ -55,7 +67,11 @@ const handler = NextAuth({
           return false;
         }
       }
-      return true;
+      // For credential provider, we've already validated in the credentials callback
+      if (account?.provider === "credentials") {
+        return true;
+      }
+      return false;
     },
     // Customize the JWT token
     async jwt({ token, user }) {
@@ -71,6 +87,8 @@ const handler = NextAuth({
         session.user.role = token.role;
         session.user.expires = token.exp;
       }
+      session.user.role = token.role || session.user.name === "admin" ? "admin" : "user";
+      console.log("session", session);
       return session;
     },
   },

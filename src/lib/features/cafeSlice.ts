@@ -1,6 +1,5 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { Cafe } from "@/schemas/cafe.schema";
-import { ApiEndpointList } from "@/constants/api-endpoint.constant";
 
 interface CafeState {
   cafes: Cafe[];
@@ -18,7 +17,7 @@ export const cafeSlice = createSlice({
   name: "cafe",
   initialState,
   reducers: {},
-  extraReducers: () => {},
+  extraReducers: (builder) => {},
 });
 
 export default cafeSlice.reducer;

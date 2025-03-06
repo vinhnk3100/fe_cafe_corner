@@ -51,7 +51,9 @@ export default function CafeCardItem({ data }: { data: CafeProps }) {
             className="w-full h-full object-cover object-center group-hover:scale-110 transition-all duration-300"
             alt=""
             src={data.cafeDetails.thumbnail}
-            layout="fill"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            width={1920}
+            height={1080}
           />
           <div className="absolute inset-0 bg-primaryColor opacity-80 group-hover:opacity-60 transition-all duration-300"></div>
         </div>

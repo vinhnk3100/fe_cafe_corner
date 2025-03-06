@@ -12,49 +12,47 @@ export const AdvanceFilterSearchCafeSchema = z.object({
 });
 
 const CafeCommentSchema = z.object({
+  id: z.string(),
   content: z.string(),
   createDate: z.string(),
 });
 
-const CafeThemeColorSchema = z.object({
-  primaryColor: z.string(),
-  secondaryColor: z.string(),
-});
-
 const CafeLocationSchema = z.object({
-  city: z.string(),
-  houseNumber: z.string(),
-  street: z.string(),
-  district: z.string(),
-  ward: z.string(),
+  city: z.string().min(1, { message: "City is required" }),
+  houseNumber: z.string().min(1, { message: "House number is required" }),
+  street: z.string().min(1, { message: "Street is required" }),
+  district: z.string().min(1, { message: "District is required" }),
+  ward: z.string().min(1, { message: "Ward is required" }),
 });
 
 const CafeOperationSchema = z.object({
-  openingTime: z.string(),
-  closingTime: z.string(),
-  openingDay: z.array(z.number()),
+  openingTime: z.string().min(1, { message: "Opening time is required" }),
+  closingTime: z.string().min(1, { message: "Closing time is required" }),
+  openingDay: z.array(z.number()).min(3, { message: "Opening day is required at least 3 days" }),
 });
 
 const CafeCategorySchema = z.object({
-  id: z.string(),
-  cafeCategoryName: z.string(),
+  id: z.string().optional(),
+  cafeCategoryName: z.string().optional(),
 });
 
 const CafeDetailSchema = z.object({
-  title: z.string(),
-  content: z.string(),
-  thumbnail: z.string(),
-  phoneNumber: z.string(),
+  title: z.string().min(1, { message: "Title is required" }),
+  thumbnail: z.string().min(1, { message: "Thumbnail is required" }),
+  phoneNumber: z.string().optional(),
   contentImg: z.array(z.string()),
-  cafeLogo: z.string(),
+  cafeBrand: z.object({
+    id: z.string(),
+    cafeBrandLogo: z.string(),
+    cafeBrandName: z.string(),
+  }).optional(),
   cafeOperation: CafeOperationSchema,
   cafeLocation: CafeLocationSchema,
-  cafeCategory: z.array(CafeCategorySchema),
-  cafeTheme: CafeThemeColorSchema,
+  cafeCategory: z.array(CafeCategorySchema).optional(),
 });
 
 const CafeSchema = z.object({
-  id: z.string(),
+  id: z.string().optional(),
   username: z.string(),
   createDate: z.string(),
   cafeDetails: CafeDetailSchema,

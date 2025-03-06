@@ -10,7 +10,7 @@ import {
   PaginationNext,
   PaginationLink,
 } from "@/components/ui/pagination";
-import { Coffee, FilterX, GridIcon, Star, TableIcon, X } from "lucide-react";
+import { Coffee, FilterX, GridIcon, List, Star, TableIcon, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Cafe } from "@/schemas/cafe.schema";
 import { Input } from "@/components/ui/input";
@@ -187,18 +187,24 @@ export default function CafesPage() {
   return (
     <div className="p-4 container mx-auto">
       <div className="flex gap-2 items-center justify-center my-8 h-full">
-        <Star className="w-12 h-12 bg-buttonColor rounded-full p-2 text-primaryColor" />
+        <Coffee className="w-12 h-12 bg-buttonColor rounded-full p-2 text-primaryColor" />
         <span className="flex items-center justify-center text-4xl font-bold text-textPrimaryColor">
+          Discover Cafes
+        </span>
+      </div>
+      <div className="flex gap-2 items-center justify-start my-8 h-full">
+        <Star className="w-10 h-10 bg-buttonColor rounded-full p-2 text-primaryColor" />
+        <span className="flex items-center justify-center text-3xl font-medium text-buttonHoverTextLightColor">
           New Cafes Arrivals
         </span>
       </div>
       <div className="w-full flex items-center justify-center">
         <CafeNewArrivals cafes={cafes} />
       </div>
-      <div className="flex gap-2 items-center justify-center my-8 h-full">
-        <Coffee className="w-12 h-12 bg-buttonColor rounded-full p-2 text-primaryColor" />
-        <span className="flex items-center justify-center text-4xl font-bold text-textPrimaryColor">
-          Discover Cafes
+      <div className="flex gap-2 items-center justify-start my-8 h-full">
+        <List className="w-10 h-10 bg-buttonColor rounded-full p-2 text-primaryColor" />
+        <span className="flex items-center justify-center text-3xl font-medium text-buttonHoverTextLightColor">
+          Cafes List
         </span>
       </div>
       <div className="flex flex-col md:flex-row gap-2 my-4 w-full justify-between items-center">

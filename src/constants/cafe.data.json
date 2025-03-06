@@ -5,14 +5,12 @@
     "createDate": "2025-02-20",
     "cafeDetails": {
       "title": "The Coffee House Signature",
-      "content": "Không gian sang trọng, cà phê đậm đà, view đẹp.",
       "thumbnail": "https://file.hstatic.net/1000075078/article/signaturebythecoffeehouse_03_16b2ab7101e14d62835a4b231e73b65d.jpg",
       "phoneNumber": "0901234567",
       "contentImg": [
         "https://thicongnhahang.vn/storage/app/media/uploaded-files/thiet-ke-the-coffee-house-signature-03.jpg",
         "https://img.restaurantguru.com/r49b-The-Coffee-House-Signature-interior-2024-05-1.jpg"
       ],
-      "cafeLogo": "https://source.unsplash.com/100x100/?logo",
       "cafeBrand": {
         "id": "brand_1",
         "cafeBrandLogo": "https://source.unsplash.com/100x100/?brand",
@@ -21,17 +19,28 @@
       "cafeOperation": {
         "openingTime": "07:00",
         "closingTime": "22:00",
-        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+        "openingDay": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
-        "houseNumber": "123",
-        "street": "Nguyễn Huệ",
+        "houseNumber": "141",
+        "street": "Nguyễn Thái Bình",
         "district": "1",
-        "ward": "Bến Nghé"
+        "ward": "Nguyễn Thái Bình"
       },
-      "cafeCategory": [{ "id": "cat_1", "name": "Specialty Coffee" }],
-      "cafeTheme": { "primaryColor": "#D2691E", "secondaryColor": "#8B4513" }
+      "cafeCategory": [
+        {
+          "id": "cat_1"
+        }
+      ]
     },
     "totalLike": 1200,
     "totalDislike": 50,
@@ -61,17 +70,33 @@
       "cafeOperation": {
         "openingTime": "08:00",
         "closingTime": "23:00",
-        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+        "openingDay": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
-        "houseNumber": "720A",
+        "houseNumber": "722A, Landmark 81 Tower",
         "street": "Điện Biên Phủ",
         "district": "Bình Thạnh",
         "ward": "22"
       },
-      "cafeCategory": [{ "id": "cat_1", "name": "Specialty Coffee" }],
-      "cafeTheme": { "primaryColor": "#00704A", "secondaryColor": "#D4E9E2" }
+      "cafeCategory": [
+        {
+          "id": "cat_1",
+          "name": "Specialty Coffee"
+        }
+      ],
+      "cafeTheme": {
+        "primaryColor": "#00704A",
+        "secondaryColor": "#D4E9E2"
+      }
     },
     "totalLike": 1500,
     "totalDislike": 30,
@@ -101,17 +126,33 @@
       "cafeOperation": {
         "openingTime": "07:30",
         "closingTime": "22:30",
-        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+        "openingDay": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
-        "houseNumber": "26",
-        "street": "Pasteur",
+        "houseNumber": "274",
+        "street": "Hai Bà Trưng",
         "district": "1",
-        "ward": "Bến Nghé"
+        "ward": "Tân Định "
       },
-      "cafeCategory": [{ "id": "cat_2", "name": "Vietnamese Coffee" }],
-      "cafeTheme": { "primaryColor": "#4A6572", "secondaryColor": "#D1D8E0" }
+      "cafeCategory": [
+        {
+          "id": "cat_2",
+          "name": "Vietnamese Coffee"
+        }
+      ],
+      "cafeTheme": {
+        "primaryColor": "#4A6572",
+        "secondaryColor": "#D1D8E0"
+      }
     },
     "totalLike": 900,
     "totalDislike": 70,
@@ -127,12 +168,10 @@
     "username": "chill_cafe_hunter",
     "createDate": "2025-02-23",
     "cafeDetails": {
-      "title": "Shin Coffee - Mạc Thị Bưởi",
-      "content": "Cà phê specialty chất lượng, không gian yên tĩnh, thiết kế tối giản.",
+      "title": "Shin Coffee",
       "thumbnail": "https://images.happycow.net/venues/1024/38/67/hcmp386756_2532192.jpeg",
       "phoneNumber": "0934567890",
       "contentImg": [],
-      "cafeLogo": "https://shincoffee.vn/wp-content/uploads/2023/04/shin-logo-300x300.png",
       "cafeBrand": {
         "id": "brand_4",
         "cafeBrandLogo": "https://shincoffee.vn/wp-content/uploads/2023/04/shin-logo-300x300.png",
@@ -141,7 +180,14 @@
       "cafeOperation": {
         "openingTime": "08:30",
         "closingTime": "21:30",
-        "openingDay": [1, 2, 3, 4, 5, 6]
+        "openingDay": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
@@ -150,8 +196,11 @@
         "district": "1",
         "ward": "Bến Nghé"
       },
-      "cafeCategory": [{ "id": "cat_1", "name": "Specialty Coffee" }],
-      "cafeTheme": { "primaryColor": "#333333", "secondaryColor": "#F5F5F5" }
+      "cafeCategory": [
+        {
+          "id": "cat_1"
+        }
+      ]
     },
     "totalLike": 1100,
     "totalDislike": 40,
@@ -181,7 +230,15 @@
       "cafeOperation": {
         "openingTime": "07:00",
         "closingTime": "23:00",
-        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+        "openingDay": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
@@ -190,8 +247,16 @@
         "district": "1",
         "ward": "Bến Nghé"
       },
-      "cafeCategory": [{ "id": "cat_2", "name": "Vietnamese Coffee" }],
-      "cafeTheme": { "primaryColor": "#6A040F", "secondaryColor": "#F5EEDC" }
+      "cafeCategory": [
+        {
+          "id": "cat_2",
+          "name": "Vietnamese Coffee"
+        }
+      ],
+      "cafeTheme": {
+        "primaryColor": "#6A040F",
+        "secondaryColor": "#F5EEDC"
+      }
     },
     "totalLike": 1300,
     "totalDislike": 60,
@@ -221,7 +286,15 @@
       "cafeOperation": {
         "openingTime": "08:00",
         "closingTime": "22:00",
-        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+        "openingDay": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
@@ -230,8 +303,16 @@
         "district": "3",
         "ward": "6"
       },
-      "cafeCategory": [{ "id": "cat_1", "name": "Specialty Coffee" }],
-      "cafeTheme": { "primaryColor": "#FF8C00", "secondaryColor": "#FFFACD" }
+      "cafeCategory": [
+        {
+          "id": "cat_1",
+          "name": "Specialty Coffee"
+        }
+      ],
+      "cafeTheme": {
+        "primaryColor": "#FF8C00",
+        "secondaryColor": "#FFFACD"
+      }
     },
     "totalLike": 1000,
     "totalDislike": 55,
@@ -261,7 +342,15 @@
       "cafeOperation": {
         "openingTime": "08:30",
         "closingTime": "21:30",
-        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+        "openingDay": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
@@ -270,8 +359,16 @@
         "district": "2",
         "ward": "Thảo Điền"
       },
-      "cafeCategory": [{ "id": "cat_3", "name": "Dessert & Cafe" }],
-      "cafeTheme": { "primaryColor": "#E91E63", "secondaryColor": "#FFF0F5" }
+      "cafeCategory": [
+        {
+          "id": "cat_3",
+          "name": "Dessert & Cafe"
+        }
+      ],
+      "cafeTheme": {
+        "primaryColor": "#E91E63",
+        "secondaryColor": "#FFF0F5"
+      }
     },
     "totalLike": 1250,
     "totalDislike": 35,
@@ -301,7 +398,14 @@
       "cafeOperation": {
         "openingTime": "08:30",
         "closingTime": "21:30",
-        "openingDay": [2, 3, 4, 5, 6, 7]
+        "openingDay": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
@@ -310,8 +414,16 @@
         "district": "1",
         "ward": "Phường Bến Thành"
       },
-      "cafeCategory": [{ "id": "cat_8", "name": "Organic Coffee" }],
-      "cafeTheme": { "primaryColor": "#228B22", "secondaryColor": "#F5DEB3" }
+      "cafeCategory": [
+        {
+          "id": "cat_8",
+          "name": "Organic Coffee"
+        }
+      ],
+      "cafeTheme": {
+        "primaryColor": "#228B22",
+        "secondaryColor": "#F5DEB3"
+      }
     },
     "totalLike": 1800,
     "totalDislike": 70,
@@ -341,7 +453,15 @@
       "cafeOperation": {
         "openingTime": "07:30",
         "closingTime": "23:00",
-        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+        "openingDay": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
@@ -350,8 +470,16 @@
         "district": "1",
         "ward": "Phường Bến Nghé"
       },
-      "cafeCategory": [{ "id": "cat_9", "name": "Minimalist Cafe" }],
-      "cafeTheme": { "primaryColor": "#696969", "secondaryColor": "#D3D3D3" }
+      "cafeCategory": [
+        {
+          "id": "cat_9",
+          "name": "Minimalist Cafe"
+        }
+      ],
+      "cafeTheme": {
+        "primaryColor": "#696969",
+        "secondaryColor": "#D3D3D3"
+      }
     },
     "totalLike": 1500,
     "totalDislike": 50,
@@ -381,7 +509,15 @@
       "cafeOperation": {
         "openingTime": "08:00",
         "closingTime": "22:00",
-        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+        "openingDay": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
@@ -390,8 +526,16 @@
         "district": "10",
         "ward": "Phường Trần Hưng Đạo"
       },
-      "cafeCategory": [{ "id": "cat_10", "name": "Cozy Cafe" }],
-      "cafeTheme": { "primaryColor": "#8B4513", "secondaryColor": "#FFF8DC" }
+      "cafeCategory": [
+        {
+          "id": "cat_10",
+          "name": "Cozy Cafe"
+        }
+      ],
+      "cafeTheme": {
+        "primaryColor": "#8B4513",
+        "secondaryColor": "#FFF8DC"
+      }
     },
     "totalLike": 2000,
     "totalDislike": 70,
@@ -421,7 +565,15 @@
       "cafeOperation": {
         "openingTime": "06:30",
         "closingTime": "23:30",
-        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+        "openingDay": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
@@ -430,8 +582,16 @@
         "district": "5",
         "ward": "Phường 5"
       },
-      "cafeCategory": [{ "id": "cat_11", "name": "Modern Cafe" }],
-      "cafeTheme": { "primaryColor": "#00704A", "secondaryColor": "#D4AF37" }
+      "cafeCategory": [
+        {
+          "id": "cat_11",
+          "name": "Modern Cafe"
+        }
+      ],
+      "cafeTheme": {
+        "primaryColor": "#00704A",
+        "secondaryColor": "#D4AF37"
+      }
     },
     "totalLike": 5000,
     "totalDislike": 100,
@@ -461,7 +621,15 @@
       "cafeOperation": {
         "openingTime": "09:00",
         "closingTime": "21:30",
-        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+        "openingDay": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
@@ -470,8 +638,16 @@
         "district": "10",
         "ward": "Phường 12"
       },
-      "cafeCategory": [{ "id": "cat_12", "name": "MIB Cafe" }],
-      "cafeTheme": { "primaryColor": "#A52A2A", "secondaryColor": "#FFD700" }
+      "cafeCategory": [
+        {
+          "id": "cat_12",
+          "name": "MIB Cafe"
+        }
+      ],
+      "cafeTheme": {
+        "primaryColor": "#A52A2A",
+        "secondaryColor": "#FFD700"
+      }
     },
     "totalLike": 1200,
     "totalDislike": 30,
@@ -501,7 +677,15 @@
       "cafeOperation": {
         "openingTime": "09:00",
         "closingTime": "22:00",
-        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+        "openingDay": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
@@ -510,8 +694,16 @@
         "district": "1",
         "ward": "Tân Định"
       },
-      "cafeCategory": [{ "id": "cat_4", "name": "Tea & Coffee" }],
-      "cafeTheme": { "primaryColor": "#8FBC8F", "secondaryColor": "#F0FFF0" }
+      "cafeCategory": [
+        {
+          "id": "cat_4",
+          "name": "Tea & Coffee"
+        }
+      ],
+      "cafeTheme": {
+        "primaryColor": "#8FBC8F",
+        "secondaryColor": "#F0FFF0"
+      }
     },
     "totalLike": 1150,
     "totalDislike": 45,
@@ -541,7 +733,15 @@
       "cafeOperation": {
         "openingTime": "08:00",
         "closingTime": "23:00",
-        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+        "openingDay": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
@@ -550,8 +750,16 @@
         "district": "3",
         "ward": "7"
       },
-      "cafeCategory": [{ "id": "cat_5", "name": "Live Music Cafe" }],
-      "cafeTheme": { "primaryColor": "#5F9EA0", "secondaryColor": "#F0FFFF" }
+      "cafeCategory": [
+        {
+          "id": "cat_5",
+          "name": "Live Music Cafe"
+        }
+      ],
+      "cafeTheme": {
+        "primaryColor": "#5F9EA0",
+        "secondaryColor": "#F0FFFF"
+      }
     },
     "totalLike": 1400,
     "totalDislike": 25,
@@ -581,7 +789,15 @@
       "cafeOperation": {
         "openingTime": "08:30",
         "closingTime": "22:30",
-        "openingDay": [1, 2, 3, 4, 5, 6, 7]
+        "openingDay": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       "cafeLocation": {
         "city": "Hồ Chí Minh",
@@ -590,8 +806,16 @@
         "district": "1",
         "ward": "Bến Nghé"
       },
-      "cafeCategory": [{ "id": "cat_1", "name": "Specialty Coffee" }],
-      "cafeTheme": { "primaryColor": "#4682B4", "secondaryColor": "#E6E6FA" }
+      "cafeCategory": [
+        {
+          "id": "cat_1",
+          "name": "Specialty Coffee"
+        }
+      ],
+      "cafeTheme": {
+        "primaryColor": "#4682B4",
+        "secondaryColor": "#E6E6FA"
+      }
     },
     "totalLike": 1280,
     "totalDislike": 38,
@@ -599,6 +823,46 @@
     "totalShare": 380,
     "isTodayMenu": false,
     "isOnPromotion": true,
+    "isHoldingEvents": false,
+    "isCOTY": false
+  },
+  {
+    "id": "a28fee92-e1d8-4a7c-ad06-74e6b55e0523",
+    "username": "",
+    "createDate": "2025-03-05T13:44:49.512Z",
+    "cafeDetails": {
+      "title": "HCM Signature by The Coffee House",
+      "thumbnail": "https://file.hstatic.net/1000075078/file/sig_outside_04bf4cce30d4436d9a957a4609fa2dc1.jpg",
+      "phoneNumber": "18006936",
+      "contentImg": [],
+      "cafeOperation": {
+        "openingTime": "07:00",
+        "closingTime": "22:00",
+        "openingDay": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "cafeLocation": {
+        "city": "Hồ Chí Minh",
+        "houseNumber": "101",
+        "street": "Tôn Dật Tiên",
+        "district": "7",
+        "ward": "Tân Phú"
+      },
+      "cafeCategory": []
+    },
+    "totalLike": 0,
+    "totalDislike": 0,
+    "totalComment": 0,
+    "totalShare": 0,
+    "isTodayMenu": false,
+    "isOnPromotion": false,
     "isHoldingEvents": false,
     "isCOTY": false
   }

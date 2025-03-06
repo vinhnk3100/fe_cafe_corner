@@ -2,13 +2,14 @@
 
 import { streamText } from "ai";
 import { openai } from "@ai-sdk/openai";
-
+import { getCafes } from "@/utils/cafe.utils";
 type Message = {
   role: "user" | "assistant";
   content: string;
 };
 
 export async function POST(req: Request) {
+  const cafes = getCafes();
   try {
     // Validate API Key
     if (!process.env.OPENAI_API_KEY) {
@@ -47,8 +48,11 @@ export async function POST(req: Request) {
       model: openai("gpt-4o-mini"),
       system: `You are an assistant specializing in providing information about cafés in Ho Chi Minh City. 
         Only answer questions related to cafés, such as names, addresses, styles, reviews, and menus. 
-        If you are unsure of an address, respond with: "I'm not sure about the exact address. Please check official sources like Google Maps or Foody.vn."
-        Do not make up any information or guess addresses.`,
+        If you are unsure of an address, respond with: "I'm not sure about the exact address. Please check the **Cafes page** or searching at **Discover Cafe**"
+        Do not make up any information or guess addresses.
+        Here is relevant information about the cafes:
+        ${JSON.stringify(cafes)}
+        `,
       messages,
       temperature: 0,
     });

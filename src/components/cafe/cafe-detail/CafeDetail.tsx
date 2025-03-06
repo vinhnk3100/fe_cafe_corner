@@ -6,7 +6,6 @@ import { BiSolidLike } from "react-icons/bi";
 import {
   PiArrowFatDownFill,
   PiArrowFatUpFill,
-  PiCoffeeBeanFill,
   PiShareFatFill,
 } from "react-icons/pi";
 import {
@@ -20,13 +19,12 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { useCafes } from "@/hooks/useCafes";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { formatLikeNumber } from "@/utils/format-number.utils";
 import { Badge } from "@/components/ui/badge";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
 import CountUp from "react-countup";
 import {
-  FaChevronRight,
   FaClock,
   FaComments,
   FaCrown,
@@ -34,11 +32,8 @@ import {
   FaMapMarkerAlt,
   FaPlusCircle,
 } from "react-icons/fa";
-import { dataCafe } from "@/constants/Mockdata.constants";
 import { CafeProps } from "@/types/cafe/cafe.types";
-import { loadSlim } from "@tsparticles/slim";
-import { useState, useEffect, useLayoutEffect } from "react";
-
+import { useState, useEffect } from "react";
 import SwiperCore from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -47,34 +42,26 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 import styles from "./CafeDetail.module.scss";
-
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { Cafe } from "@/schemas/cafe.schema";
+import { Coffee } from "lucide-react";
+import Link from "next/link";
+import {
+  Card,
+  CardTitle,
+  CardHeader,
+  CardDescription,
+} from "@/components/ui/card";
 
 const CafeDetail = ({ cafeId }: { cafeId: string }) => {
-  const iconSvg = `<svg fill="#FFF" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 width="800px" height="800px" viewBox="0 0 326.05 326.05"
-	 xml:space="preserve">
-<g>
-	<path d="M14.257,275.602C-17.052,220.391,4.253,133.798,69.023,69.01c73.553-73.543,175.256-91.076,227.182-39.16
-		c0.061,0.068,0.112,0.145,0.195,0.214c-10.392,30.235-43.486,94.567-142.686,129.348C62.842,191.29,27.788,241.972,14.257,275.602z
-		 M310.81,48.75c-7.871,18.361-21.57,42.356-45.173,65.957c-23.725,23.735-57.445,47.046-105.208,63.8
-		C63.49,212.5,36.405,268.149,28.848,295.116c0.357,0.36,0.664,0.733,1.011,1.083c51.921,51.918,153.628,34.386,227.176-39.169
-		C322.479,191.585,343.526,103.869,310.81,48.75z"/>
-</g>
-</svg>`;
+  const { cafes, isLoading, error } = useCafes();
   const [screenSize, setScreenSize] = useState({
     width: 0,
     height: 0,
   });
 
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore | null>(null);
-  const [cafeprimaryColor, setCafeprimaryColor] = useState<string>();
   const [cafeData, setCafeData] = useState<CafeProps>();
-  const [init, setInit] = useState(false);
-
-  useEffect(() => {
-    console.log(thumbsSwiper);
-  }, [thumbsSwiper]);
 
   useEffect(() => {
     // Handler to update screen size
@@ -97,35 +84,29 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
 
   useEffect(() => {
     const fetchCafeById = async () => {
-      setCafeData(dataCafe.find((item) => item.id === cafeId));
+      setCafeData(cafes?.find((item: Cafe) => item.id === cafeId));
     };
     fetchCafeById();
-  }, [cafeData, cafeId, cafeprimaryColor]);
+  }, [cafeId, cafes]);
 
-  useLayoutEffect(() => {
-    const fetchCafeById = async () => {
-      setCafeprimaryColor(
-        dataCafe.find((item) => item.id === cafeId)?.cafeDetails.cafeTheme
-          .primaryColor
-      );
-    };
-    fetchCafeById();
-  }, [cafeData, cafeId, cafeprimaryColor]);
-
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
-
-  if (!cafeData) {
-    return <>Loading...</>;
+  if (isLoading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[70vh]">
+        <Coffee className="w-12 h-12 animate-spin text-buttonColor" />
+      </div>
+    );
   }
 
-  if (init)
+  if (!cafeData) {
     return (
+      <div className="flex flex-col items-center justify-center min-h-[70vh]">
+        <p className="text-textPrimaryColor">Cafe not found</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="h-full w-full bg-primaryColor flex flex-col">
       <div className="container mx-auto px-4 lg:px-8 flex flex-col lg:flex-row py-8 lg:gap-12">
         {/* Left Sticky Section - Images */}
         <div className="lg:w-1/2 relative lg:sticky lg:top-20 self-start space-y-8">
@@ -140,6 +121,16 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
                 modules={[FreeMode, Navigation, Thumbs]}
                 className={`${styles.main_swiper} hidden`}
               >
+                <SwiperSlide>
+                  <Image
+                    width={800}
+                    height={600}
+                    src={cafeData.cafeDetails.thumbnail}
+                    alt={`cafe thumbnail`}
+                    className="w-full mx-auto h-[600px] max-h-[600px] md:max-h-[500px] sm:max-h-[400px] object-cover rounded-lg select-none"
+                    priority
+                  />
+                </SwiperSlide>
                 {cafeData.cafeDetails.contentImg.map((img, index) => (
                   <SwiperSlide key={index}>
                     <Image
@@ -147,7 +138,9 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
                       height={600}
                       src={img}
                       alt={`Nature ${index + 1}`}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="w-full mx-auto h-[600px] max-h-[600px] md:max-h-[500px] sm:max-h-[400px] object-cover rounded-lg select-none"
+                      priority
                     />
                   </SwiperSlide>
                 ))}
@@ -163,14 +156,27 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
                 modules={[FreeMode, Navigation, Thumbs]}
                 className={`${styles.mySwiper}`}
               >
+                <SwiperSlide>
+                  <Image
+                    width={200}
+                    height={200}
+                    src={cafeData.cafeDetails.thumbnail}
+                    alt={`cafe thumbnail`}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="w-full h-[200px] md:h-[150px] sm:h-[100px] object-cover rounded-md opacity-100 select-none"
+                    priority
+                  />
+                </SwiperSlide>
                 {cafeData.cafeDetails.contentImg.map((img, index) => (
                   <SwiperSlide key={index}>
                     <Image
-                      width={800}
-                      height={800}
+                      width={200}
+                      height={200}
                       src={img}
                       alt={`Thumbnail ${index + 1}`}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="w-full h-[200px] md:h-[150px] sm:h-[100px] object-cover rounded-md opacity-100 select-none"
+                      priority
                     />
                   </SwiperSlide>
                 ))}
@@ -181,21 +187,26 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
               {/* Thumbnail Image */}
               <div className="relative w-full h-[500px] overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  src={cafeData.cafeDetails.thumbnail}
+                  src={
+                    cafeData.cafeDetails.thumbnail ||
+                    "https://formbuilder.ccavenue.com/live/uploads/company_image/488/17316704336156_Event-Image-Not-Found.jpg"
+                  }
                   alt="Cafe Thumbnail"
-                  fill
+                  width={800}
+                  height={500}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                  priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 text-white">
                   {cafeData.isCOTY && (
                     <div className="w-full h-full flex flex-row items-center gap-3">
-                      <span className="h-full text-xl text-yellow-300">
+                      <span className="h-full text-xl text-buttonColor">
                         {" "}
                         Cafe of the Year 2024
                       </span>
-                      <FaCrown className="text-yellow-300 drop-shadow-md text-4xl" />
+                      <FaCrown className="text-buttonColor drop-shadow-md text-4xl" />
                     </div>
                   )}
                   <h1 className="text-lg text-slate-300 w-auto h-full">
@@ -203,19 +214,14 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
                       ? "Recommended by most viewer ⭐"
                       : ""}
                   </h1>
-                  <h1
-                    className="text-4xl font-bold"
-                    style={{
-                      color: `${cafeData.cafeDetails.cafeTheme.primaryColor}`,
-                    }}
-                  >
+                  <h1 className="text-4xl font-bold text-textPrimaryColor">
                     {cafeData.cafeDetails.title}
                   </h1>
                   <div className="flex gap-2 mt-2">
                     {cafeData.cafeDetails.cafeCategory.map((category) => (
                       <Badge
                         key={category.id}
-                        className="bg-yellow-500 text-slate-900 hover:bg-yellow-300 cursor-pointer text-md"
+                        className="bg-buttonColor text-primaryColor hover:bg-buttonHoverColor cursor-pointer text-md"
                       >
                         {category.cafeCategoryName}
                       </Badge>
@@ -244,23 +250,33 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
                       <Dialog>
                         <DialogTrigger className="relative w-full group overflow-hidden">
                           <div className="flex justify-center items-center right-0 w-full h-full bg-black absolute opacity-0 group-hover:opacity-60 transition-all z-10">
-                            <FaPlusCircle className="text-4xl text-slate-50 group-hover:scale-110" />
+                            <FaPlusCircle className="text-4xl text-buttonColor group-hover:scale-110" />
                           </div>
                           <Image
-                            src={imgSrc}
+                            src={
+                              imgSrc ||
+                              "https://formbuilder.ccavenue.com/live/uploads/company_image/488/17316704336156_Event-Image-Not-Found.jpg"
+                            }
                             alt={`Cafe Image ${index + 1}`}
                             width={600}
                             height={400}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             className="group-hover:scale-110 object-cover w-full h-48 rounded-lg transition-all"
+                            priority
                           />
                         </DialogTrigger>
-                        <DialogContent className="p-0 m-0 mx-auto w-full scale-150 border-none justify-center bg-slate-950">
+                        <DialogContent className="p-0 m-0 mx-auto w-full scale-150 border-none justify-center bg-primaryColor">
                           <Image
-                            src={imgSrc}
+                            src={
+                              imgSrc ||
+                              "https://formbuilder.ccavenue.com/live/uploads/company_image/488/17316704336156_Event-Image-Not-Found.jpg"
+                            }
                             alt={`Cafe Image ${index + 1}`}
                             width={800}
                             height={600}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             className="object-contain bg-no-repeat w-full rounded-md border-none"
+                            priority
                           />
                         </DialogContent>
                       </Dialog>
@@ -277,14 +293,14 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
           {/* Cafe Name */}
           <div className="hidden lg:flex justify-between items-center">
             <div className="flex items-start flex-col">
-              <h2 className="text-4xl font-semibold text-gray-200">
+              <h2 className="text-4xl font-semibold text-textPrimaryColor">
                 {cafeData.cafeDetails.title}
               </h2>
               <div className="grid grid-cols-5 lg:grid-cols-3 xl:grid-cols-5 gap-2 mt-1">
                 {cafeData.cafeDetails.cafeCategory.map((category) => (
                   <Badge
                     key={category.id}
-                    className="bg-yellow-500 text-slate-900 hover:bg-yellow-300 cursor-pointer text-md"
+                    className="bg-buttonColor text-primaryColor hover:bg-buttonHoverColor cursor-pointer text-md"
                   >
                     {category.cafeCategoryName}
                   </Badge>
@@ -292,8 +308,8 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <BiSolidLike className="text-green-500 text-2xl" />
-              <span className="text-green-500 text-lg">
+              <BiSolidLike className="text-buttonColor text-2xl" />
+              <span className="text-buttonColor text-lg">
                 {Math.floor(
                   (cafeData.totalLike /
                     (cafeData.totalLike + cafeData.totalDislike)) *
@@ -307,12 +323,12 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
           {/* Opening Hours */}
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4">
-              <FaClock className="text-yellow-500 text-3xl" />
+              <FaClock className="text-buttonColor text-3xl" />
               <div>
-                <h2 className="text-lg font-semibold text-gray-200">
+                <h2 className="text-lg font-semibold text-textPrimaryColor">
                   Opening Hours
                 </h2>
-                <p className="text-gray-400">
+                <p className="text-textSecondaryColor">
                   {cafeData.cafeDetails.cafeOperation.openingTime} -{" "}
                   {cafeData.cafeDetails.cafeOperation.closingTime}
                 </p>
@@ -322,10 +338,12 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
 
           {/* Address */}
           <div className="flex items-center gap-4">
-            <FaMapMarkerAlt className="text-yellow-500 text-6xl md:text-3xl" />
+            <FaMapMarkerAlt className="text-buttonColor text-6xl md:text-3xl" />
             <div>
-              <h2 className="text-lg font-semibold text-gray-200">Address</h2>
-              <p className="text-gray-400">
+              <h2 className="text-lg font-semibold text-textPrimaryColor">
+                Address
+              </h2>
+              <p className="text-textSecondaryColor">
                 {cafeData.cafeDetails.cafeLocation.houseNumber}{" "}
                 {cafeData.cafeDetails.cafeLocation.street}
                 {cafeData.cafeDetails.cafeLocation.district &&
@@ -340,26 +358,20 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
 
           {/* Price */}
           <div className="flex items-center gap-4">
-            <FaDollarSign className="text-yellow-500 text-3xl" />
+            <FaDollarSign className="text-buttonColor text-3xl" />
             <div>
-              <h2 className="text-lg font-semibold text-gray-200">Price</h2>
-              <p className="text-gray-400">From: 50,000đ - 100,000đ</p>
+              <h2 className="text-lg font-semibold text-textPrimaryColor">
+                Price
+              </h2>
+              <p className="text-textSecondaryColor">
+                From: 50,000đ - 100,000đ
+              </p>
             </div>
           </div>
 
           {/* Content */}
-          <div className="text-gray-300 leading-relaxed">
+          <div className="text-textSecondaryColor leading-relaxed">
             {cafeData.cafeDetails.content || "No additional content provided."}
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex gap-4 mt-4">
-            <button className="bg-yellow-500 text-gray-900 px-6 py-3 rounded-md font-semibold hover:bg-yellow-300 transition select-none">
-              View Chain <FaChevronRight className="inline ml-2" />
-            </button>
-            <button className="bg-gray-800 text-gray-300 px-6 py-3 rounded-md font-semibold hover:bg-gray-700 transition select-none">
-              See Events
-            </button>
           </div>
 
           {/* Interaction Buttons */}
@@ -367,11 +379,12 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button className="bg-slate-900 border border-slate-800 hover:bg-green-800">
+                  <Button className="bg-primaryColor border border-green-600 shadow-xl hover:border-green-600/20 hover:bg-green-600 hover:bg-opacity-20 hover:text-buttonHoverTextLightColor">
                     <PiArrowFatUpFill className="text-xl text-green-600" />
                     <CountUp
                       end={cafeData.totalLike}
                       formattingFn={formatLikeNumber}
+                      className="text-textSecondaryColor"
                     />
                   </Button>
                 </TooltipTrigger>
@@ -384,7 +397,7 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button className="bg-slate-900 hover:bg-red-800 border border-slate-800">
+                  <Button className="bg-primaryColor border border-red-600 shadow-xl hover:border-red-600/20 hover:bg-red-600 hover:bg-opacity-20 hover:text-buttonHoverTextLightColor">
                     <PiArrowFatDownFill className="text-xl text-red-600" />
                   </Button>
                 </TooltipTrigger>
@@ -397,8 +410,8 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button className="bg-slate-900 hover:bg-cyan-800 border border-slate-800">
-                    <FaComments className="text-lg text-cyan-600" />
+                  <Button className="bg-primaryColor border border-purple-600 shadow-xl hover:border-purple-600/20 hover:bg-purple-600 hover:bg-opacity-20 hover:text-buttonHoverTextLightColor">
+                    <FaComments className="text-lg text-purple-600" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -410,8 +423,8 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button className="bg-slate-900 hover:bg-purple-800 border border-slate-800">
-                    <PiShareFatFill className="text-lg text-purple-600" />
+                  <Button className="bg-primaryColor border border-blue-600 shadow-xl hover:border-blue-600/20 hover:bg-blue-600 hover:bg-opacity-20 hover:text-buttonHoverTextLightColor">
+                    <PiShareFatFill className="text-lg text-blue-600" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -420,58 +433,55 @@ const CafeDetail = ({ cafeId }: { cafeId: string }) => {
               </Tooltip>
             </TooltipProvider>
           </div>
-          <Particles
-            className="z-[-1]"
-            id="tsparticles"
-            options={{
-              fullScreen: { enable: true },
-              particles: {
-                color: {
-                  value: "#ffffff",
-                },
-                links: {
-                  enable: false,
-                },
-                move: {
-                  direction: "none",
-                  enable: true,
-                  outModes: {
-                    default: "bounce",
-                  },
-                  random: false,
-                  speed: 0.2,
-                  straight: false,
-                },
-                number: {
-                  density: {
-                    enable: true,
-                  },
-                  value: 30,
-                },
-                opacity: {
-                  value: 0.5,
-                },
-                shape: {
-                  type: "image", // Use image as the particle shape
-                  options: {
-                    image: [
-                      {
-                        src: `data:image/svg+xml;base64,${btoa(iconSvg)}`, // Base64 encode the SVG
-                        width: 200,
-                        height: 200,
-                      },
-                    ],
-                  },
-                },
-                size: {
-                  value: { min: 1, max: 10 },
-                },
-              },
-            }}
-          />
         </div>
       </div>
-    );
+      <div className="w-full h-full bg-primaryColor container mx-auto flex flex-col px-4 lg:px-8 py-8 gap-6 lg:gap-12">
+        <div className="text-2xl font-bold text-textPrimaryColor items-center justify-center flex text-center w-full">
+          Related Cafes
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 w-full">
+          {cafes?.slice(0, 4).map((cafe: Cafe) => {
+            const getRelatedDistrict =
+              cafe.cafeDetails.cafeLocation.district ===
+              cafeData.cafeDetails.cafeLocation.district;
+            if (getRelatedDistrict)
+              return (
+                <Link href={`/cafes/${cafe.id}`} key={cafe.id}>
+                  <Card className="w-full h-64 relative overflow-hidden group hover:shadow-lg transition-all duration-300">
+                    {/* Background Overlay */}
+                    <div className="w-full h-full relative">
+                      <div className="absolute w-full h-full bg-primaryColor/50"></div>
+                      <Image
+                        className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                        src={cafe.cafeDetails.thumbnail}
+                        alt={cafe.cafeDetails.title}
+                        width={600}
+                        height={600}
+                        priority
+                      />
+                    </div>
+
+                    {/* Wave Effect Inside CardHeader */}
+                    <CardHeader className="w-full h-12 group-hover:h-28 transition-all duration-500 z-10 absolute bottom-0 left-0 bg-buttonColor/80 group-hover:bg-buttonColor overflow-hidden p-3">
+                      <CardTitle className="text-slate-200 text-lg sm:text-xl font-bold relative">
+                        {cafe.cafeDetails.title}
+                      </CardTitle>
+                      <CardDescription className="text-sm sm:text-md text-gray-200 group-hover:text-white line-clamp-2">
+                        {cafe.cafeDetails.cafeLocation.houseNumber}{" "}
+                        {cafe.cafeDetails.cafeLocation.street}, Quận{" "}
+                        {cafe.cafeDetails.cafeLocation.district},{" "}
+                        {cafe.cafeDetails.cafeLocation.ward},{" "}
+                        {cafe.cafeDetails.cafeLocation.city}
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
+                </Link>
+              );
+          })}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default CafeDetail;

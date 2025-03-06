@@ -19,8 +19,10 @@ import { FaGithub } from "react-icons/fa";
 import { Input } from "@/components/ui/input";
 import FormErrorMsg from "../FormErrorMsg";
 import { LoginSchema } from "@/schemas";
-
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 export default function LoginForm() {
+  const router = useRouter();
   const [message, setMessage] = useState<string>("");
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
@@ -45,13 +47,8 @@ export default function LoginForm() {
           return;
         }
         if (res?.ok) {
-          // toast({
-          //   title: "Login Successfully!",
-          //   description: "Proceed to next page...",
-          //   variant: "success",
-          //   duration: 1000,
-          // });
-          // router.push("/");
+          toast.success("Login Successfully!");
+          router.push("/");
           return;
         } else {
           setMessage("Failed to Login!");
@@ -66,10 +63,10 @@ export default function LoginForm() {
   return (
     <>
       <div className="w-full max-w-md">
-        <div className="bg-black py-8 px-6 shadow sm:px-10">
+        <div className="py-8 px-6 rounded-md sm:px-10">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-slate-200">Login</h2>
-            <p className="mt-2 text-sm text-slate-200">Welcome back!</p>
+            <h2 className="text-2xl font-bold text-textPrimaryColor">Login</h2>
+            <p className="mt-2 text-lg text-slate-300">Welcome back!</p>
           </div>
           <Form {...form}>
             <form
@@ -85,12 +82,12 @@ export default function LoginForm() {
                       <FormControl>
                         <Input
                           {...field}
-                          className="text-slate-900 bg-slate-200 hover:bg-slate-900 focus:bg-slate-900 focus:text-slate-200 hover:text-slate-200 transition-all"
+                          className="bg-coffeeBeanColor text-white border-mainNavbarColor focus:border-textPrimaryColor hover:border-textPrimaryColor transition-all"
                           type="text"
                           placeholder="Username"
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-red-400" />
                     </FormItem>
                   )}
                 />
@@ -102,12 +99,12 @@ export default function LoginForm() {
                       <FormControl>
                         <Input
                           {...field}
-                          className="text-slate-900 bg-slate-200 hover:bg-slate-900 focus:bg-slate-900 focus:text-slate-200 hover:text-slate-200 transition-all"
+                          className="bg-coffeeBeanColor text-white border-mainNavbarColor focus:border-textPrimaryColor hover:border-textPrimaryColor transition-all"
                           type="password"
                           placeholder="******"
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-red-400" />
                     </FormItem>
                   )}
                 />
@@ -117,14 +114,14 @@ export default function LoginForm() {
                 <div>
                   <Button
                     type="submit"
-                    className="w-full bg-slate-700 hover:bg-slate-800 text-white"
+                    className="text-xl font-medium w-full bg-buttonColor hover:bg-buttonHoverColor text-primaryColor transition-all"
                   >
                     Sign In
                   </Button>
                 </div>
                 <div className="flex justify-end">
                   <Link
-                    className="text-sm font-medium text-slate-200 hover:text-slate-400 hover:underline hover:underline-offset-4"
+                    className="text-sm font-medium text-textPrimaryColor hover:text-buttonHoverColor hover:underline hover:underline-offset-4 transition-all"
                     href="/login"
                     prefetch={false}
                   >
@@ -134,37 +131,34 @@ export default function LoginForm() {
               </div>
             </form>
           </Form>
-          <div className="mb-0 space-y-6 mt-4">
+          <div className="mb-0 space-y-6 mt-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                {/* {(!loading && (
-                    <div className="w-full border-t border-gray-300" />
-                  )) || (
-                    <>
-                      <div className="w-full border-t border-gray-300 mr-3" />
-                      <CgSpinner className="animate-spin text-white h-16 w-16" />
-                      <div className="w-full border-t border-gray-300 ml-3" />
-                    </>
-                  )} */}
+                <div className="w-full border-t border-coffeeBeanColor" />
               </div>
-              <div className="relative flex justify-center text-sm"></div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-2 bg-primaryColor text-textPrimaryColor">Or continue with</span>
+              </div>
             </div>
             <div className="flex flex-row gap-6">
               <Button
                 onClick={() => signIn("google", { callbackUrl: "/" })}
-                className="w-full transition-all bg-white text-gray-700 border border-gray-300 shadow-sm"
+                className="w-full transition-all bg-coffeeBeanColor text-white border border-mainNavbarColor hover:border-textPrimaryColor"
               >
                 <FcGoogle className="text-2xl" />
               </Button>
-              <Button className="group transition-all w-full bg-white text-gray-700 border border-gray-300 shadow-sm">
-                <FaGithub className="group-hover:text-white text-2xl" />
+              <Button 
+                onClick={() => signIn("github", { callbackUrl: "/" })}
+                className="group transition-all w-full bg-coffeeBeanColor text-white border border-mainNavbarColor hover:border-textPrimaryColor"
+              >
+                <FaGithub className="text-2xl text-white" />
               </Button>
             </div>
           </div>
-          <p className="mt-6 text-xs text-slate-200">
+          <p className="mt-6 text-xs text-slate-300">
             By clicking continue, you agree to our{" "}
             <Link
-              className="font-medium text-slate-200 hover:text-slate-400 underline hover:underline-offset-4"
+              className="font-medium text-textPrimaryColor hover:text-buttonHoverColor underline hover:underline-offset-4 transition-all"
               href="/register"
               prefetch={false}
             >
@@ -172,7 +166,7 @@ export default function LoginForm() {
             </Link>{" "}
             and{" "}
             <Link
-              className="font-medium text-slate-200 hover:text-slate-400 underline hover:underline-offset-4"
+              className="font-medium text-textPrimaryColor hover:text-buttonHoverColor underline hover:underline-offset-4 transition-all"
               href="/register"
               prefetch={false}
             >

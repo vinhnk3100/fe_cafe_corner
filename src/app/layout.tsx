@@ -25,7 +25,6 @@ import { Input } from "@/components/ui/input";
 import { useChat } from "@ai-sdk/react";
 import { NavigationProvider } from "@/providers/navigation-provider";
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -73,11 +72,6 @@ export default function RootLayout({
         <NavigationProvider>
           <Providers>
             <div className="flex flex-col min-h-screen">
-              <link
-                href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css"
-                rel="stylesheet"
-              ></link>
-
               {!authRoutes.includes(pathname) && (
                 <NavbarMain
                   scrollDown={isScrollingDown}
@@ -89,127 +83,82 @@ export default function RootLayout({
                 <div className="w-full">{children}</div>
               </main>
 
-              <footer className="relative w-full text-white py-16 h-auto md:h-[550px] flex flex-col justify-center items-center">
-                <div className="bg-primaryColor absolute w-full h-full inset-0 opacity-15 -z-10">
-                  <Image
-                    src="https://demo.awaikenthemes.com/html-preview/roast/images/footer-bg-image.jpg"
-                    alt="Background"
-                    width={1000}
-                    height={1000}
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-
-                <div className="container items-center mx-auto px-4 relative z-10">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-                    {/* Contact Us Section */}
-                    <div className="flex flex-col items-center text-center">
-                      <div className="rounded-full bg-coffeeBeanColor p-3 mb-4">
-                        <PhoneIcon className="w-10 h-10 text-buttonColor" />
-                      </div>
-                      <h3 className="text-xl uppercase tracking-wider mb-4">
-                        Contact Us
-                      </h3>
-                      <Button
-                        variant="outline"
-                        className="border-buttonColor text-primaryColor font-semibold text-lg hover:bg-buttonColor/80 rounded-full px-8 bg-buttonColor"
-                      >
-                        CONTACT US
-                      </Button>
-                    </div>
-                    <div className="w-[2px] h-[200px] bg-slate-600 absolute left-1/3 md:block hidden"></div>
-                    {/* Address Section */}
-                    <div className="flex flex-col items-center text-center">
-                      <div className="rounded-full bg-coffeeBeanColor p-3 mb-4">
-                        <MapPinIcon className="w-10 h-10 text-buttonColor" />
-                      </div>
-                      <h3 className="text-xl uppercase tracking-wider mb-4">
-                        Address
-                      </h3>
-                      <Button
-                        variant="outline"
-                        className="border-buttonColor text-primaryColor font-semibold text-lg hover:bg-buttonColor/80 rounded-full px-8 bg-buttonColor"
-                      >
-                        GET DIRECTION
-                      </Button>
-                    </div>
-                    <div className="w-[2px] h-[200px] bg-slate-600 absolute right-1/3 md:block hidden"></div>
-                    {/* Opening Hours Section */}
-                    <div className="flex flex-col items-center text-center">
-                      <div className="rounded-full bg-coffeeBeanColor p-3 mb-4">
-                        <ClockIcon className="w-10 h-10 text-buttonColor" />
-                      </div>
-                      <h3 className="text-xl uppercase tracking-wider mb-4">
-                        Opening Hours
-                      </h3>
-                      <Button
-                        variant="outline"
-                        className="border-buttonColor text-primaryColor font-semibold text-lg hover:bg-buttonColor/80 rounded-full px-8 bg-buttonColor"
-                      >
-                        RESERVE A TABLE
-                      </Button>
-                    </div>
+              {!authRoutes.includes(pathname) && (
+                <footer className="relative w-full text-white py-4 h-auto flex flex-col justify-center items-center">
+                  <div className="bg-primaryColor absolute w-full h-full inset-0 opacity-15 -z-10">
+                    <Image
+                      src="https://demo.awaikenthemes.com/html-preview/roast/images/footer-bg-image.jpg"
+                      alt="Background"
+                      width={1000}
+                      height={1000}
+                      className="w-full h-full object-cover object-center"
+                    />
                   </div>
 
-                  {/* Logo and Copyright Section */}
-                  <div className="flex flex-col md:flex-row items-center justify-center w-full border-t border-slate-600 pt-16 mt-16">
-                    <div className="w-full text-xl text-gray-200 mb-4 md:mb-0">
-                      Copyright © 2025 All Rights Reserved.
-                    </div>
+                  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    {/* Logo and Copyright Section */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                      <div className="text-center md:text-left text-sm sm:text-base text-gray-200 order-2 md:order-1">
+                        Copyright © 2025 All Rights Reserved.
+                      </div>
 
-                    <div className="flex items-center gap-2 text-2xl w-full text-textPrimaryColor">
-                      <Link href="/">
-                        <span className="flex items-center gap-2">
-                          <Coffee className="w-10 h-10 text-primaryColor bg-buttonColor rounded-full p-1" />
-                          Cafe Corner
-                        </span>
-                      </Link>
-                    </div>
+                      <div className="flex justify-center items-center order-1 md:order-2">
+                        <Link href="/" className="transition-transform hover:scale-105">
+                          <span className="flex items-center gap-2 text-xl sm:text-2xl font-bold">
+                            <Coffee className="w-8 h-8 sm:w-10 sm:h-10 text-primaryColor bg-buttonColor rounded-full p-1" />
+                            Cafe Corner
+                          </span>
+                        </Link>
+                      </div>
 
-                    <div className="flex mt-4 md:mt-0 gap-4">
-                      <Link
-                        href="#"
-                        className="bg-buttonColor rounded-full p-2 flex items-center justify-center mr-2"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="w-8 h-8 text-black"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
+                      <div className="flex justify-center md:justify-end gap-4 order-3">
+                        <Link
+                          href="#"
+                          className="bg-buttonColor rounded-full p-2 flex items-center justify-center hover:bg-buttonHoverColor transition-colors"
+                          aria-label="Instagram"
                         >
-                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                        </svg>
-                      </Link>
-                      <Link
-                        href="#"
-                        className="bg-buttonColor rounded-full p-2 flex items-center justify-center mr-2"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="w-8 h-8 text-black"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-6 h-6 sm:w-8 sm:h-8 text-black"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                          </svg>
+                        </Link>
+                        <Link
+                          href="#"
+                          className="bg-buttonColor rounded-full p-2 flex items-center justify-center hover:bg-buttonHoverColor transition-colors"
+                          aria-label="Facebook"
                         >
-                          <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                        </svg>
-                      </Link>
-                      <Link
-                        href="#"
-                        className="bg-buttonColor rounded-full p-2 flex items-center justify-center"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="w-8 h-8 text-black"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-6 h-6 sm:w-8 sm:h-8 text-black"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                          </svg>
+                        </Link>
+                        <Link
+                          href="#"
+                          className="bg-buttonColor rounded-full p-2 flex items-center justify-center hover:bg-buttonHoverColor transition-colors"
+                          aria-label="Profile"
                         >
-                          <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm7.753 18.305c-.261-.586-.789-.991-1.871-1.241-2.293-.529-4.428-.993-3.393-2.945 3.145-5.942.833-9.119-2.489-9.119-3.388 0-5.644 3.299-2.489 9.119 1.066 1.964-1.148 2.427-3.393 2.945-1.084.25-1.608.658-1.867 1.246-1.405-1.723-2.251-3.919-2.251-6.31 0-5.514 4.486-10 10-10s10 4.486 10 10c0 2.389-.845 4.583-2.247 6.305z" />
-                        </svg>
-                      </Link>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-6 h-6 sm:w-8 sm:h-8 text-black"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm7.753 18.305c-.261-.586-.789-.991-1.871-1.241-2.293-.529-4.428-.993-3.393-2.945 3.145-5.942.833-9.119-2.489-9.119-3.388 0-5.644 3.299-2.489 9.119 1.066 1.964-1.148 2.427-3.393 2.945-1.084.25-1.608.658-1.867 1.246-1.405-1.723-2.251-3.919-2.251-6.31 0-5.514 4.486-10 10-10s10 4.486 10 10c0 2.389-.845 4.583-2.247 6.305z" />
+                          </svg>
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </footer>
+                </footer>
+              )}
             </div>
             <div className="fixed bottom-4 right-4  flex flex-col items-end z-[80]">
               {isOpen && (

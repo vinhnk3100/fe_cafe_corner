@@ -35,6 +35,7 @@ export default function CafeImage({
               alt={cafe.cafeDetails.title}
               width={400}
               height={250}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className={imageClass}
             />
           </CarouselItem>
@@ -49,6 +50,7 @@ export default function CafeImage({
                 alt={cafe.cafeDetails.title}
                 width={400}
                 height={250}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className={imageClass}
               />
             </CarouselItem>
@@ -70,6 +72,7 @@ export default function CafeImage({
       alt={cafe.cafeDetails.title}
       width={400}
       height={250}
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       className={imageClass}
     />
   );

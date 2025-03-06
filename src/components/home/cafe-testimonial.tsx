@@ -37,7 +37,9 @@ export default function TestimonialCarousel() {
           src="https://demo.awaikenthemes.com/html-preview/roast/images/testimonial-bg.jpg"
           alt="Background"
           className="w-full h-full object-cover opacity-20 object-center"
-          layout="fill"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          width={1920}
+          height={1080}
         />
       </div>
 

@@ -236,30 +236,28 @@ export default function CafeSwiper() {
             <CardContent className="p-0">
               <div className="relative w-full h-[500px]">
                 <Image
-                  src={
-                    nextCafe.cafeDetails.thumbnail ||
-                    "https://formbuilder.ccavenue.com/live/uploads/company_image/488/17316704336156_Event-Image-Not-Found.jpg"
-                  }
+                  src={nextCafe.cafeDetails.thumbnail || "https://formbuilder.ccavenue.com/live/uploads/company_image/488/17316704336156_Event-Image-Not-Found.jpg"}
                   alt={nextCafe.cafeDetails.title}
-                  fill
+                  width={360}
+                  height={500}
+                  sizes="(max-width: 768px) 100vw, 360px"
                   className="object-cover"
                   draggable={false}
-                  priority={false}
+                  priority
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4">
                   <h2 className="text-2xl font-bold text-white">
                     {nextCafe.cafeDetails.title}
                   </h2>
-                  <p className="text-white text-sm mt-1">
+                  <p className="text-white/90 text-sm mt-1">
                     {nextCafe.cafeDetails.cafeLocation.district},{" "}
                     {nextCafe.cafeDetails.cafeLocation.city}
                   </p>
                 </div>
               </div>
-              <div className="p-4">
+              <div className="p-4 bg-slate-900">
                 <p className="text-gray-300 line-clamp-3">
-                  {nextCafe.cafeDetails.description ||
-                    "No description available"}
+                  {nextCafe.cafeDetails.description || "No description available"}
                 </p>
               </div>
             </CardContent>
@@ -283,30 +281,28 @@ export default function CafeSwiper() {
             <CardContent className="p-0">
               <div className="relative w-full h-[500px]">
                 <Image
-                  src={
-                    currentCafe.cafeDetails.thumbnail ||
-                    "https://source.unsplash.com/random/?cafe"
-                  }
+                  src={currentCafe.cafeDetails.thumbnail || "https://formbuilder.ccavenue.com/live/uploads/company_image/488/17316704336156_Event-Image-Not-Found.jpg"}
                   alt={currentCafe.cafeDetails.title}
-                  fill
+                  width={360}
+                  height={500}
+                  sizes="(max-width: 768px) 100vw, 360px"
                   className="object-cover"
                   draggable={false}
-                  priority={true}
+                  priority
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4">
                   <h2 className="text-2xl font-bold text-white">
                     {currentCafe.cafeDetails.title}
                   </h2>
-                  <p className="text-white text-sm mt-1">
+                  <p className="text-white/90 text-sm mt-1">
                     {currentCafe.cafeDetails.cafeLocation.district},{" "}
                     {currentCafe.cafeDetails.cafeLocation.city}
                   </p>
                 </div>
               </div>
-              <div className="p-4">
+              <div className="p-4 bg-slate-900">
                 <p className="text-gray-300 line-clamp-3">
-                  {currentCafe.cafeDetails.description ||
-                    "No description available"}
+                  {currentCafe.cafeDetails.description || "No description available"}
                 </p>
               </div>
             </CardContent>
