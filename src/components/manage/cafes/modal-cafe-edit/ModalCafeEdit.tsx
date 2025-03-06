@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import {

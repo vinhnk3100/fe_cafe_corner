@@ -258,7 +258,7 @@ export default function ManageCafes() {
         ),
       },
     ],
-    []
+    [cafeToDelete?.name, confirmDelete, deleteDialogOpen]
   );
 
   const data = useMemo(() => cafes || [], [cafes]);
